@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Lightbulb, Rocket, Zap } from 'lucide-react'
+import Image from 'next/image'
 
 const innovations = [
   {
@@ -78,10 +79,11 @@ export default function InnovationSection() {
             >
               {/* Image */}
               <div className="relative h-80 overflow-hidden">
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                 

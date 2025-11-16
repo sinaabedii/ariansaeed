@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Search, Filter, Calendar, Tag } from 'lucide-react'
 
@@ -30,6 +30,17 @@ export default function ArticlesFilter({ onFilterChange }: ArticlesFilterProps) 
   const [searchQuery, setSearchQuery] = useState('')
   const [sortBy, setSortBy] = useState('latest')
   const [showFilters, setShowFilters] = useState(false)
+  const [isDesktop, setIsDesktop] = useState(true)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768)
+    }
+    
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category)
@@ -74,7 +85,7 @@ export default function ArticlesFilter({ onFilterChange }: ArticlesFilterProps) 
           {/* Filters */}
           <motion.div
             initial={false}
-            animate={{ height: showFilters || window.innerWidth >= 768 ? 'auto' : 0 }}
+            animate={{ height: showFilters || isDesktop ? 'auto' : 0 }}
             className="overflow-hidden md:overflow-visible"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

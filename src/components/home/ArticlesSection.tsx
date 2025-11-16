@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Calendar, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
 
 const articles = [
   {
@@ -76,10 +77,11 @@ export default function ArticlesSection() {
               className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
             >
               <div className="relative h-56 overflow-hidden">
-                <img
+                <Image
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
                   <span className="inline-block px-3 py-1 bg-primary/90 backdrop-blur-sm text-white rounded-full text-xs font-semibold">

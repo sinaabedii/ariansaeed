@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Linkedin } from 'lucide-react'
+import Image from 'next/image'
 
 const leaders = [
   {
@@ -49,11 +50,12 @@ export default function Leadership() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group text-center"
             >
-              <div className="relative mb-4 overflow-hidden rounded-2xl">
-                <img
+              <div className="relative mb-4 overflow-hidden rounded-2xl aspect-square">
+                <Image
                   src={leader.image}
                   alt={leader.name}
-                  className="w-full aspect-square object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  fill
+                  className="object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-colors flex items-center justify-center">
                   <a
