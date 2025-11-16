@@ -5,12 +5,12 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 
 const milestones = [
-  { year: '1999', title: 'Foundation', description: 'Arian Saeed Holding was established' },
-  { year: '2005', title: 'Expansion', description: 'Expanded into MDF manufacturing' },
-  { year: '2010', title: 'Diversification', description: 'Entered agriculture and construction sectors' },
-  { year: '2015', title: 'Innovation', description: 'Launched AI & Engineering division' },
-  { year: '2020', title: 'Global Reach', description: 'Expanded to 15+ countries worldwide' },
-  { year: '2024', title: 'Sustainable Future', description: 'Committed to carbon neutrality by 2030' },
+  { year: '1982', title: 'Foundation', description: 'Arian Saeed Industrial Group Inc. (ASIGI) was established as a value-driven company' },
+  { year: '1990s', title: 'Wood Industry Pioneer', description: 'Became a leading provider of wood-based panels and cellulose products with Western European technology' },
+  { year: '2000s', title: 'Expansion & Diversification', description: 'Expanded into petrochemicals, construction, and multiple industries, adding numerous businesses to the group' },
+  { year: '2010s', title: 'Technology Innovation', description: 'Pioneered in acquiring new technologies from around the world to Iran, establishing as a leading provider in Middle East' },
+  { year: '2015', title: 'AI & Engineering', description: 'Launched AI division and advanced engineering services' },
+  { year: 'Today', title: '32 Companies Strong', description: 'Operating 32 companies with 1,500 highly educated and young employees across diverse industries' },
 ]
 
 export default function Timeline() {
@@ -22,7 +22,7 @@ export default function Timeline() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-heading font-bold text-gray-900 mb-4">Our Journey</h2>
-          <p className="text-lg text-gray-600">25+ years of growth and innovation</p>
+          <p className="text-lg text-gray-600">42+ years of growth, innovation, and excellence since 1982</p>
         </div>
 
         <div className="max-w-5xl mx-auto">

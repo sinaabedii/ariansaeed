@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_CONFIG.name}`,
   },
   description: SITE_CONFIG.description,
-  keywords: ['holding company', 'cellulose', 'MDF', 'agriculture', 'construction', 'AI', 'investment', 'trade'],
+  keywords: ['ASIGI', 'Arian Saeed Industrial Group', 'wood-based panels', 'MDF manufacturing', 'cellulose products', 'Sina MDF', 'petrochemicals', 'construction', 'AI', 'investment', 'trade', 'Western European technology', 'German technology', 'export services'],
   authors: [{ name: SITE_CONFIG.name }],
   creator: SITE_CONFIG.name,
   openGraph: {

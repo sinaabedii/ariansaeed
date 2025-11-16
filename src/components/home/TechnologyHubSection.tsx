@@ -95,7 +95,7 @@ export default function TechnologyHubSection() {
             Technology & <span className="text-primary">Innovation Hub</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            At the forefront of technological advancement, we develop cutting-edge solutions that shape the future of business.
+            We have always been a pioneer in acquiring new technologies from around the world to Iran. Our strong technological and engineering background has been proven in many industrial paramount projects that we have assembled and run by ourselves, utilizing Western European technology, especially from Germany.
           </p>
         </motion.div>
 

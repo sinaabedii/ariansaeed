@@ -120,10 +120,10 @@ export default function GlobalPresenceSection() {
           className="text-center mb-12 md:mb-16 px-4"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 md:mb-6">
-            Global <span className="text-white/80">Partnerships</span>
+            Export <span className="text-white/80">Services</span>
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
-            Building bridges across continents. Our international partnerships span 11 countries, fostering collaboration and growth through strategic alliances and shared success.
+            Everything that Sina MDF produces has desirable, healthy and world-class characteristics. Our international supply is very prosperous and developing, with products shared across markets worldwide. Thousands of production staff trained by European experts ensure optimal production and supply.
           </p>
         </motion.div>
 

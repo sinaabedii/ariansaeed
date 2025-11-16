@@ -6,46 +6,60 @@ import Image from 'next/image'
 
 const values = [
   {
-    icon: Eye,
-    title: 'Vision',
-    description: 'To be the leading holding company driving innovation and sustainable growth across diverse industries.',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+    icon: Target,
+    title: 'Express',
+    description: 'Fast and efficient delivery of products and services to meet customer needs promptly.',
+    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80',
     gradient: 'from-blue-500 to-purple-600'
   },
   {
-    icon: Target,
-    title: 'Mission',
-    description: 'Empowering businesses through strategic investments, cutting-edge technology, and exceptional leadership.',
-    image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&q=80',
+    icon: Award,
+    title: 'Economy',
+    description: 'Cost-effective solutions that provide the best value without compromising on quality.',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
     gradient: 'from-green-500 to-teal-600'
   },
   {
     icon: Heart,
-    title: 'Integrity',
-    description: 'Building trust through transparency, ethical practices, and unwavering commitment to excellence.',
+    title: 'Strong',
+    description: 'Robust and durable products built to withstand the test of time and deliver reliability.',
     image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80',
     gradient: 'from-red-500 to-pink-600'
   },
   {
     icon: Lightbulb,
-    title: 'Innovation',
-    description: 'Pioneering breakthrough solutions that transform industries and create lasting value.',
+    title: 'Environment-Friendly',
+    description: 'Sustainable practices that protect the environment and support arboriculture.',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
+    gradient: 'from-green-500 to-emerald-600'
+  },
+  {
+    icon: Eye,
+    title: 'Customer-Oriented',
+    description: 'Focused on understanding and exceeding customer expectations in every interaction.',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
+    gradient: 'from-indigo-500 to-blue-600'
+  },
+  {
+    icon: Target,
+    title: 'Focused on the Future',
+    description: 'Forward-thinking approach with continuous innovation and strategic planning.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
+    gradient: 'from-purple-500 to-indigo-600'
+  },
+  {
+    icon: Lightbulb,
+    title: 'Innovative and Creative',
+    description: 'Pioneering new solutions and creative approaches that transform industries.',
     image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80',
     gradient: 'from-yellow-500 to-orange-600'
   },
   {
     icon: Users,
-    title: 'Collaboration',
-    description: 'Fostering partnerships that amplify success and drive collective growth.',
+    title: 'Powered by Talented Employees',
+    description: 'Our 1,500 highly educated and young employees are our greatest asset.',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80',
-    gradient: 'from-indigo-500 to-blue-600'
-  },
-  {
-    icon: Award,
-    title: 'Excellence',
-    description: 'Delivering superior results through continuous improvement and world-class standards.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80',
-    gradient: 'from-purple-500 to-indigo-600'
+    gradient: 'from-cyan-500 to-blue-600'
   }
 ]
 
@@ -61,14 +75,14 @@ export default function VisionValuesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">
-            Our Vision & <span className="text-primary">Values</span>
+            Our <span className="text-primary">Features</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Guided by our core principles, we shape the future through strategic vision and unwavering commitment to excellence.
+            Delivering excellence through our core strengths and commitment to quality, innovation, and sustainability.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
             <motion.div
               key={value.title}

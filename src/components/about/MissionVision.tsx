@@ -9,17 +9,17 @@ const values = [
   {
     icon: Target,
     title: 'Our Mission',
-    description: 'To deliver exceptional products and services that create lasting value for our stakeholders while maintaining the highest standards of quality and sustainability.',
+    description: 'To help create positive, enduring change in the world by empowering our people to give back to their communities, operating our firm in socially responsible and environmentally sustainable ways, and working with clients to intentionally address societal challenges.',
   },
   {
     icon: Eye,
     title: 'Our Vision',
-    description: 'To be a leading global conglomerate recognized for innovation, sustainability, and positive impact on communities worldwide.',
+    description: 'To be a leading provider of world-class products and services across multiple industries, pioneering in acquiring new technologies and establishing ourselves as a trusted partner in Middle Eastern countries.',
   },
   {
     icon: Award,
     title: 'Our Values',
-    description: 'Integrity, excellence, innovation, sustainability, and commitment to our people and communities guide everything we do.',
+    description: 'As a participant in the UN Global Compact, we support the Ten Principles on human rights, environment, labor, and anti-corruption. Our values are reflected in our Code of Professional Conduct and our commitment to excellence.',
   },
 ]
 

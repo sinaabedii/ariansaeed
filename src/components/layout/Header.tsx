@@ -76,7 +76,7 @@ export default function Header() {
             )}>
               <Image
                 src="/logo/asigi.png"
-                alt="Arian Saeed Holding Logo"
+                alt="Arian Saeed Industrial Group Inc. Logo"
                 fill
                 sizes="56px"
                 priority

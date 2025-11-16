@@ -9,18 +9,18 @@ import Image from 'next/image'
 const features = [
   {
     icon: Award,
-    title: 'Excellence',
-    description: 'Committed to delivering exceptional quality in every project and product.',
+    title: 'Western Technology',
+    description: 'We produce everything with technology from Western Europe, especially Germany.',
   },
   {
     icon: Target,
-    title: 'Innovation',
-    description: 'Leading the industry with cutting-edge solutions and technologies.',
+    title: 'World-Class Quality',
+    description: 'Offering the best wood fiber compressed products at the highest quality level in the world.',
   },
   {
     icon: Eye,
-    title: 'Vision',
-    description: 'Building a sustainable future through responsible business practices.',
+    title: 'Global Supply',
+    description: 'International supply is very prosperous and developing across multiple regions.',
   },
 ]
 
@@ -39,20 +39,21 @@ export default function AboutSection() {
             transition={{ duration: 0.6 }}
           >
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold mb-4">
-              About Arian Saeed Holding
+              About Arian Saeed Industrial Group Inc.
             </span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">
-              Building Excellence Across Multiple Industries
+              Seven Thousand Years of Wood Industry Heritage
             </h2>
             <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Arian Saeed Holding is a diversified multi-industry conglomerate with a strong presence 
-              in cellulose products, MDF manufacturing, agriculture, construction, AI & engineering, 
-              financial investment, and international trade.
+              The history of carpentry and joinery in Iran dates back to seven thousand years ago and is 
+              perhaps the first recorded industry in the history of Iran that is significant and valuable 
+              for all of us. This long history of wood industry in the country and the world shows the 
+              importance of wood and wood accessories in the life of all of us.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              With over 25 years of experience, we have established ourselves as a trusted leader in 
-              our sectors, consistently delivering innovative solutions and sustainable growth for our 
-              stakeholders and communities.
+              Arian Saeed Industrial Group Inc. (ASIGI), regarded as a value-driven company, was established 
+              in 1982 and throughout the years, has expanded into several different industries. Today with 32 
+              companies active in different subjects, we have 1.5 thousand highly educated and young employees.
             </p>
 
             {/* Feature Grid */}
@@ -143,8 +144,8 @@ export default function AboutSection() {
               transition={{ duration: 3, repeat: Infinity }}
               className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-2xl p-6 z-10"
             >
-              <div className="text-4xl font-bold text-primary">25+</div>
-              <div className="text-sm text-gray-600">Years of Excellence</div>
+              <div className="text-4xl font-bold text-primary">42+</div>
+              <div className="text-sm text-gray-600">Years Since 1982</div>
             </motion.div>
           </motion.div>
         </div>

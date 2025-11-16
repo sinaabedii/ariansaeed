@@ -20,7 +20,7 @@ export default function AboutHero() {
           transition={{ duration: 0.6 }}
           className="text-5xl md:text-6xl font-heading font-bold mb-6"
         >
-          About Arian Saeed Holding
+          About Arian Saeed Industrial Group Inc.
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -28,7 +28,7 @@ export default function AboutHero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl max-w-3xl mx-auto"
         >
-          Building a sustainable future through innovation, excellence, and commitment to our communities
+          A value-driven company established in 1982, with 32 companies and 1,500 highly educated employees driving innovation across multiple industries
         </motion.p>
       </div>
     </section>

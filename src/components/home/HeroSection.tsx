@@ -7,24 +7,24 @@ import { motion, AnimatePresence } from 'framer-motion'
 const slides = [
   {
     id: 1,
-    title: 'Leading the Future',
-    subtitle: 'Innovation Across Multiple Industries',
-    description: 'Building tomorrow\'s solutions with cutting-edge technology and sustainable practices',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070',
-  },
-  {
-    id: 2,
-    title: 'Sustainable Growth',
-    subtitle: 'Excellence in Manufacturing',
-    description: 'Premium cellulose and MDF products for a sustainable future',
+    title: 'Arian Saeed Group',
+    subtitle: 'Global Expertise In Production And Supply',
+    description: 'We produce everything with Western European technology, especially Germany, offering the best wood fiber compressed products at the highest quality level in the world',
     image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070',
   },
   {
+    id: 2,
+    title: '7,000 Years of Heritage',
+    subtitle: 'The History of Carpentry in Iran',
+    description: 'The history of carpentry and joinery in Iran dates back to seven thousand years ago, the first recorded industry that is significant and valuable for all of us',
+    image: 'https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070',
+  },
+  {
     id: 3,
-    title: 'Smart Solutions',
-    subtitle: 'AI & Engineering Innovation',
-    description: 'Pioneering artificial intelligence and advanced engineering solutions',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072',
+    title: 'Export Excellence',
+    subtitle: 'Serving Global Markets',
+    description: 'Everything that Sina MDF produces has desirable, healthy and world-class characteristics for international customers',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070',
   },
 ]
 

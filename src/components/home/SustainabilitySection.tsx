@@ -82,10 +82,10 @@ export default function SustainabilitySection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-6">
-            Sustainability & <span className="text-green-600">Environment</span>
+            Our Commitment to <span className="text-green-600">the Environment</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Committed to creating a sustainable future through innovative environmental solutions and responsible business practices.
+            Our commitment to making a difference in society is embedded in everything we do. We are committed to managing our firm in ways that are socially responsible and environmentally sustainable.
           </p>
         </motion.div>
 
@@ -113,7 +113,7 @@ export default function SustainabilitySection() {
                 viewport={{ once: true }}
                 className="text-3xl md:text-4xl font-bold mb-4"
               >
-                Building a Greener Tomorrow
+                Acting Responsibly
               </motion.h3>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -122,8 +122,7 @@ export default function SustainabilitySection() {
                 viewport={{ once: true }}
                 className="text-lg max-w-2xl mx-auto"
               >
-                Our comprehensive sustainability strategy focuses on environmental stewardship, 
-                social responsibility, and economic viability.
+                As a participant in the United Nations Global Compact, we support and respect the Ten Principles on human rights, environment, labor, and anti-corruption. We bring this commitment to life through our Values, our Code of Professional Conduct, and our policies related to the environment, our supply chain, our people, and our professional standards.
               </motion.p>
             </div>
           </div>

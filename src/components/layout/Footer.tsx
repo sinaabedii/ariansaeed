@@ -47,7 +47,7 @@ export default function Footer() {
               <div className="relative w-12 h-12">
                 <Image
                   src="/logo/asigi.png"
-                  alt="Arian Saeed Holding Logo"
+                  alt="Arian Saeed Industrial Group Inc. Logo"
                   fill
                   sizes="48px"
                   className="object-contain"
