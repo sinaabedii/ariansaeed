@@ -8,7 +8,7 @@ export default function CareersHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070)',
+          backgroundImage: 'url(/images/4.jpg)',
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />

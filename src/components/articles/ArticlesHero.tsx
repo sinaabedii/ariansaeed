@@ -8,7 +8,7 @@ export default function ArticlesHero() {
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1200&q=80"
+          src="/images/c1_hWy2qZ4.jpg"
           alt="Articles and Insights"
           fill
           className="object-cover"

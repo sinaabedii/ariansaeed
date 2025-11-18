@@ -9,7 +9,7 @@ const initiatives = [
     icon: Sun,
     title: 'Renewable Energy',
     description: 'Transitioning to 100% renewable energy across all operations',
-    image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&q=80',
+    image: '/images/1.jpg',
     progress: 85,
     target: '2025',
     color: 'from-yellow-400 to-orange-500'
@@ -18,7 +18,7 @@ const initiatives = [
     icon: Recycle,
     title: 'Circular Economy',
     description: 'Implementing zero-waste principles and sustainable practices',
-    image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=600&q=80',
+    image: '/images/2.jpg',
     progress: 72,
     target: '2026',
     color: 'from-green-400 to-emerald-500'
@@ -27,7 +27,7 @@ const initiatives = [
     icon: Droplets,
     title: 'Water Conservation',
     description: 'Advanced water management and conservation technologies',
-    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80',
+    image: '/images/3.jpg',
     progress: 90,
     target: '2024',
     color: 'from-blue-400 to-cyan-500'
@@ -36,7 +36,7 @@ const initiatives = [
     icon: TreePine,
     title: 'Carbon Neutral',
     description: 'Achieving net-zero carbon emissions through innovation',
-    image: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80',
+    image: '/images/4.jpg',
     progress: 68,
     target: '2030',
     color: 'from-green-500 to-teal-600'
@@ -98,7 +98,7 @@ export default function SustainabilitySection() {
           className="relative h-96 rounded-3xl overflow-hidden mb-16"
         >
           <Image
-            src="https://images.unsplash.com/photo-1569163139394-de44cb6c4a3b?w=1200&q=80"
+            src="/images/DJI_0006.JPG"
             alt="Sustainable Future"
             fill
             className="object-cover"

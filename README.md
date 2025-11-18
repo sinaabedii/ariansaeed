@@ -169,12 +169,24 @@ Copyright © 2024 Arian Saeed Holding. All rights reserved.
 
 This is a proprietary project. For inquiries, please contact the development team.
 
+## ⚡ Performance Optimization
+
+This website is optimized for maximum performance:
+- **Dynamic Imports**: Lazy loading for below-the-fold components
+- **Image Optimization**: Next.js Image component with AVIF/WebP support
+- **Code Splitting**: Automatic chunking for optimal bundle size
+- **SWC Minification**: Fast production builds
+- **CSS Optimization**: Tailwind CSS with PurgeCSS
+- **Font Optimization**: Google Fonts with display swap
+
+Target Lighthouse Score: 90+
+
 ## 📧 Contact
 
 For support or questions:
-- Email: info@ariansaeedholding.com
+- Email: info@ariansaeed.com
 - Phone: +98 21 1234 5678
-- Website: https://ariansaeedholding.com
+- Website: https://www.ariansaeed.com
 
 ---
 

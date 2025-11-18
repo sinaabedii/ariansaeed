@@ -15,7 +15,7 @@ const articles = [
     author: 'Dr. Sarah Johnson',
     publishDate: '2024-11-10',
     readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+    image: '/images/1O0A6321.JPG',
     views: 2847,
     likes: 156,
     featured: true
@@ -28,7 +28,7 @@ const articles = [
     author: 'Michael Chen',
     publishDate: '2024-11-08',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1569163139394-de44cb6c4a3b?w=600&q=80',
+    image: '/images/1O0A6342.JPG',
     views: 1923,
     likes: 89,
     featured: false
@@ -41,7 +41,7 @@ const articles = [
     author: 'Emma Rodriguez',
     publishDate: '2024-11-05',
     readTime: '10 min read',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    image: '/images/DSC_0030.JPG',
     views: 3156,
     likes: 203,
     featured: true
@@ -54,7 +54,7 @@ const articles = [
     author: 'David Park',
     publishDate: '2024-11-03',
     readTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80',
+    image: '/images/_SMH3265.jpg',
     views: 2134,
     likes: 127,
     featured: false
@@ -67,7 +67,7 @@ const articles = [
     author: 'Lisa Wang',
     publishDate: '2024-11-01',
     readTime: '12 min read',
-    image: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80',
+    image: '/images/DJI_0006.JPG',
     views: 4521,
     likes: 298,
     featured: true
@@ -80,7 +80,7 @@ const articles = [
     author: 'Robert Thompson',
     publishDate: '2024-10-28',
     readTime: '9 min read',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+    image: '/images/DSC00426.JPG',
     views: 1876,
     likes: 94,
     featured: false

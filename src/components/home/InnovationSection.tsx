@@ -11,19 +11,19 @@ const innovations = [
     icon: Lightbulb,
     title: 'Smart Manufacturing',
     description: 'AI-powered production optimization',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070',
+    image: '/images/c2_up6Glpn.jpg',
   },
   {
     icon: Rocket,
     title: 'Sustainable Solutions',
     description: 'Eco-friendly products and processes',
-    image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070',
+    image: '/images/c3.jpg',
   },
   {
     icon: Zap,
     title: 'Digital Transformation',
     description: 'Next-generation business technologies',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072',
+    image: '/images/c4.jpg',
   },
 ]
 

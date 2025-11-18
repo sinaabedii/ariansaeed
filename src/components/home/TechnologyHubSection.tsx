@@ -9,7 +9,7 @@ const technologies = [
     icon: Brain,
     name: 'Artificial Intelligence',
     description: 'Advanced AI solutions driving automation and intelligent decision-making',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80',
+    image: '/images/c1_hWy2qZ4.jpg',
     stats: '50+ AI Models',
     color: 'from-purple-500 to-indigo-600'
   },
@@ -17,7 +17,7 @@ const technologies = [
     icon: Cloud,
     name: 'Cloud Computing',
     description: 'Scalable cloud infrastructure powering digital transformation',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
+    image: '/images/c2_up6Glpn.jpg',
     stats: '99.9% Uptime',
     color: 'from-blue-500 to-cyan-600'
   },
@@ -25,7 +25,7 @@ const technologies = [
     icon: Shield,
     name: 'Cybersecurity',
     description: 'Enterprise-grade security solutions protecting digital assets',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80',
+    image: '/images/c3.jpg',
     stats: 'Zero Breaches',
     color: 'from-red-500 to-pink-600'
   },
@@ -33,7 +33,7 @@ const technologies = [
     icon: Database,
     name: 'Big Data Analytics',
     description: 'Transforming data into actionable insights for strategic growth',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80',
+    image: '/images/c4.jpg',
     stats: '10PB+ Processed',
     color: 'from-green-500 to-emerald-600'
   }
@@ -43,19 +43,19 @@ const innovations = [
   {
     title: 'Quantum Computing Research',
     description: 'Pioneering quantum algorithms for complex optimization problems',
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80',
+    image: '/images/DJI_0006.JPG',
     status: 'In Development'
   },
   {
     title: 'IoT Ecosystem Platform',
     description: 'Connecting billions of devices for smart city initiatives',
-    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&q=80',
+    image: '/images/DSC00426.JPG',
     status: 'Live'
   },
   {
     title: 'Blockchain Infrastructure',
     description: 'Decentralized solutions for transparent business operations',
-    image: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&q=80',
+    image: '/images/1.jpg',
     status: 'Beta'
   }
 ]

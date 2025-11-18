@@ -8,7 +8,7 @@ export default function ContactHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: 'url(https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074)',
+          backgroundImage: 'url(/images/DSC00426.JPG)',
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />

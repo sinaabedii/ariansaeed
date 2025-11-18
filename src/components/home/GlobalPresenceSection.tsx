@@ -16,86 +16,93 @@ const Globe3D = dynamic(() => import('@/components/3d/Globe3D'), {
 
 const partnerCountries = [
   {
+    city: 'Tehran',
+    country: 'Iran',
+    status: 'Headquarters',
+    image: '/images/counteries/iran-tehran.jpg',
+    description: 'Main operations center'
+  },
+  {
     city: 'Istanbul',
     country: 'Turkey',
     status: 'Active Partnership',
-    image: 'https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&q=90',
+    image: '/images/counteries/Turkey.jpg',
     description: 'Strategic partnerships and trade operations'
   },
   {
     city: 'Dubai',
     country: 'UAE',
     status: 'Regional Hub',
-    image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=90',
+    image: '/images/counteries/Dubai.jpg',
     description: 'Middle East business hub'
   },
   {
     city: 'Muscat',
     country: 'Oman',
     status: 'Active Projects',
-    image: 'https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=800&q=90',
+    image: '/images/counteries/oman.webp',
     description: 'Infrastructure development'
   },
   {
     city: 'Berlin',
     country: 'Germany',
     status: 'Strategic Alliance',
-    image: 'https://images.unsplash.com/photo-1546726747-421c6d69c929?w=800&q=90',
+    image: '/images/counteries/germany.webp',
     description: 'Technology partnerships'
   },
   {
     city: 'Beijing',
     country: 'China',
     status: 'Major Collaborations',
-    image: 'https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=90',
+    image: '/images/counteries/china.jpg',
     description: 'Manufacturing partnerships'
   },
   {
     city: 'Baku',
     country: 'Azerbaijan',
     status: 'Active Partnership',
-    image: 'https://images.unsplash.com/photo-1589400840047-eb5b6de2f5e1?w=800&q=90',
+    image: '/images/counteries/azerbaijan.jpg',
     description: 'Energy sector projects'
   },
   {
     city: 'Moscow',
     country: 'Russia',
     status: 'Strategic Projects',
-    image: 'https://images.unsplash.com/photo-1513326738677-b964603b136d?w=800&q=90',
+    image: '/images/counteries/russia.jpg',
     description: 'Industrial collaborations'
   },
   {
     city: 'Dushanbe',
     country: 'Tajikistan',
     status: 'Development Projects',
-    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=90',
+    image: '/images/counteries/tajikistan.jpg',
     description: 'Infrastructure development'
   },
   {
     city: 'Baghdad',
     country: 'Iraq',
     status: 'Active Projects',
-    image: 'https://images.unsplash.com/photo-1580837119756-563d608dd119?w=800&q=90',
+    image: '/images/counteries/iraq.jpg',
     description: 'Construction projects'
   },
   {
     city: 'Damascus',
     country: 'Syria',
     status: 'Reconstruction',
-    image: 'https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=800&q=90',
+    image: '/images/counteries/Damascus.webp',
     description: 'Reconstruction projects'
   },
   {
     city: 'Beirut',
     country: 'Lebanon',
     status: 'Active Partnership',
-    image: 'https://images.unsplash.com/photo-1580837119756-563d608dd119?w=800&q=90',
+    image: '/images/counteries/syria.jpg',
     description: 'Business development'
   }
 ]
 
 const stats = [
-  { icon: Globe, label: 'Partner Countries', value: '11' },
+  { icon: Globe, label: 'Partner Countries', value: '12' },
   { icon: Building2, label: 'Active Projects', value: '50+' },
   { icon: Users, label: 'International Team', value: '1,200+' },
   { icon: MapPin, label: 'Global Reach', value: '3 Continents' }
@@ -221,7 +228,11 @@ export default function GlobalPresenceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
               viewport={{ once: true }}
-              className="group bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/15 transition-all duration-300 border border-white/5 hover:border-white/20"
+              className={`group bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/15 transition-all duration-300 ${
+                country.status === 'Headquarters' 
+                  ? 'border-2 border-green-500/50 hover:border-green-500/70 ring-2 ring-green-500/20' 
+                  : 'border border-white/5 hover:border-white/20'
+              }`}
             >
               <div className="relative w-full h-32 md:h-40 rounded-lg md:rounded-xl overflow-hidden mb-3 md:mb-4">
                 <Image
@@ -232,9 +243,17 @@ export default function GlobalPresenceSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-2 md:bottom-3 left-2 md:left-3 text-white">
-                  <div className="text-sm md:text-base font-bold">{country.country}</div>
+                  <div className="text-sm md:text-base font-bold flex items-center gap-1">
+                    {country.country}
+                    {country.status === 'Headquarters' && <span className="text-xs">🏢</span>}
+                  </div>
                   <div className="text-xs opacity-90">{country.city}</div>
                 </div>
+                {country.status === 'Headquarters' && (
+                  <div className="absolute top-2 md:top-3 right-2 md:right-3 bg-green-500 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">
+                    HQ
+                  </div>
+                )}
               </div>
               
               <div className="space-y-2 md:space-y-3">
@@ -249,14 +268,20 @@ export default function GlobalPresenceSection() {
                   </div>
                   <div className="flex items-center space-x-1.5 md:space-x-2 text-white/70">
                     <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 flex-shrink-0" />
-                    <span className="text-xs md:text-sm whitespace-nowrap">Partner</span>
+                    <span className="text-xs md:text-sm whitespace-nowrap">
+                      {country.status === 'Headquarters' ? 'Main Base' : 'Partner'}
+                    </span>
                   </div>
                 </div>
                 
                 {/* Status indicator */}
                 <div className="flex items-center space-x-2 pt-2 border-t border-white/10">
-                  <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-green-400 rounded-full animate-pulse flex-shrink-0" />
-                  <span className="text-xs text-white/60 truncate">Active Collaboration</span>
+                  <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse flex-shrink-0 ${
+                    country.status === 'Headquarters' ? 'bg-green-600' : 'bg-green-400'
+                  }`} />
+                  <span className="text-xs text-white/60 truncate">
+                    {country.status === 'Headquarters' ? 'Main Operations Center' : 'Active Collaboration'}
+                  </span>
                 </div>
               </div>
             </motion.div>

@@ -45,10 +45,10 @@ const articles = [
     category: 'Technology',
     author: 'Dr. Sarah Johnson',
     authorBio: 'Dr. Sarah Johnson is a leading expert in AI and digital transformation with over 15 years of experience in technology consulting.',
-    authorImage: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&q=80',
+    authorImage: '/images/c2_up6Glpn.jpg',
     publishDate: '2024-11-10',
     readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
+    image: '/images/1O0A6321.JPG',
     views: 2847,
     likes: 156,
     tags: ['AI', 'Business Strategy', 'Digital Transformation', 'Automation']

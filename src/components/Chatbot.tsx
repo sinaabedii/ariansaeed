@@ -14,55 +14,129 @@ interface Message {
 }
 
 const quickReplies = [
-  'Tell me about your services',
-  'How can I contact you?',
-  'What are your business domains?',
-  'Schedule a meeting',
-  'View our locations',
-  'Get support'
+  'About ASIGI',
+  'Our Products',
+  'Global Offices',
+  'Contact Us',
+  'Careers',
+  'Partnerships'
 ]
 
 const botResponses: { [key: string]: Message } = {
-  'Tell me about your services': {
+  'About ASIGI': {
     id: 0,
-    text: 'We offer comprehensive business solutions across multiple industries including technology, healthcare, finance, and sustainability. Would you like to know more about a specific domain?',
+    text: 'Arian Saeed Industrial Group (ASIGI) was established in 1982. We operate 32 companies across 7 major industries with 1,200+ employees and partnerships in 12 countries worldwide. What would you like to know more about?',
     isBot: true,
     timestamp: new Date(),
     type: 'options',
-    options: ['Technology Solutions', 'Healthcare Services', 'Financial Services', 'Sustainability']
+    options: ['Our History', 'Business Sectors', 'Global Presence', 'Key Numbers']
   },
-  'How can I contact you?': {
+  'Our Products': {
+    id: 0,
+    text: 'Our flagship products include Sina MDF (manufactured with German technology), cellulose products, petrochemicals, and construction solutions. Which industry interests you?',
+    isBot: true,
+    timestamp: new Date(),
+    type: 'options',
+    options: ['Wood-Based Panels', 'Cellulose Products', 'Petrochemicals', 'AI & Technology']
+  },
+  'Global Offices': {
+    id: 0,
+    text: 'We have offices and partnerships in 12 countries: Iran (HQ - Tehran), Turkey, UAE, Oman, Germany, China, Azerbaijan, Russia, Tajikistan, Iraq, Syria, and Lebanon.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Contact Us': {
     id: 0,
     text: 'Here are the ways you can reach us:',
     isBot: true,
     timestamp: new Date(),
     type: 'contact'
   },
-  'What are your business domains?': {
+  'Careers': {
     id: 0,
-    text: 'Our main business domains include:\n• Technology & Innovation\n• Healthcare Solutions\n• Financial Services\n• Sustainable Energy\n• Real Estate Development\n• Manufacturing Excellence',
+    text: 'Join our team of 1,200+ professionals! We have opportunities in manufacturing, engineering, AI & technology, and business development across 32 companies. Visit our Careers page to explore current openings.',
     isBot: true,
     timestamp: new Date()
   },
-  'Schedule a meeting': {
+  'Partnerships': {
     id: 0,
-    text: 'I&apos;d be happy to help you schedule a meeting! Please provide your preferred date and time, and our team will get back to you within 24 hours.',
-    isBot: true,
-    timestamp: new Date()
-  },
-  'View our locations': {
-    id: 0,
-    text: 'We have offices in Tehran, Dubai, London, and Singapore. You can find detailed addresses and contact information on our contact page.',
-    isBot: true,
-    timestamp: new Date()
-  },
-  'Get support': {
-    id: 0,
-    text: 'Our support team is available 24/7. You can reach us via phone, email, or live chat. What type of support do you need?',
+    text: 'We welcome strategic partnerships, joint ventures, and distribution opportunities across our business domains. Our team evaluates partnerships based on strategic fit and shared values. Would you like to discuss a specific area?',
     isBot: true,
     timestamp: new Date(),
     type: 'options',
-    options: ['Technical Support', 'Sales Inquiry', 'General Questions', 'Partnership']
+    options: ['Distribution', 'Technology Transfer', 'Investment', 'Trade']
+  },
+  'Our History': {
+    id: 0,
+    text: 'Founded in 1982, ASIGI has grown from a single company to 32 active companies operating across multiple continents. Our commitment to innovation and excellence has made us a leading industrial group.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Business Sectors': {
+    id: 0,
+    text: 'We operate in 7 major sectors:\n• Wood-Based Panels & MDF\n• Cellulose Products\n• Petrochemicals\n• Construction\n• AI & Technology\n• Investment\n• International Trade',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Global Presence': {
+    id: 0,
+    text: 'Our headquarters is in Tehran, Iran, with partnerships across Turkey, UAE, Oman, Germany, China, Azerbaijan, Russia, Tajikistan, Iraq, Syria, and Lebanon. We serve markets across 3 continents.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Key Numbers': {
+    id: 0,
+    text: 'Quick Facts:\n• Established: 1982\n• Active Companies: 32\n• Employees: 1,200+\n• Countries: 12\n• Industries: 7\n• Active Projects: 50+',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Wood-Based Panels': {
+    id: 0,
+    text: 'Our Sina MDF brand uses cutting-edge Western European technology, especially German equipment. We produce high-quality MDF and wood fiber products that meet international standards.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Cellulose Products': {
+    id: 0,
+    text: 'We operate advanced cellulose production facilities with multiple production lines, creating sustainable and high-quality cellulose products for various industries.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Petrochemicals': {
+    id: 0,
+    text: 'Our petrochemical division provides comprehensive solutions and products for industrial and commercial applications across international markets.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'AI & Technology': {
+    id: 0,
+    text: 'We invest heavily in AI and cutting-edge technology to drive innovation across all our business units, ensuring we stay at the forefront of industrial advancement.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Distribution': {
+    id: 0,
+    text: 'We offer distribution partnership opportunities for our products in new markets. Our support includes logistics, quality assurance, and marketing assistance.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Technology Transfer': {
+    id: 0,
+    text: 'We collaborate with international partners for technology transfer, especially in manufacturing and industrial processes. Contact our business development team to discuss opportunities.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Investment': {
+    id: 0,
+    text: 'We welcome investment opportunities across our 7 business sectors. Our investment team can discuss specific projects and opportunities that align with your interests.',
+    isBot: true,
+    timestamp: new Date()
+  },
+  'Trade': {
+    id: 0,
+    text: 'We provide comprehensive export services for MDF panels, cellulose products, petrochemicals, and construction solutions to markets worldwide with full logistics support.',
+    isBot: true,
+    timestamp: new Date()
   }
 }
 
@@ -73,7 +147,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: 'Hello! Welcome to Arian Saeed Holding. I&apos;m your virtual assistant. How can I help you today?',
+      text: 'Hello! Welcome to Arian Saeed Industrial Group (ASIGI). I&apos;m here to help you learn about our 32 companies, global partnerships, and innovative solutions. How can I assist you today?',
       isBot: true,
       timestamp: new Date()
     }
@@ -141,24 +215,32 @@ export default function Chatbot() {
   const renderMessage = (message: Message) => {
     if (message.type === 'contact') {
       return (
-        <div className="bg-gray-50 rounded-2xl p-4 space-y-3">
-          <p className="text-sm font-medium text-gray-800 mb-3">{message.text}</p>
+        <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-3 md:p-4 space-y-2.5 border border-primary/20 shadow-sm">
+          <p className="text-xs md:text-sm font-bold text-gray-900 mb-2">{message.text}</p>
           <div className="space-y-2">
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <Phone className="w-4 h-4 text-primary" />
-              <span>+98 21 1234 5678</span>
+            <div className="flex items-center space-x-2 text-xs md:text-sm text-gray-900">
+              <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <Phone className="w-3.5 h-3.5 text-primary" />
+              </div>
+              <span className="font-medium">+98 21 1234 5678</span>
             </div>
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <Mail className="w-4 h-4 text-primary" />
-              <span>info@ariansaeed.com</span>
+            <div className="flex items-center space-x-2 text-xs md:text-sm text-gray-900">
+              <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <Mail className="w-3.5 h-3.5 text-primary" />
+              </div>
+              <span className="font-medium">info@ariansaeed.com</span>
             </div>
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <MapPin className="w-4 h-4 text-primary" />
-              <span>Tehran, Iran</span>
+            <div className="flex items-center space-x-2 text-xs md:text-sm text-gray-900">
+              <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <MapPin className="w-3.5 h-3.5 text-primary" />
+              </div>
+              <span className="font-medium">Tehran, Iran</span>
             </div>
-            <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <Clock className="w-4 h-4 text-primary" />
-              <span>Mon-Fri: 9AM-6PM</span>
+            <div className="flex items-center space-x-2 text-xs md:text-sm text-gray-900">
+              <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <Clock className="w-3.5 h-3.5 text-primary" />
+              </div>
+              <span className="font-medium">Sat-Thu: 9AM-6PM</span>
             </div>
           </div>
         </div>
@@ -167,14 +249,14 @@ export default function Chatbot() {
 
     if (message.type === 'options' && message.options) {
       return (
-        <div className="space-y-3">
-          <p className="text-sm">{message.text}</p>
-          <div className="grid grid-cols-1 gap-2">
+        <div className="space-y-2.5">
+          <p className="text-xs md:text-sm text-gray-900 font-medium">{message.text}</p>
+          <div className="grid grid-cols-1 gap-1.5">
             {message.options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleOptionClick(option)}
-                className="text-left px-3 py-2 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors text-sm"
+                className="text-left px-2.5 md:px-3 py-1.5 md:py-2 bg-gradient-to-r from-primary/5 to-primary/10 text-primary rounded-lg hover:from-primary/15 hover:to-primary/25 transition-all text-xs md:text-sm font-medium border border-primary/20 hover:border-primary/30 shadow-sm hover:shadow"
               >
                 {option}
               </button>
@@ -184,7 +266,7 @@ export default function Chatbot() {
       )
     }
 
-    return <p className="text-sm whitespace-pre-line">{message.text}</p>
+    return <p className="text-xs md:text-sm whitespace-pre-line leading-relaxed text-gray-900">{message.text}</p>
   }
 
   return (
@@ -195,7 +277,7 @@ export default function Chatbot() {
           setIsOpen(!isOpen)
           setUnreadCount(0)
         }}
-        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 w-14 h-14 md:w-16 md:h-16 bg-gradient-primary rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-all duration-300 relative"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[9999] w-14 h-14 md:w-16 md:h-16 bg-gradient-to-r from-primary to-primary-600 rounded-full shadow-lg flex items-center justify-center text-white hover:shadow-xl transition-all duration-300"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
@@ -242,23 +324,23 @@ export default function Chatbot() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className={`fixed z-50 bg-white rounded-2xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 ${
+            className={`fixed z-[9999] bg-white rounded-2xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 ${
               isMinimized 
                 ? 'bottom-20 right-4 md:bottom-24 md:right-6 w-80 h-16' 
-                : 'bottom-20 right-4 left-4 top-20 md:bottom-24 md:right-6 md:left-auto md:top-auto md:w-96 md:h-[32rem]'
+                : 'bottom-20 right-4 left-4 top-4 md:bottom-24 md:right-6 md:left-auto md:top-auto md:w-[400px] md:h-[600px]'
             }`}
             transition={{ duration: 0.3 }}
           >
             {/* Header */}
-            <div className="bg-gradient-primary px-4 md:px-6 py-3 md:py-4 text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-primary to-primary-600 px-4 md:px-6 py-3 md:py-4 text-white flex items-center justify-between shadow-lg">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 md:w-10 md:h-10 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 md:w-10 md:h-10 bg-white/30 backdrop-blur-lg rounded-full flex items-center justify-center shadow-sm">
                   <MessageCircle className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-sm md:text-base">Arian Saeed Assistant</h3>
-                  <p className="text-xs text-white/80">
-                    {isTyping ? 'Typing...' : 'We&apos;re here to help!'}
+                  <h3 className="font-bold text-sm md:text-base text-white">ASIGI Assistant</h3>
+                  <p className="text-[10px] md:text-xs text-white font-medium">
+                    {isTyping ? 'Typing...' : 'Online • Ready to help'}
                   </p>
                 </div>
               </div>
@@ -281,7 +363,7 @@ export default function Chatbot() {
             {!isMinimized && (
               <>
                 {/* Messages */}
-                <div className="flex-1 overflow-y-auto p-4 md:p-6 space-y-4">
+                <div className="flex-1 overflow-y-auto p-3 md:p-4 space-y-3 bg-gradient-to-b from-gray-50/50 to-white">
                   {messages.map((message) => (
                     <motion.div
                       key={message.id}
@@ -289,20 +371,20 @@ export default function Chatbot() {
                       animate={{ opacity: 1, y: 0 }}
                       className={`flex ${message.isBot ? 'justify-start' : 'justify-end'}`}
                     >
-                      <div className={`flex items-start space-x-2 max-w-[85%] ${message.isBot ? '' : 'flex-row-reverse space-x-reverse'}`}>
-                        <div className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      <div className={`flex items-start space-x-1.5 md:space-x-2 max-w-[90%] md:max-w-[85%] ${message.isBot ? '' : 'flex-row-reverse space-x-reverse'}`}>
+                        <div className={`w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm ${
                           message.isBot ? 'bg-primary text-white' : 'bg-gray-200 text-gray-600'
                         }`}>
                           {message.isBot ? <Bot className="w-3 h-3 md:w-4 md:h-4" /> : <User className="w-3 h-3 md:w-4 md:h-4" />}
                         </div>
-                        <div className={`rounded-2xl px-3 md:px-4 py-2 ${
+                        <div className={`rounded-2xl px-2.5 md:px-3 py-2 shadow-sm ${
                           message.isBot 
-                            ? 'bg-gray-100 text-gray-800' 
+                            ? 'bg-gray-100 text-gray-900' 
                             : 'bg-primary text-white'
                         }`}>
                           {renderMessage(message)}
-                          <p className={`text-xs mt-1 ${
-                            message.isBot ? 'text-gray-500' : 'text-white/70'
+                          <p className={`text-[10px] md:text-xs mt-0.5 ${
+                            message.isBot ? 'text-gray-600' : 'text-white/70'
                           }`}>
                             {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                           </p>
@@ -336,13 +418,13 @@ export default function Chatbot() {
                 </div>
 
                 {/* Quick Replies */}
-                <div className="px-4 md:px-6 py-2">
-                  <div className="flex flex-wrap gap-1 md:gap-2">
+                <div className="px-3 md:px-4 py-2 bg-white border-t border-gray-100">
+                  <div className="flex flex-wrap gap-1.5">
                     {quickReplies.slice(0, 4).map((reply, index) => (
                       <button
                         key={index}
                         onClick={() => sendMessage(reply)}
-                        className="text-xs px-2 md:px-3 py-1 bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200 transition-colors"
+                        className="text-[10px] md:text-xs px-2 md:px-2.5 py-1 bg-gradient-to-r from-primary/5 to-primary/10 text-primary border border-primary/20 rounded-full hover:from-primary/10 hover:to-primary/20 transition-all shadow-sm font-semibold"
                       >
                         {reply}
                       </button>
@@ -351,19 +433,19 @@ export default function Chatbot() {
                 </div>
 
                 {/* Input Form */}
-                <form onSubmit={handleSubmit} className="p-4 md:p-6 pt-2 border-t border-gray-100">
+                <form onSubmit={handleSubmit} className="p-3 md:p-4 border-t border-gray-200 bg-white">
                   <div className="flex space-x-2">
                     <input
                       type="text"
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
                       placeholder="Type your message..."
-                      className="flex-1 px-3 md:px-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm"
+                      className="flex-1 px-3 md:px-4 py-2 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary text-xs md:text-sm bg-gray-50 focus:bg-white transition-colors"
                     />
                     <button
                       type="submit"
                       disabled={!inputValue.trim()}
-                      className="w-8 h-8 md:w-10 md:h-10 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-r from-primary to-primary-600 text-white rounded-full flex items-center justify-center hover:shadow-lg hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       <Send className="w-3 h-3 md:w-4 md:h-4" />
                     </button>

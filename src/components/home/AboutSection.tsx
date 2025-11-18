@@ -91,7 +91,7 @@ export default function AboutSection() {
                 className="relative h-64 rounded-2xl overflow-hidden"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070"
+                  src="/images/1O0A6321.JPG"
                   alt="Business Meeting"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -104,7 +104,7 @@ export default function AboutSection() {
                 className="relative h-64 rounded-2xl overflow-hidden mt-8"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069"
+                  src="/images/1O0A6342.JPG"
                   alt="Office Space"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -117,7 +117,7 @@ export default function AboutSection() {
                 className="relative h-64 rounded-2xl overflow-hidden -mt-8"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070"
+                  src="/images/DSC_0030.JPG"
                   alt="Team Work"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -130,7 +130,7 @@ export default function AboutSection() {
                 className="relative h-64 rounded-2xl overflow-hidden"
               >
                 <Image
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070"
+                  src="/images/_SMH3265.jpg"
                   alt="Innovation"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"

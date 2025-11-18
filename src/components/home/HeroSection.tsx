@@ -10,21 +10,21 @@ const slides = [
     title: 'Arian Saeed Group',
     subtitle: 'Global Expertise In Production And Supply',
     description: 'We produce everything with Western European technology, especially Germany, offering the best wood fiber compressed products at the highest quality level in the world',
-    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070',
+    image: '/images/1.jpg',
   },
   {
     id: 2,
     title: '7,000 Years of Heritage',
     subtitle: 'The History of Carpentry in Iran',
     description: 'The history of carpentry and joinery in Iran dates back to seven thousand years ago, the first recorded industry that is significant and valuable for all of us',
-    image: 'https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070',
+    image: '/images/2.jpg',
   },
   {
     id: 3,
     title: 'Export Excellence',
     subtitle: 'Serving Global Markets',
     description: 'Everything that Sina MDF produces has desirable, healthy and world-class characteristics for international customers',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070',
+    image: '/images/3.jpg',
   },
 ]
 
@@ -34,7 +34,7 @@ export default function HeroSection() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
+    }, 7000) // Longer interval for subtle transitions
 
     return () => clearInterval(timer)
   }, [])
@@ -49,24 +49,41 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
-          transition={{ duration: 0.7 }}
-          className="absolute inset-0"
-        >
-          {/* Background Image */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${slides[currentSlide].image})`,
+      {/* Background Images Layer - Smooth Crossfade */}
+      <div className="absolute inset-0">
+        {slides.map((slide, index) => (
+          <motion.div
+            key={slide.id}
+            initial={false}
+            animate={{
+              opacity: index === currentSlide ? 1 : 0,
+              scale: index === currentSlide ? 1 : 1.05,
             }}
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+            transition={{
+              opacity: { duration: 1.2, ease: [0.43, 0.13, 0.23, 0.96] },
+              scale: { duration: 8, ease: "linear" },
+            }}
+            className="absolute inset-0"
+            style={{ pointerEvents: index === currentSlide ? 'auto' : 'none' }}
+          >
+            {/* Background Image with Ken Burns Effect */}
+            <motion.div
+              animate={{
+                scale: index === currentSlide ? [1, 1.08] : 1,
+              }}
+              transition={{
+                duration: 8,
+                ease: "linear",
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: `url(${slide.image})`,
+              }}
+            />
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
           
           {/* Particle Effect */}
           <div className="absolute inset-0 opacity-30">
@@ -90,59 +107,69 @@ export default function HeroSection() {
               />
             ))}
           </div>
+          </motion.div>
+        ))}
+      </div>
 
-          {/* Content */}
-          <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
-            <div className="max-w-3xl">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.6 }}
-                className="mb-4"
-              >
-                <span className="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm text-white rounded-full text-sm font-semibold">
-                  {slides[currentSlide].subtitle}
-                </span>
-              </motion.div>
+      {/* Content Layer - Always on Top */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="relative z-10 container mx-auto px-4 h-full flex items-center"
+        >
+          <div className="max-w-3xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+              className="mb-4"
+            >
+              <span className="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm text-white rounded-full text-sm font-semibold">
+                {slides[currentSlide].subtitle}
+              </span>
+            </motion.div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight"
-              >
-                {slides[currentSlide].title}
-              </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight"
+            >
+              {slides[currentSlide].title}
+            </motion.h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="text-xl text-white/90 mb-8 leading-relaxed"
-              >
-                {slides[currentSlide].description}
-              </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.8 }}
+              className="text-xl text-white/90 mb-8 leading-relaxed"
+            >
+              {slides[currentSlide].description}
+            </motion.p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.6 }}
-                className="flex flex-wrap gap-4"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+              className="flex flex-wrap gap-4"
+            >
+              <a
+                href="#domains"
+                className="px-8 py-4 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                <a
-                  href="#domains"
-                  className="px-8 py-4 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
-                >
-                  Explore Our Domains
-                </a>
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-white/10 backdrop-blur-lg hover:bg-white/20 text-white border-2 border-white/30 rounded-lg font-semibold transition-all"
-                >
-                  Contact Us
-                </a>
-              </motion.div>
-            </div>
+                Explore Our Domains
+              </a>
+              <a
+                href="/contact"
+                className="px-8 py-4 bg-white/10 backdrop-blur-lg hover:bg-white/20 text-white border-2 border-white/30 rounded-lg font-semibold transition-all"
+              >
+                Contact Us
+              </a>
+            </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
