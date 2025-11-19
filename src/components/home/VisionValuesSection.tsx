@@ -101,9 +101,9 @@ export default function VisionValuesSection() {
         />
       </div>
 
-      {/* Floating Particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+      {/* Floating Particles - Optimized count */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
+        {[...Array(10)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-primary/20 rounded-full"
@@ -192,6 +192,9 @@ export default function VisionValuesSection() {
                     src={value.image}
                     alt={value.title}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    quality={80}
+                    loading="lazy"
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${value.gradient} opacity-90 group-hover:opacity-80 transition-opacity duration-500`} />

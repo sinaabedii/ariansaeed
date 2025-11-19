@@ -101,6 +101,9 @@ export default function SustainabilitySection() {
             src="/images/DJI_0006.JPG"
             alt="Sustainable Future"
             fill
+            sizes="(max-width: 768px) 100vw, 1200px"
+            quality={85}
+            loading="lazy"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-green-900/70 to-blue-900/70" />
@@ -144,6 +147,9 @@ export default function SustainabilitySection() {
                   src={initiative.image}
                   alt={initiative.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  quality={80}
+                  loading="lazy"
                   className="object-cover"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-br ${initiative.color} opacity-80`} />

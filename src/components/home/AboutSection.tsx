@@ -94,6 +94,9 @@ export default function AboutSection() {
                   src="/images/1O0A6321.JPG"
                   alt="Business Meeting"
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                  quality={85}
+                  loading="lazy"
                   className="object-cover hover:scale-110 transition-transform duration-500"
                 />
               </motion.div>
@@ -107,6 +110,9 @@ export default function AboutSection() {
                   src="/images/1O0A6342.JPG"
                   alt="Office Space"
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                  quality={85}
+                  loading="lazy"
                   className="object-cover hover:scale-110 transition-transform duration-500"
                 />
               </motion.div>
@@ -120,6 +126,9 @@ export default function AboutSection() {
                   src="/images/DSC_0030.JPG"
                   alt="Team Work"
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                  quality={85}
+                  loading="lazy"
                   className="object-cover hover:scale-110 transition-transform duration-500"
                 />
               </motion.div>
@@ -133,6 +142,9 @@ export default function AboutSection() {
                   src="/images/_SMH3265.jpg"
                   alt="Innovation"
                   fill
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                  quality={85}
+                  loading="lazy"
                   className="object-cover hover:scale-110 transition-transform duration-500"
                 />
               </motion.div>

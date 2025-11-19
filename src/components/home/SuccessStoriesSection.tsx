@@ -99,6 +99,9 @@ export default function SuccessStoriesSection() {
                     src={testimonials[activeTestimonial].image}
                     alt={testimonials[activeTestimonial].name}
                     fill
+                    sizes="64px"
+                    quality={85}
+                    loading="lazy"
                     className="object-cover"
                   />
                 </div>
@@ -160,6 +163,9 @@ export default function SuccessStoriesSection() {
                       src={testimonial.image}
                       alt={testimonial.name}
                       fill
+                      sizes="48px"
+                      quality={85}
+                      loading="lazy"
                       className="object-cover"
                     />
                   </div>

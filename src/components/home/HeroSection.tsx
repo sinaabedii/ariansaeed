@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
 const slides = [
   {
@@ -30,6 +31,9 @@ const slides = [
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  
+  // Memoize slides to prevent unnecessary re-renders
+  const memoizedSlides = useMemo(() => slides, [])
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -51,7 +55,7 @@ export default function HeroSection() {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Images Layer - Smooth Crossfade */}
       <div className="absolute inset-0">
-        {slides.map((slide, index) => (
+        {memoizedSlides.map((slide, index) => (
           <motion.div
             key={slide.id}
             initial={false}
@@ -66,7 +70,7 @@ export default function HeroSection() {
             className="absolute inset-0"
             style={{ pointerEvents: index === currentSlide ? 'auto' : 'none' }}
           >
-            {/* Background Image with Ken Burns Effect */}
+            {/* Background Image with Ken Burns Effect - Using Next Image for optimization */}
             <motion.div
               animate={{
                 scale: index === currentSlide ? [1, 1.08] : 1,
@@ -77,17 +81,24 @@ export default function HeroSection() {
                 repeat: Infinity,
                 repeatType: "reverse",
               }}
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            />
+              className="absolute inset-0"
+            >
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                fill
+                priority={index === 0}
+                quality={85}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </motion.div>
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
           
-          {/* Particle Effect */}
-          <div className="absolute inset-0 opacity-30">
-            {[...Array(50)].map((_, i) => (
+          {/* Optimized Particle Effect - Reduced count for better performance */}
+          <div className="absolute inset-0 opacity-30 hidden md:block">
+            {[...Array(15)].map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute w-1 h-1 bg-white rounded-full"
@@ -129,7 +140,7 @@ export default function HeroSection() {
               className="mb-4"
             >
               <span className="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm text-white rounded-full text-sm font-semibold">
-                {slides[currentSlide].subtitle}
+                {memoizedSlides[currentSlide].subtitle}
               </span>
             </motion.div>
 
@@ -139,7 +150,7 @@ export default function HeroSection() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight"
             >
-              {slides[currentSlide].title}
+              {memoizedSlides[currentSlide].title}
             </motion.h1>
 
             <motion.p
@@ -148,7 +159,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5, duration: 0.8 }}
               className="text-xl text-white/90 mb-8 leading-relaxed"
             >
-              {slides[currentSlide].description}
+              {memoizedSlides[currentSlide].description}
             </motion.p>
 
             <motion.div
@@ -192,7 +203,7 @@ export default function HeroSection() {
 
       {/* Slide Indicators */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
-        {slides.map((_, index) => (
+        {memoizedSlides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}

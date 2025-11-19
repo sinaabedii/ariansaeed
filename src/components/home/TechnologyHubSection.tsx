@@ -115,6 +115,9 @@ export default function TechnologyHubSection() {
                   src={tech.image}
                   alt={tech.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  quality={80}
+                  loading="lazy"
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-80`} />
@@ -160,6 +163,9 @@ export default function TechnologyHubSection() {
                     src={innovation.image}
                     alt={innovation.title}
                     fill
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                    quality={80}
+                    loading="lazy"
                     className="object-cover"
                   />
                   <div className="absolute top-4 right-4">

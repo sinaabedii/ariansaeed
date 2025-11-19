@@ -154,6 +154,9 @@ export default function SubsidiariesSection() {
                         src={company.logo}
                         alt={company.name}
                         fill
+                        sizes="(max-width: 768px) 200px, (max-width: 1024px) 150px, 200px"
+                        quality={90}
+                        loading="lazy"
                         className="object-contain p-4 transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
@@ -250,6 +253,8 @@ export default function SubsidiariesSection() {
                   src={selectedCompany.logo}
                   alt={selectedCompany.name}
                   fill
+                  sizes="128px"
+                  quality={90}
                   className="object-contain p-6"
                 />
               </div>
