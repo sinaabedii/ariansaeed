@@ -11,8 +11,10 @@ export default function ArticlesHero() {
           src="/images/c1_hWy2qZ4.jpg"
           alt="Articles and Insights"
           fill
-          className="object-cover"
+          sizes="100vw"
+          quality={85}
           priority
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 to-primary-700/60" />
       </div>

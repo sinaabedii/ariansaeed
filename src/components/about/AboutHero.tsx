@@ -1,16 +1,22 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function AboutHero() {
   return (
     <section className="relative h-[60vh] flex items-center justify-center overflow-hidden pt-20 md:pt-24">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(/images/DJI_0006.JPG)',
-        }}
-      />
+      <div className="absolute inset-0">
+        <Image
+          src="/images/DJI_0006.JPG"
+          alt="About Arian Saeed Industrial Group"
+          fill
+          sizes="100vw"
+          quality={85}
+          priority
+          className="object-cover"
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70" />
       
       <div className="relative z-10 container mx-auto px-4 text-center text-white">

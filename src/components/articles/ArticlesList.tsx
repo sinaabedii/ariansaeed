@@ -127,6 +127,9 @@ export default function ArticlesList() {
                       src={article.image}
                       alt={article.title}
                       fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      quality={85}
+                      loading="lazy"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4">
@@ -204,6 +207,9 @@ export default function ArticlesList() {
                       src={article.image}
                       alt={article.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={80}
+                      loading="lazy"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 right-3">

@@ -44,8 +44,10 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
             src={article.image}
             alt={article.title}
             fill
-            className="object-cover scale-105 transition-transform duration-1000"
+            sizes="100vw"
+            quality={90}
             priority
+            className="object-cover scale-105 transition-transform duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-gray-900/30" />
           
@@ -175,6 +177,9 @@ export default function ArticleDetail({ article }: ArticleDetailProps) {
                         src={article.authorImage}
                         alt={article.author}
                         fill
+                        sizes="96px"
+                        quality={85}
+                        loading="lazy"
                         className="object-cover"
                       />
                     </div>
