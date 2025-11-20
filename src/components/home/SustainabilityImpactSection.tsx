@@ -366,7 +366,7 @@ export default function SustainabilityImpactSection() {
               Together Towards a Greener Future
             </h4>
             <p className="text-white/70 mb-6 max-w-2xl">
-              Our commitment to sustainability isn't just a goal—it's a responsibility we take seriously every single day
+              Our commitment to sustainability isn&apos;t just a goal—it&apos;s a responsibility we take seriously every single day
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}

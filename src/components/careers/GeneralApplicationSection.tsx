@@ -84,7 +84,7 @@ export default function GeneralApplicationSection() {
             </div>
 
             <h2 className="text-5xl md:text-6xl font-heading font-bold mb-6">
-              <span className="text-gray-900">Don't See Your</span>
+              <span className="text-gray-900">Don&apos;t See Your</span>
               <br />
               <span className="bg-gradient-to-r from-primary via-purple-600 to-blue-600 bg-clip-text text-transparent">
                 Perfect Role?
@@ -92,7 +92,7 @@ export default function GeneralApplicationSection() {
             </h2>
 
             <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
-              Submit your resume and we'll keep you in mind for future opportunities that match your skills and aspirations
+              Submit your resume and we&apos;ll keep you in mind for future opportunities that match your skills and aspirations
             </p>
           </motion.div>
 
@@ -191,7 +191,7 @@ export default function GeneralApplicationSection() {
               
               <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
                 Upload your resume and tell us about your experience, skills, and career goals. 
-                We're always looking for talented individuals to join our growing family.
+                We&apos;re always looking for talented individuals to join our growing family.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
