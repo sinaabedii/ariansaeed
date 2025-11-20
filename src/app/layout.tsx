@@ -102,12 +102,12 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased overflow-x-hidden">
         <ToastProvider>
           <LoadingScreen />
           <ProgressBar />
           <Header />
-          <main className="min-h-screen">
+          <main className="min-h-screen overflow-x-hidden">
             {children}
           </main>
           <Footer />

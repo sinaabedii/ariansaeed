@@ -8,28 +8,31 @@ import Image from 'next/image'
 
 const articles = [
   {
-    id: 1,
-    title: 'Sustainable Manufacturing: Our Journey',
-    excerpt: 'Discover how we\'re revolutionizing the manufacturing industry with sustainable practices.',
-    image: '/images/1O0A6321.JPG',
-    category: 'Sustainability',
-    date: '2024-01-15',
+    id: 101,
+    title: 'Opening of the First Dedicated BYD Showroom in Iran',
+    excerpt:
+      'Arian Saeed Group and Arian Leila unveiled the country\'s first dedicated BYD showroom on Beheshti St., showcasing the latest BYD models for Iran.',
+    image: '/images/blogs-news/byd/BYD-Ali-5.webp',
+    category: 'Automotive',
+    date: '2024-11-18',
   },
   {
-    id: 2,
-    title: 'AI Integration in Agriculture',
-    excerpt: 'Learn about our cutting-edge AI solutions transforming modern agriculture.',
-    image: '/images/1O0A6342.JPG',
-    category: 'Technology',
-    date: '2024-01-10',
+    id: 102,
+    title: 'Arian Saeed Launches Strategic Agriculture Initiative',
+    excerpt:
+      'Our new agriculture program focuses on sustainable cultivation, modern irrigation, and AI-driven farm analytics to boost national productivity.',
+    image: '/images/blogs-news/Agriculture/AI-in-Agriculture.webp',
+    category: 'Agriculture',
+    date: '2024-11-12',
   },
   {
-    id: 3,
-    title: 'Expanding Global Trade Networks',
-    excerpt: 'How we\'re building stronger international partnerships for sustainable growth.',
-    image: '/images/DSC_0030.JPG',
-    category: 'Business',
-    date: '2024-01-05',
+    id: 103,
+    title: '21st International Exhibition of Wood Industries (Tehran 2024)',
+    excerpt:
+      'From Feb 1–4, 2024, Tehran hosts leading brands in wood, raw materials, machinery, and furniture hardware at the international exhibitions venue.',
+    image: '/images/blogs-news/sinamdf/Negotiations2.jpg',
+    category: 'Events',
+    date: '2024-02-01',
   },
 ]
 

@@ -2,8 +2,9 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { MapPin, Clock, Briefcase } from 'lucide-react'
+import ResumeModal from './ResumeModal'
 
 const jobs = [
   {
@@ -32,6 +33,13 @@ const jobs = [
 export default function JobListings() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [selectedJob, setSelectedJob] = useState<string>('')
+
+  const handleApplyClick = (jobTitle: string) => {
+    setSelectedJob(jobTitle)
+    setIsModalOpen(true)
+  }
 
   return (
     <section ref={ref} className="py-24 bg-white">
@@ -68,7 +76,10 @@ export default function JobListings() {
                     </div>
                   </div>
                 </div>
-                <button className="px-6 py-3 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-colors whitespace-nowrap">
+                <button 
+                  onClick={() => handleApplyClick(job.title)}
+                  className="px-6 py-3 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-colors whitespace-nowrap"
+                >
                   Apply Now
                 </button>
               </div>
@@ -76,6 +87,13 @@ export default function JobListings() {
           ))}
         </div>
       </div>
+
+      {/* Resume Modal */}
+      <ResumeModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        jobTitle={selectedJob}
+      />
     </section>
   )
 }

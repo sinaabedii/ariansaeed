@@ -47,7 +47,7 @@ export default function FAQSection() {
   }
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section ref={ref} className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -98,31 +98,31 @@ export default function FAQSection() {
             >
               <button
                 onClick={() => toggleFAQ(faq.id)}
-                className="w-full text-left bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all group"
+                className="w-full text-left bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg hover:shadow-xl transition-all group"
               >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-4 flex-1">
-                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center space-x-3 sm:space-x-4 flex-1 min-w-0">
+                    <div className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0 transition-all ${
                       openId === faq.id
                         ? 'bg-primary text-white'
                         : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 group-hover:bg-primary/10 group-hover:text-primary'
                     }`}>
                       {openId === faq.id ? (
-                        <CheckCircle2 className="w-5 h-5" />
+                        <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5" />
                       ) : (
-                        <span className="font-bold text-sm">{String(index + 1).padStart(2, '0')}</span>
+                        <span className="font-bold text-xs sm:text-sm">{String(index + 1).padStart(2, '0')}</span>
                       )}
                     </div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white text-lg pr-4">
+                    <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base md:text-lg min-w-0 flex-1">
                       {faq.question}
                     </h3>
                   </div>
                   <motion.div
                     animate={{ rotate: openId === faq.id ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
-                    className="flex-shrink-0"
+                    className="flex-shrink-0 ml-2"
                   >
-                    <ChevronDown className={`w-6 h-6 transition-colors ${
+                    <ChevronDown className={`w-5 h-5 sm:w-6 sm:h-6 transition-colors ${
                       openId === faq.id ? 'text-primary' : 'text-gray-400'
                     }`} />
                   </motion.div>
@@ -137,8 +137,8 @@ export default function FAQSection() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="pt-4 pl-14">
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      <div className="pt-3 sm:pt-4 pl-11 sm:pl-13 md:pl-14">
+                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

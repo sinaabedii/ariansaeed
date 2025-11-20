@@ -324,10 +324,10 @@ export default function Chatbot() {
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className={`fixed z-[9999] bg-white rounded-2xl md:rounded-3xl shadow-2xl flex flex-col overflow-hidden border border-gray-200 ${
+            className={`fixed z-[9999] bg-white shadow-2xl flex flex-col overflow-hidden border border-gray-200 ${
               isMinimized 
-                ? 'bottom-20 right-4 md:bottom-24 md:right-6 w-80 h-16' 
-                : 'bottom-20 right-4 left-4 top-4 md:bottom-24 md:right-6 md:left-auto md:top-auto md:w-[400px] md:h-[600px]'
+                ? 'bottom-20 right-4 md:bottom-24 md:right-6 w-80 h-16 rounded-2xl' 
+                : 'inset-0 md:inset-auto md:bottom-24 md:right-6 md:w-[400px] md:h-[600px] md:rounded-3xl'
             }`}
             transition={{ duration: 0.3 }}
           >
@@ -347,15 +347,15 @@ export default function Chatbot() {
               <div className="flex items-center space-x-2">
                 <button
                   onClick={() => setIsMinimized(!isMinimized)}
-                  className="p-1 hover:bg-white/20 rounded-full transition-colors"
+                  className="hidden md:block p-1 hover:bg-white/20 rounded-full transition-colors"
                 >
                   {isMinimized ? <Maximize2 className="w-4 h-4" /> : <Minimize2 className="w-4 h-4" />}
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-1 hover:bg-white/20 rounded-full transition-colors"
+                  className="p-1.5 md:p-1 hover:bg-white/20 rounded-full transition-colors"
                 >
-                  <X className="w-4 h-4" />
+                  <X className="w-5 h-5 md:w-4 md:h-4" />
                 </button>
               </div>
             </div>

@@ -130,16 +130,16 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }}
-          className="relative z-10 container mx-auto px-4 h-full flex items-center"
+          className="relative z-10 container mx-auto px-4 sm:px-6 h-full flex items-center"
         >
-          <div className="max-w-3xl">
+          <div className="max-w-3xl w-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.8 }}
-              className="mb-4"
+              className="mb-3 sm:mb-4"
             >
-              <span className="inline-block px-4 py-2 bg-primary/90 backdrop-blur-sm text-white rounded-full text-sm font-semibold">
+              <span className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 bg-primary/90 backdrop-blur-sm text-white rounded-full text-xs sm:text-sm font-semibold">
                 {memoizedSlides[currentSlide].subtitle}
               </span>
             </motion.div>
@@ -148,7 +148,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-4 sm:mb-6 leading-tight"
             >
               {memoizedSlides[currentSlide].title}
             </motion.h1>
@@ -157,7 +157,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-xl text-white/90 mb-8 leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed"
             >
               {memoizedSlides[currentSlide].description}
             </motion.p>
@@ -170,13 +170,13 @@ export default function HeroSection() {
             >
               <a
                 href="#domains"
-                className="px-8 py-4 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4 bg-primary hover:bg-primary-600 text-white rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 Explore Our Domains
               </a>
               <a
                 href="/contact"
-                className="px-8 py-4 bg-white/10 backdrop-blur-lg hover:bg-white/20 text-white border-2 border-white/30 rounded-lg font-semibold transition-all"
+                className="px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4 bg-white/10 backdrop-blur-lg hover:bg-white/20 text-white border-2 border-white/30 rounded-lg font-semibold transition-all text-sm sm:text-base"
               >
                 Contact Us
               </a>
@@ -185,31 +185,31 @@ export default function HeroSection() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows */}
+      {/* Navigation Arrows - Mobile: bottom, Desktop: sides */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white transition-all flex items-center justify-center"
+        className="absolute left-2 sm:left-4 md:left-8 bottom-4 sm:bottom-6 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white transition-all flex items-center justify-center"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white transition-all flex items-center justify-center"
+        className="absolute left-14 sm:left-20 md:left-auto md:right-8 bottom-4 sm:bottom-6 md:top-1/2 md:-translate-y-1/2 md:bottom-auto z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 hover:bg-white/20 text-white transition-all flex items-center justify-center"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
+      {/* Slide Indicators - Mobile optimized */}
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2 sm:space-x-3">
         {memoizedSlides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all ${
               index === currentSlide
-                ? 'bg-white w-8'
+                ? 'bg-white w-6 sm:w-8'
                 : 'bg-white/50 hover:bg-white/70'
             }`}
             aria-label={`Go to slide ${index + 1}`}

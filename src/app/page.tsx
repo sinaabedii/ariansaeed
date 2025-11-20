@@ -13,9 +13,12 @@ const PartnersSection = dynamic(() => import('@/components/home/PartnersSection'
 const GlobalPresenceSection = dynamic(() => import('@/components/home/GlobalPresenceSection'), { ssr: true })
 const TechnologyHubSection = dynamic(() => import('@/components/home/TechnologyHubSection'), { ssr: true })
 const InnovationSection = dynamic(() => import('@/components/home/InnovationSection'), { ssr: true })
+const RenewableEnergySection = dynamic(() => import('@/components/home/RenewableEnergySection'), { ssr: true })
+const SolarCellInteractive = dynamic(() => import('@/components/home/SolarCellInteractive'), { ssr: true })
 const SuccessStoriesSection = dynamic(() => import('@/components/home/SuccessStoriesSection'), { ssr: true })
 const TestimonialsSection = dynamic(() => import('@/components/home/TestimonialsSection'), { ssr: true })
-const SustainabilitySection = dynamic(() => import('@/components/home/SustainabilitySection'), { ssr: true })
+const SustainabilityPlayground = dynamic(() => import('@/components/home/SustainabilityPlayground'), { ssr: true })
+// const BYDShowroom = dynamic(() => import('@/components/home/BYDShowroom'), { ssr: true })
 const SubsidiariesSection = dynamic(() => import('@/components/home/SubsidiariesSection'), { ssr: true })
 const FAQSection = dynamic(() => import('@/components/home/FAQSection'), { ssr: true })
 const CTASection = dynamic(() => import('@/components/home/CTASection'), { ssr: true })
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <>
+    <div className="overflow-x-hidden w-full">
       <HeroSection />
       <AboutSection />
       <VisionValuesSection />
@@ -39,13 +42,16 @@ export default function HomePage() {
       <GlobalPresenceSection />
       <TechnologyHubSection />
       <InnovationSection />
+      <RenewableEnergySection />
+      <SolarCellInteractive />
       <SuccessStoriesSection />
       <TestimonialsSection />
-      <SustainabilitySection />
+      <SustainabilityPlayground />
+      {/* <BYDShowroom /> */}
       <SubsidiariesSection />
       <FAQSection />
       <CTASection />
       <ArticlesSection />
-    </>
+    </div>
   )
 }

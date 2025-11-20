@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import CareersHero from '@/components/careers/CareersHero'
 import JobListings from '@/components/careers/JobListings'
 import Benefits from '@/components/careers/Benefits'
+import GeneralApplicationSection from '@/components/careers/GeneralApplicationSection'
 
 export const metadata: Metadata = {
   title: 'Careers - Join Our Team & Build Your Future',
@@ -37,6 +38,7 @@ export default function CareersPage() {
       <CareersHero />
       <Benefits />
       <JobListings />
+      <GeneralApplicationSection />
     </>
   )
 }

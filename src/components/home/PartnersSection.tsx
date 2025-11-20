@@ -27,7 +27,7 @@ export default function PartnersSection() {
   const isInView = useInView(ref, { once: true })
 
   return (
-    <section ref={ref} className="py-24 bg-white dark:bg-gray-900 overflow-hidden">
+    <section ref={ref} className="py-16 sm:py-20 md:py-24 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -58,7 +58,7 @@ export default function PartnersSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-12 sm:mb-14 md:mb-16">
           {stats.map((stat, index) => {
             const Icon = stat.icon
             return (
@@ -67,15 +67,15 @@ export default function PartnersSection() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="text-center px-2"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Icon className="w-8 h-8 text-white" />
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-primary to-primary-600 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
+                  <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-1">
+                <div className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-1">
                   {stat.value}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">
+                <div className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                   {stat.label}
                 </div>
               </motion.div>
@@ -91,37 +91,37 @@ export default function PartnersSection() {
           className="relative"
         >
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white dark:from-gray-900 to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white dark:from-gray-900 to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-white dark:from-gray-900 to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-white dark:from-gray-900 to-transparent z-10" />
 
           {/* Scrolling Container */}
           <div className="overflow-hidden">
             <motion.div
               animate={{
-                x: [0, -1920],
+                x: ["-0%", "-50%"],
               }}
               transition={{
-                duration: 30,
+                duration: 40,
                 repeat: Infinity,
                 ease: 'linear',
               }}
-              className="flex space-x-8"
+              className="flex space-x-4 sm:space-x-6 md:space-x-8"
             >
               {/* Double the array for seamless loop */}
-              {[...partners, ...partners].map((partner, index) => (
+              {[...partners, ...partners, ...partners, ...partners].map((partner, index) => (
                 <motion.div
                   key={`${partner.id}-${index}`}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="flex-shrink-0 w-48 h-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg hover:shadow-xl transition-all group cursor-pointer"
+                  className="flex-shrink-0 w-36 h-24 sm:w-40 sm:h-28 md:w-48 md:h-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all group cursor-pointer"
                 >
-                  <div className="w-full h-full flex flex-col items-center justify-center p-6">
+                  <div className="w-full h-full flex flex-col items-center justify-center p-3 sm:p-4 md:p-6">
                     {/* Logo Placeholder */}
-                    <div className={`w-16 h-16 bg-gradient-to-br ${partner.color} rounded-xl flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
-                      <span className="text-2xl font-bold text-white">
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-gradient-to-br ${partner.color} rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform`}>
+                      <span className="text-lg sm:text-xl md:text-2xl font-bold text-white">
                         {partner.logo}
                       </span>
                     </div>
-                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 text-center">
+                    <span className="text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300 text-center">
                       {partner.name}
                     </span>
                   </div>
@@ -136,16 +136,16 @@ export default function PartnersSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-14 md:mt-16"
         >
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
+          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
             Interested in becoming a partner?
           </p>
           <a
             href="/contact"
-            className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-primary to-primary-600 text-white rounded-xl font-semibold hover:shadow-xl transform hover:scale-105 transition-all"
+            className="inline-flex items-center space-x-2 px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-primary to-primary-600 text-white rounded-xl font-semibold hover:shadow-xl transform hover:scale-105 transition-all text-sm sm:text-base"
           >
-            <Handshake className="w-5 h-5" />
+            <Handshake className="w-4 h-4 sm:w-5 sm:h-5" />
             <span>Partner With Us</span>
           </a>
         </motion.div>

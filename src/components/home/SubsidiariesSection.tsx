@@ -22,7 +22,7 @@ export default function SubsidiariesSection() {
 
   return (
     <>
-      <section ref={ref} className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+      <section ref={ref} className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
         {/* Animated Background Effects */}
         <div className="absolute inset-0 opacity-10">
           {[...Array(3)].map((_, i) => (
@@ -56,13 +56,13 @@ export default function SubsidiariesSection() {
           }} />
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
             <motion.span
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="inline-block px-6 py-2 bg-gradient-to-r from-primary/20 to-primary/10 backdrop-blur-lg text-white rounded-full text-sm font-semibold mb-4 border border-primary/30"
+              className="inline-block px-4 py-1.5 sm:px-5 sm:py-2 md:px-6 md:py-2 bg-gradient-to-r from-primary/20 to-primary/10 backdrop-blur-lg text-white rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 border border-primary/30"
             >
               Our Companies
             </motion.span>
@@ -70,7 +70,7 @@ export default function SubsidiariesSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80"
             >
               Subsidiary Companies
             </motion.h2>
@@ -78,7 +78,7 @@ export default function SubsidiariesSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg text-white/70 max-w-2xl mx-auto"
+              className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto px-4"
             >
               Leading companies under the Arian Saeed Holding umbrella
             </motion.p>
@@ -140,7 +140,7 @@ export default function SubsidiariesSection() {
                 <SwiperSlide key={company.id} className="!h-auto">
                   <motion.div
                     onClick={() => setSelectedCompany(company)}
-                    className="group relative bg-white/5 backdrop-blur-xl rounded-3xl p-8 hover:bg-white/10 transition-all duration-500 cursor-pointer border border-white/10 hover:border-primary/50 h-full flex flex-col"
+                    className="group relative bg-white/5 backdrop-blur-xl rounded-3xl p-6 sm:p-8 hover:bg-white/10 transition-all duration-500 cursor-pointer border border-white/10 hover:border-primary/50 h-full flex flex-col"
                     whileHover={{ y: -10, scale: 1.02 }}
                     transition={{ duration: 0.3 }}
                   >

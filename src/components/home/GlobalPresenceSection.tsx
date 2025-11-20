@@ -110,7 +110,7 @@ const stats = [
 
 export default function GlobalPresenceSection() {
   return (
-    <section className="py-12 md:py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -118,18 +118,18 @@ export default function GlobalPresenceSection() {
         }} />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16 px-4"
+          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 md:mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 sm:mb-4 md:mb-6">
             Export <span className="text-white/80">Services</span>
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed px-2">
             Everything that Sina MDF produces has desirable, healthy and world-class characteristics. Our international supply is very prosperous and developing, with products shared across markets worldwide. Thousands of production staff trained by European experts ensure optimal production and supply.
           </p>
         </motion.div>
@@ -140,15 +140,15 @@ export default function GlobalPresenceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-12 md:mb-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 mb-8 sm:mb-10 md:mb-12 lg:mb-16"
         >
           {stats.map((stat, index) => (
-            <div key={stat.label} className="text-center">
-              <div className="w-12 h-12 md:w-16 md:h-16 bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4">
-                <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            <div key={stat.label} className="text-center px-1">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/10 backdrop-blur-lg rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
+                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
               </div>
-              <div className="text-2xl md:text-3xl font-bold mb-1 md:mb-2">{stat.value}</div>
-              <div className="text-xs md:text-sm text-white/70 px-2">{stat.label}</div>
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold mb-1">{stat.value}</div>
+              <div className="text-[10px] sm:text-xs md:text-sm text-white/70">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -159,9 +159,9 @@ export default function GlobalPresenceSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="relative max-w-6xl mx-auto"
+          className="relative max-w-6xl mx-auto mb-8 sm:mb-10 md:mb-12 lg:mb-16"
         >
-          <div className="relative h-[500px] md:h-[600px] bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg rounded-2xl md:rounded-3xl overflow-hidden border border-white/10">
+          <div className="relative h-[350px] sm:h-[450px] md:h-[550px] lg:h-[600px] bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-lg rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/10">
             {/* Decorative elements - hidden on mobile */}
             <div className="hidden md:block absolute top-4 left-4 w-2 h-2 bg-white/30 rounded-full animate-pulse" />
             <div className="hidden md:block absolute top-8 right-8 w-1 h-1 bg-white/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
@@ -170,44 +170,78 @@ export default function GlobalPresenceSection() {
             {/* 3D Globe Component */}
             <Globe3D className="w-full h-full" />
             
-            {/* Floating info panels - responsive */}
-            <div className="hidden md:flex absolute top-1/2 right-4 transform -translate-y-1/2 flex-col space-y-3">
+            {/* Floating info panels - Desktop - Compact */}
+            <div className="hidden lg:flex absolute top-1/2 right-3 transform -translate-y-1/2 flex-col space-y-2">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1 }}
-                className="bg-white/10 backdrop-blur-lg rounded-lg p-3 text-white text-sm"
+                className="bg-white/10 backdrop-blur-lg rounded p-2 text-white border border-white/20"
               >
-                <div className="flex items-center space-x-2 mb-1">
-                  <Zap className="w-3 h-3 text-yellow-400" />
-                  <span className="font-medium">Real-time Operations</span>
+                <div className="flex items-center space-x-1.5 mb-0.5">
+                  <Zap className="w-3.5 h-3.5 text-yellow-400" />
+                  <span className="font-medium text-xs">Real-time Operations</span>
                 </div>
-                <div className="text-white/70 text-xs">24/7 Global Coverage</div>
+                <div className="text-white/70 text-[10px]">24/7 Global Coverage</div>
               </motion.div>
               
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2 }}
-                className="bg-white/10 backdrop-blur-lg rounded-lg p-3 text-white text-sm"
+                className="bg-white/10 backdrop-blur-lg rounded p-2 text-white border border-white/20"
               >
-                <div className="flex items-center space-x-2 mb-1">
-                  <TrendingUp className="w-3 h-3 text-green-400" />
-                  <span className="font-medium">Growth Rate</span>
+                <div className="flex items-center space-x-1.5 mb-0.5">
+                  <TrendingUp className="w-3.5 h-3.5 text-green-400" />
+                  <span className="font-medium text-xs">Growth Rate</span>
                 </div>
-                <div className="text-white/70 text-xs">+25% YoY Expansion</div>
+                <div className="text-white/70 text-[10px]">+25% YoY Expansion</div>
               </motion.div>
             </div>
             
-            {/* Mobile info bar */}
-            <div className="md:hidden absolute bottom-3 left-3 right-3 flex items-center justify-between bg-white/10 backdrop-blur-lg rounded-lg px-3 py-2 text-white text-xs">
-              <div className="flex items-center space-x-1.5">
-                <Zap className="w-3 h-3 text-yellow-400 flex-shrink-0" />
-                <span className="font-medium truncate">24/7 Operations</span>
-              </div>
-              <div className="flex items-center space-x-1.5">
-                <TrendingUp className="w-3 h-3 text-green-400 flex-shrink-0" />
-                <span className="font-medium">+25% Growth</span>
+            {/* Mobile & Tablet info bar - Very compact */}
+            <div className="lg:hidden absolute bottom-2 left-2 right-2 z-10">
+              <div className="bg-white/90 backdrop-blur-md rounded shadow-md border border-gray-200 p-1.5 sm:p-2">
+                <div className="flex items-center justify-around gap-1 sm:gap-1.5">
+                  {/* Operations */}
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-sm bg-yellow-100 flex items-center justify-center">
+                      <Zap className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-yellow-600" />
+                    </div>
+                    <div>
+                      <div className="text-[9px] sm:text-[10px] font-bold text-gray-900 leading-tight">24/7</div>
+                      <div className="text-[7px] sm:text-[8px] text-gray-600 leading-tight">Ops</div>
+                    </div>
+                  </div>
+                  
+                  {/* Divider */}
+                  <div className="h-5 sm:h-6 w-px bg-gray-300"></div>
+                  
+                  {/* Growth */}
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-sm bg-green-100 flex items-center justify-center">
+                      <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-green-600" />
+                    </div>
+                    <div>
+                      <div className="text-[9px] sm:text-[10px] font-bold text-gray-900 leading-tight">+25%</div>
+                      <div className="text-[7px] sm:text-[8px] text-gray-600 leading-tight">Growth</div>
+                    </div>
+                  </div>
+                  
+                  {/* Divider */}
+                  <div className="h-5 sm:h-6 w-px bg-gray-300"></div>
+                  
+                  {/* Countries */}
+                  <div className="flex items-center gap-1 sm:gap-1.5">
+                    <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-sm bg-blue-100 flex items-center justify-center">
+                      <Globe className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-blue-600" />
+                    </div>
+                    <div>
+                      <div className="text-[9px] sm:text-[10px] font-bold text-gray-900 leading-tight">12+</div>
+                      <div className="text-[7px] sm:text-[8px] text-gray-600 leading-tight">Cnts</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -219,7 +253,7 @@ export default function GlobalPresenceSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-12 md:mt-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6"
         >
           {partnerCountries.map((country, index) => (
             <motion.div 
@@ -228,13 +262,13 @@ export default function GlobalPresenceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
               viewport={{ once: true }}
-              className={`group bg-white/10 backdrop-blur-lg rounded-xl md:rounded-2xl p-4 md:p-6 hover:bg-white/15 transition-all duration-300 ${
+              className={`group bg-white/10 backdrop-blur-lg rounded-lg sm:rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6 hover:bg-white/15 transition-all duration-300 ${
                 country.status === 'Headquarters' 
                   ? 'border-2 border-green-500/50 hover:border-green-500/70 ring-2 ring-green-500/20' 
                   : 'border border-white/5 hover:border-white/20'
               }`}
             >
-              <div className="relative w-full h-32 md:h-40 rounded-lg md:rounded-xl overflow-hidden mb-3 md:mb-4">
+              <div className="relative w-full h-28 sm:h-32 md:h-36 lg:h-40 rounded-lg overflow-hidden mb-2 sm:mb-3 md:mb-4">
                 <Image
                   src={country.image}
                   alt={country.country}
@@ -245,45 +279,45 @@ export default function GlobalPresenceSection() {
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-2 md:bottom-3 left-2 md:left-3 text-white">
-                  <div className="text-sm md:text-base font-bold flex items-center gap-1">
+                <div className="absolute bottom-1.5 sm:bottom-2 md:bottom-3 left-1.5 sm:left-2 md:left-3 text-white">
+                  <div className="text-xs sm:text-sm md:text-base font-bold flex items-center gap-1">
                     {country.country}
-                    {country.status === 'Headquarters' && <span className="text-xs">🏢</span>}
+                    {country.status === 'Headquarters' && <span className="text-[10px] sm:text-xs">🏢</span>}
                   </div>
-                  <div className="text-xs opacity-90">{country.city}</div>
+                  <div className="text-[10px] sm:text-xs opacity-90">{country.city}</div>
                 </div>
                 {country.status === 'Headquarters' && (
-                  <div className="absolute top-2 md:top-3 right-2 md:right-3 bg-green-500 text-white text-[10px] md:text-xs font-bold px-2 py-1 rounded-full">
+                  <div className="absolute top-1.5 sm:top-2 md:top-3 right-1.5 sm:right-2 md:right-3 bg-green-500 text-white text-[9px] sm:text-[10px] md:text-xs font-bold px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full">
                     HQ
                   </div>
                 )}
               </div>
               
-              <div className="space-y-2 md:space-y-3">
-                <h3 className="font-semibold text-sm md:text-base text-white group-hover:text-white/90 transition-colors line-clamp-2">
+              <div className="space-y-1.5 sm:space-y-2 md:space-y-3">
+                <h3 className="font-semibold text-xs sm:text-sm md:text-base text-white group-hover:text-white/90 transition-colors line-clamp-2">
                   {country.description}
                 </h3>
                 
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex items-center space-x-1.5 md:space-x-2 text-white/70 min-w-0">
-                    <Building2 className="w-3.5 h-3.5 md:w-4 md:h-4 flex-shrink-0" />
-                    <span className="text-xs md:text-sm truncate">{country.status}</span>
+                <div className="flex items-center justify-between gap-1.5 sm:gap-2">
+                  <div className="flex items-center space-x-1 sm:space-x-1.5 text-white/70 min-w-0 flex-1">
+                    <Building2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 flex-shrink-0" />
+                    <span className="text-[10px] sm:text-xs md:text-sm truncate">{country.status}</span>
                   </div>
-                  <div className="flex items-center space-x-1.5 md:space-x-2 text-white/70">
-                    <MapPin className="w-3.5 h-3.5 md:w-4 md:h-4 flex-shrink-0" />
-                    <span className="text-xs md:text-sm whitespace-nowrap">
-                      {country.status === 'Headquarters' ? 'Main Base' : 'Partner'}
+                  <div className="flex items-center space-x-1 sm:space-x-1.5 text-white/70 flex-shrink-0">
+                    <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 flex-shrink-0" />
+                    <span className="text-[10px] sm:text-xs md:text-sm whitespace-nowrap">
+                      {country.status === 'Headquarters' ? 'Base' : 'Partner'}
                     </span>
                   </div>
                 </div>
                 
                 {/* Status indicator */}
-                <div className="flex items-center space-x-2 pt-2 border-t border-white/10">
-                  <div className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full animate-pulse flex-shrink-0 ${
+                <div className="flex items-center space-x-1.5 sm:space-x-2 pt-1.5 sm:pt-2 border-t border-white/10">
+                  <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full animate-pulse flex-shrink-0 ${
                     country.status === 'Headquarters' ? 'bg-green-600' : 'bg-green-400'
                   }`} />
-                  <span className="text-xs text-white/60 truncate">
-                    {country.status === 'Headquarters' ? 'Main Operations Center' : 'Active Collaboration'}
+                  <span className="text-[10px] sm:text-xs text-white/60 truncate">
+                    {country.status === 'Headquarters' ? 'Main Center' : 'Active'}
                   </span>
                 </div>
               </div>
