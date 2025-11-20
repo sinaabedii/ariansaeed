@@ -1,0 +1,21 @@
+# Django Core
+Django>=4.2,<5.0
+djangorestframework>=3.14,<4.0
+
+# Environment Variables
+python-decouple>=3.8
+
+# CORS Headers
+django-cors-headers>=4.0
+
+# Image Processing (استفاده از نسخه جدیدتر با wheel)
+Pillow>=10.0
+
+# File Upload
+django-cleanup>=8.0
+
+# Filtering
+django-filter>=23.0
+
+# API Documentation
+drf-spectacular>=0.27
