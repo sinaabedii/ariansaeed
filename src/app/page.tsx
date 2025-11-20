@@ -13,11 +13,10 @@ const PartnersSection = dynamic(() => import('@/components/home/PartnersSection'
 const GlobalPresenceSection = dynamic(() => import('@/components/home/GlobalPresenceSection'), { ssr: true })
 const TechnologyHubSection = dynamic(() => import('@/components/home/TechnologyHubSection'), { ssr: true })
 const InnovationSection = dynamic(() => import('@/components/home/InnovationSection'), { ssr: true })
-const RenewableEnergySection = dynamic(() => import('@/components/home/RenewableEnergySection'), { ssr: true })
-const SolarCellInteractive = dynamic(() => import('@/components/home/SolarCellInteractive'), { ssr: true })
-const SuccessStoriesSection = dynamic(() => import('@/components/home/SuccessStoriesSection'), { ssr: true })
+const RenewableEnergyHub = dynamic(() => import('@/components/home/RenewableEnergyHub'), { ssr: true })
+// const SuccessStoriesSection = dynamic(() => import('@/components/home/SuccessStoriesSection'), { ssr: true })
 const TestimonialsSection = dynamic(() => import('@/components/home/TestimonialsSection'), { ssr: true })
-const SustainabilityPlayground = dynamic(() => import('@/components/home/SustainabilityPlayground'), { ssr: true })
+// const SustainabilityPlayground = dynamic(() => import('@/components/home/SustainabilityPlayground'), { ssr: true })
 // const BYDShowroom = dynamic(() => import('@/components/home/BYDShowroom'), { ssr: true })
 const SubsidiariesSection = dynamic(() => import('@/components/home/SubsidiariesSection'), { ssr: true })
 const FAQSection = dynamic(() => import('@/components/home/FAQSection'), { ssr: true })
@@ -41,16 +40,15 @@ export default function HomePage() {
       <PartnersSection />
       <GlobalPresenceSection />
       <TechnologyHubSection />
-      <InnovationSection />
-      <RenewableEnergySection />
-      <SolarCellInteractive />
-      <SuccessStoriesSection />
+      <RenewableEnergyHub />
+      {/* <SuccessStoriesSection /> */}
       <TestimonialsSection />
-      <SustainabilityPlayground />
+      {/* <SustainabilityPlayground /> */}
       {/* <BYDShowroom /> */}
+      <InnovationSection />
       <SubsidiariesSection />
-      <FAQSection />
       <CTASection />
+      <FAQSection />
       <ArticlesSection />
     </div>
   )

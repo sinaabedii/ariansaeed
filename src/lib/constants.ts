@@ -47,11 +47,18 @@ export const BUSINESS_DOMAINS = [
     gradient: 'from-indigo-500 to-purple-500',
   },
   {
+    id: 'renewable-energy',
+    title: 'Renewable Energy',
+    description: 'Solar, wind, and hydroelectric power solutions with cutting-edge photovoltaic technology and sustainable energy management systems.',
+    icon: 'Sun',
+    gradient: 'from-yellow-500 to-orange-500',
+  },
+  {
     id: 'investment',
     title: 'Investment',
     description: 'Strategic financial investments and value-driven portfolio management.',
     icon: 'TrendingUp',
-    gradient: 'from-yellow-500 to-orange-500',
+    gradient: 'from-amber-500 to-yellow-500',
   },
   {
     id: 'trade',

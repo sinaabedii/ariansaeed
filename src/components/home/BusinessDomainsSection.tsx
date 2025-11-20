@@ -4,7 +4,17 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { BUSINESS_DOMAINS } from '@/lib/constants'
-import * as Icons from 'lucide-react'
+import { 
+  MdViewInAr,
+  MdInventory,
+  MdWaterDrop,
+  MdConstruction,
+  MdPsychology,
+  MdWbSunny,
+  MdTrendingUp,
+  MdPublic,
+  MdWork
+} from 'react-icons/md'
 
 export default function BusinessDomainsSection() {
   const ref = useRef(null)
@@ -41,10 +51,7 @@ export default function BusinessDomainsSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {BUSINESS_DOMAINS.map((domain, index) => {
-            const Icon = Icons[domain.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>
-            
-            return (
+          {BUSINESS_DOMAINS.map((domain, index) => (
               <motion.div
                 key={domain.id}
                 initial={{ opacity: 0, y: 30 }}
@@ -57,7 +64,15 @@ export default function BusinessDomainsSection() {
                 
                 <div className="relative z-10">
                   <div className={`w-16 h-16 bg-gradient-to-br ${domain.gradient} rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                    <Icon className="w-8 h-8 text-white" />
+                    {domain.id === 'wood-panels' && <MdViewInAr className="w-8 h-8 text-white" />}
+                    {domain.id === 'cellulose' && <MdInventory className="w-8 h-8 text-white" />}
+                    {domain.id === 'petrochemicals' && <MdWaterDrop className="w-8 h-8 text-white" />}
+                    {domain.id === 'construction' && <MdConstruction className="w-8 h-8 text-white" />}
+                    {domain.id === 'ai-tech' && <MdPsychology className="w-8 h-8 text-white" />}
+                    {domain.id === 'renewable-energy' && <MdWbSunny className="w-8 h-8 text-white" />}
+                    {domain.id === 'investment' && <MdTrendingUp className="w-8 h-8 text-white" />}
+                    {domain.id === 'trade' && <MdPublic className="w-8 h-8 text-white" />}
+                    {!['wood-panels', 'cellulose', 'petrochemicals', 'construction', 'ai-tech', 'renewable-energy', 'investment', 'trade'].includes(domain.id) && <MdWork className="w-8 h-8 text-white" />}
                   </div>
                   
                   <h3 className="text-2xl font-heading font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">
@@ -72,8 +87,7 @@ export default function BusinessDomainsSection() {
                 {/* Decorative Element */}
                 <div className="absolute -right-8 -bottom-8 w-32 h-32 bg-gradient-to-br from-primary/5 to-transparent rounded-full transform group-hover:scale-150 transition-transform duration-500" />
               </motion.div>
-            )
-          })}
+          ))}
         </div>
       </div>
     </section>

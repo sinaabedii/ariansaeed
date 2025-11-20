@@ -5,14 +5,8 @@ import { useRef } from 'react'
 import { Building2, Globe2, Handshake, Award } from 'lucide-react'
 
 const partners = [
-  { id: 1, name: 'Siemens', logo: 'S', color: 'from-teal-500 to-cyan-600' },
-  { id: 2, name: 'IKEA', logo: 'I', color: 'from-blue-500 to-blue-700' },
-  { id: 3, name: 'BMW Group', logo: 'B', color: 'from-gray-700 to-gray-900' },
-  { id: 4, name: 'Volkswagen', logo: 'V', color: 'from-blue-600 to-blue-800' },
-  { id: 5, name: 'Bosch', logo: 'BO', color: 'from-red-500 to-red-700' },
-  { id: 6, name: 'BASF', logo: 'BA', color: 'from-orange-500 to-orange-700' },
-  { id: 7, name: 'Mercedes-Benz', logo: 'M', color: 'from-gray-600 to-gray-800' },
-  { id: 8, name: 'Henkel', logo: 'H', color: 'from-purple-500 to-purple-700' },
+  { id: 1, name: 'BYD', logo: 'B', color: 'from-blue-500 to-blue-700' },
+
 ]
 
 const stats = [

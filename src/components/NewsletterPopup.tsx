@@ -61,7 +61,7 @@ export default function NewsletterPopup() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
             transition={{ type: 'spring', duration: 0.6 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] max-w-2xl z-[10005]"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] sm:w-[90%] max-w-2xl z-[10005] max-h-[90vh] overflow-y-auto"
           >
             <div className="relative bg-white dark:bg-gray-900 rounded-3xl shadow-2xl overflow-hidden">
               {/* Close Button */}
@@ -72,9 +72,9 @@ export default function NewsletterPopup() {
                 <X className="w-5 h-5 text-gray-600 dark:text-gray-300" />
               </button>
 
-              <div className="grid md:grid-cols-2">
+              <div className="grid grid-cols-1 md:grid-cols-2">
                 {/* Left Side - Image/Design */}
-                <div className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-700 p-8 md:p-12 text-white overflow-hidden">
+                <div className="relative bg-gradient-to-br from-primary via-primary-600 to-primary-700 p-6 sm:p-8 md:p-12 text-white overflow-hidden min-h-[200px] md:min-h-0">
                   {/* Decorative Elements */}
                   <motion.div
                     animate={{
@@ -105,20 +105,20 @@ export default function NewsletterPopup() {
                     <motion.div
                       animate={{ rotate: [0, 10, -10, 0] }}
                       transition={{ duration: 3, repeat: Infinity }}
-                      className="w-20 h-20 bg-white/20 backdrop-blur-lg rounded-2xl flex items-center justify-center mb-6"
+                      className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-lg rounded-2xl flex items-center justify-center mb-4 sm:mb-6"
                     >
-                      <Gift className="w-10 h-10" />
+                      <Gift className="w-8 h-8 sm:w-10 sm:h-10" />
                     </motion.div>
 
-                    <h3 className="text-3xl font-heading font-bold mb-4">
+                    <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-3 sm:mb-4">
                       Join Our Community
                     </h3>
-                    <p className="text-white/90 mb-6">
+                    <p className="text-sm sm:text-base text-white/90 mb-4 sm:mb-6">
                       Get exclusive insights, industry updates, and special offers delivered to your inbox.
                     </p>
 
                     {/* Benefits */}
-                    <div className="space-y-3">
+                    <div className="space-y-2 sm:space-y-3">
                       {[
                         'Industry insights & trends',
                         'Exclusive offers & updates',
@@ -132,8 +132,8 @@ export default function NewsletterPopup() {
                           transition={{ delay: index * 0.1 }}
                           className="flex items-center space-x-3"
                         >
-                          <Sparkles className="w-5 h-5 text-yellow-300" />
-                          <span className="text-sm text-white/90">{benefit}</span>
+                          <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300 flex-shrink-0" />
+                          <span className="text-xs sm:text-sm text-white/90">{benefit}</span>
                         </motion.div>
                       ))}
                     </div>
@@ -141,13 +141,13 @@ export default function NewsletterPopup() {
                 </div>
 
                 {/* Right Side - Form */}
-                <div className="p-8 md:p-12">
+                <div className="p-6 sm:p-8 md:p-12">
                   {!isSubmitted ? (
                     <>
-                      <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                         Stay Updated
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6">
+                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6">
                         Subscribe to our newsletter and never miss an update.
                       </p>
 
@@ -157,7 +157,7 @@ export default function NewsletterPopup() {
                             Email Address
                           </label>
                           <div className="relative">
-                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-gray-400" />
                             <input
                               id="newsletter-email"
                               type="email"
@@ -165,20 +165,20 @@ export default function NewsletterPopup() {
                               onChange={(e) => setEmail(e.target.value)}
                               placeholder="your.email@example.com"
                               required
-                              className="w-full pl-12 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                              className="w-full pl-10 sm:pl-12 pr-4 py-2.5 sm:py-3 text-sm sm:text-base border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
                             />
                           </div>
                         </div>
 
                         <button
                           type="submit"
-                          className="w-full py-3 bg-gradient-to-r from-primary to-primary-600 text-white rounded-xl font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all"
+                          className="w-full py-2.5 sm:py-3 text-sm sm:text-base bg-gradient-to-r from-primary to-primary-600 text-white rounded-xl font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all"
                         >
                           Subscribe Now
                         </button>
                       </form>
 
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-4 text-center">
+                      <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400 mt-3 sm:mt-4 text-center leading-relaxed">
                         We respect your privacy. Unsubscribe at any time.
                       </p>
                     </>
@@ -186,19 +186,19 @@ export default function NewsletterPopup() {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="text-center py-12"
+                      className="text-center py-8 sm:py-12"
                     >
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ type: 'spring', delay: 0.2 }}
-                        className="w-20 h-20 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4"
+                        className="w-16 h-16 sm:w-20 sm:h-20 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4"
                       >
                         <motion.svg
                           initial={{ pathLength: 0 }}
                           animate={{ pathLength: 1 }}
                           transition={{ duration: 0.5, delay: 0.3 }}
-                          className="w-10 h-10 text-green-600 dark:text-green-400"
+                          className="w-8 h-8 sm:w-10 sm:h-10 text-green-600 dark:text-green-400"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
@@ -211,10 +211,10 @@ export default function NewsletterPopup() {
                           />
                         </motion.svg>
                       </motion.div>
-                      <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      <h4 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-2">
                         Welcome Aboard!
                       </h4>
-                      <p className="text-gray-600 dark:text-gray-400">
+                      <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
                         Thank you for subscribing to our newsletter.
                       </p>
                     </motion.div>
