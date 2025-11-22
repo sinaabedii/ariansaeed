@@ -8,7 +8,7 @@ const articles = [
     id: 101,
     title: 'Opening of the First Dedicated BYD Showroom in Iran',
     content: `
-      <p>Arian Saeed Industrial Group, together with Arian Leila, officially opened Iran's first dedicated BYD showroom on Beheshti Street (at the Hosseini intersection). The grand opening was attended by senior executives of both Arian Saeed Group and Arian Leila.</p>
+      <p>Arian Saeed Industrial Group, together with Arian Leila, officially opened Iran's first dedicated BYD showroom on Beheshti Street (at the Hosseini intersection). The grand opening was attended by senior executives of both Arian Saeed Industrial Group Inc and Arian Leila.</p>
 
       <p>Enthusiasts of the BYD brand can now visit the showroom to experience the latest models tailored for the Iranian market. The initial lineup planned for launch includes the <strong>BYD Dolphin</strong> (hatchback) and <strong>Yuan Plus</strong> as fully electric variants. In addition, the <strong>BYD Han</strong> and <strong>BYD Song Plus</strong> are expected to arrive in both <em>all-electric</em> and <em>plug-in hybrid</em> configurations.</p>
 
@@ -145,12 +145,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   if (!article) {
     return {
-      title: 'Article Not Found | Arian Saeed Holding'
+      title: 'Article Not Found | Arian Saeed Industrial Group Inc'
     }
   }
 
   return {
-    title: `${article.title} | Arian Saeed Holding`,
+    title: `${article.title} | Arian Saeed Industrial Group Inc`,
     description: article.excerpt,
     keywords: article.tags.join(', '),
     openGraph: {

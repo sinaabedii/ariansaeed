@@ -1,4 +1,4 @@
-# Arian Saeed Holding - Corporate Website
+# Arian Saeed Industrial Group Inc - Corporate Website
 
 A cutting-edge, innovative corporate website built with Next.js 14, TypeScript, and modern web technologies.
 
@@ -163,7 +163,7 @@ Update in `src/lib/constants.ts` to change location.
 
 ## 📝 License
 
-Copyright © 2024 Arian Saeed Holding. All rights reserved.
+Copyright © 2024 Arian Saeed Industrial Group Inc. All rights reserved.
 
 ## 🤝 Contributing
 

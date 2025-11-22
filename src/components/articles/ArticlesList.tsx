@@ -11,7 +11,7 @@ const articles = [
     id: 101,
     title: 'Opening of the First Dedicated BYD Showroom in Iran',
     excerpt:
-      'Arian Saeed Group and Arian Leila opened Iran\'s first dedicated BYD showroom on Beheshti St., featuring the latest BYD models planned for the local market.',
+      'Arian Saeed Industrial Group Inc and Arian Leila opened Iran\'s first dedicated BYD showroom on Beheshti St., featuring the latest BYD models planned for the local market.',
     category: 'Automotive',
     author: 'Editorial Team',
     publishDate: '2024-11-18',

@@ -1,17 +1,62 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Cog, Zap, Shield, TreePine, Users, Globe2, Factory, Sparkles } from 'lucide-react'
+import { Sun, Building2, Brain, TrendingUp, Car, Cog, Zap, Shield, TreePine, Users, Globe2, Factory, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 
 const values = [
+  {
+    icon: Sun,
+    title: 'Solar Panels',
+    description: 'High‑efficiency solar systems to cut energy costs for homes, buildings, and businesses with sustainable power solutions.',
+    image: '/images/solarpark-limbach-dorf-Xpert.Digital-png.png',
+    gradient: 'from-yellow-600 to-orange-600',
+    number: '01',
+    stat: 'Clean Energy'
+  },
+  {
+    icon: Building2,
+    title: 'Factory Energy Panels',
+    description: 'Integrated energy and automation for production lines to reduce consumption, boost efficiency, and ensure uptime.',
+    image: '/images/c2_up6Glpn.jpg',
+    gradient: 'from-blue-600 to-cyan-600',
+    number: '02',
+    stat: '24/7 Uptime'
+  },
+  {
+    icon: Brain,
+    title: 'Artificial Intelligence',
+    description: 'Data analytics, computer vision, and smart automation to improve decisions, quality, and speed across operations.',
+    image: '/images/1_bigstock-Ai-Car-Fix-Technology-Ai-Fix-471835423.jpg',
+    gradient: 'from-indigo-600 to-purple-600',
+    number: '03',
+    stat: 'AI Powered'
+  },
+  {
+    icon: TrendingUp,
+    title: 'Investment & Finance',
+    description: 'Portfolio management and project financing focused on sustainable returns and long‑term value creation.',
+    image: '/images/IMG_Mst_Invest_Wealth_Manage.jpg',
+    gradient: 'from-amber-600 to-yellow-600',
+    number: '04',
+    stat: 'High ROI'
+  },
+  {
+    icon: Car,
+    title: 'BYD Automotive Business',
+    description: 'Sales network and after‑sales services for BYD electric vehicles, delivering reliable and eco‑friendly mobility.',
+    image: '/images/1053127.jpg',
+    gradient: 'from-green-600 to-emerald-600',
+    number: '05',
+    stat: 'EV Leader'
+  },
   {
     icon: Cog,
     title: 'German Technology',
     description: 'Production powered by cutting-edge Western European technology, especially from Germany, ensuring world-class quality in every panel.',
     image: '/images/1.jpg',
     gradient: 'from-slate-600 to-slate-800',
-    number: '01',
+    number: '06',
     stat: '99.9% Quality'
   },
   {
@@ -20,7 +65,7 @@ const values = [
     description: 'Six cellulose factories with 12 production lines, backed by two chemical factories ensuring optimal production capacity.',
     image: '/images/2.jpg',
     gradient: 'from-blue-600 to-cyan-600',
-    number: '02',
+    number: '07',
     stat: '24/7 Operations'
   },
   {
@@ -29,7 +74,7 @@ const values = [
     description: '7,000 years of Iranian carpentry heritage combined with modern environmental protection and sustainable arboriculture practices.',
     image: '/images/3.jpg',
     gradient: 'from-green-600 to-emerald-600',
-    number: '03',
+    number: '08',
     stat: 'Eco-Certified'
   },
   {
@@ -38,7 +83,7 @@ const values = [
     description: 'Robust and strong MDF products built to withstand time, delivering unmatched reliability for construction and furniture applications.',
     image: '/images/4.jpg',
     gradient: 'from-orange-600 to-red-600',
-    number: '04',
+    number: '09',
     stat: '50+ Years Life'
   },
   {
@@ -47,7 +92,7 @@ const values = [
     description: 'Prosperous international supply to diverse markets worldwide with Sina MDF products meeting world-class standards.',
     image: '/images/1O0A6321.JPG',
     gradient: 'from-purple-600 to-indigo-600',
-    number: '05',
+    number: '10',
     stat: '50+ Countries'
   },
   {
@@ -56,7 +101,7 @@ const values = [
     description: 'Highly educated production staff trained by European experts, bringing decades of knowledge and precision to every product.',
     image: '/images/1O0A6342.JPG',
     gradient: 'from-pink-600 to-rose-600',
-    number: '06',
+    number: '11',
     stat: 'EU Trained'
   },
   {
@@ -65,7 +110,7 @@ const values = [
     description: 'Express logistics and efficient supply chain ensuring fast delivery of products to meet customer needs promptly.',
     image: '/images/DSC_0030.JPG',
     gradient: 'from-yellow-600 to-amber-600',
-    number: '07',
+    number: '12',
     stat: '48H Delivery'
   },
   {
@@ -74,7 +119,7 @@ const values = [
     description: 'Economic solutions providing the best value without compromising on quality, supported by efficient production processes.',
     image: '/images/_SMH3265.jpg',
     gradient: 'from-teal-600 to-cyan-600',
-    number: '08',
+    number: '13',
     stat: 'Best Value'
   }
 ]
@@ -149,7 +194,7 @@ export default function VisionValuesSection() {
             Excellence in <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">Every Detail</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto leading-relaxed px-4">
-            42 years of innovation, 12 production lines, and 1,500 expert professionals delivering world-class MDF products.
+            42 years of innovation across energy, technology, mobility, construction, finance, and manufacturing—delivering excellence in every detail.
           </p>
         </motion.div>
 

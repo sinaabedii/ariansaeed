@@ -91,7 +91,7 @@ export default function AboutSection() {
                 className="relative h-48 sm:h-56 md:h-64 rounded-xl sm:rounded-2xl overflow-hidden"
               >
                 <Image
-                  src="/images/1O0A6321.JPG"
+                  src="/images/DJI_0006.JPG"
                   alt="Business Meeting"
                   fill
                   sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"

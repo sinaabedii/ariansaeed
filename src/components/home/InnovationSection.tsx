@@ -9,7 +9,7 @@ import Image from 'next/image'
 const innovations = [
   {
     icon: Lightbulb,
-    title: 'Smart Manufacturing',
+    title: 'Smart and Automated Manufacturing',
     description: 'AI-powered production optimization',
     image: '/images/c2_up6Glpn.jpg',
   },
@@ -21,7 +21,7 @@ const innovations = [
   },
   {
     icon: Zap,
-    title: 'Digital Transformation',
+    title: 'Green and Sustainable',
     description: 'Next-generation business technologies',
     image: '/images/c4.jpg',
   },

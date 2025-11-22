@@ -1,23 +1,20 @@
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 
-// Critical - Above the fold (loaded immediately)
 import HeroSection from '@/components/home/HeroSection'
 import AboutSection from '@/components/home/AboutSection'
 import VisionValuesSection from '@/components/home/VisionValuesSection'
 import StatsSection from '@/components/home/StatsSection'
+import GlobalPresenceSection from '@/components/home/GlobalPresenceSection'
 
-// Below the fold - Lazy loaded with dynamic imports
 const BusinessDomainsSection = dynamic(() => import('@/components/home/BusinessDomainsSection'), { ssr: true })
-const PartnersSection = dynamic(() => import('@/components/home/PartnersSection'), { ssr: true })
-const GlobalPresenceSection = dynamic(() => import('@/components/home/GlobalPresenceSection'), { ssr: true })
+// const GlobalPresenceSection = dynamic(() => import('@/components/home/GlobalPresenceSection'), { ssr: true })
+const StaticGlobeSection = dynamic(() => import('@/components/home/StaticGlobeSection'), { ssr: true })
 const TechnologyHubSection = dynamic(() => import('@/components/home/TechnologyHubSection'), { ssr: true })
 const InnovationSection = dynamic(() => import('@/components/home/InnovationSection'), { ssr: true })
 const RenewableEnergyHub = dynamic(() => import('@/components/home/RenewableEnergyHub'), { ssr: true })
-// const SuccessStoriesSection = dynamic(() => import('@/components/home/SuccessStoriesSection'), { ssr: true })
+const ElectricVehiclesSection = dynamic(() => import('@/components/home/ElectricVehiclesSection'), { ssr: true })
 const TestimonialsSection = dynamic(() => import('@/components/home/TestimonialsSection'), { ssr: true })
-// const SustainabilityPlayground = dynamic(() => import('@/components/home/SustainabilityPlayground'), { ssr: true })
-// const BYDShowroom = dynamic(() => import('@/components/home/BYDShowroom'), { ssr: true })
 const SubsidiariesSection = dynamic(() => import('@/components/home/SubsidiariesSection'), { ssr: true })
 const FAQSection = dynamic(() => import('@/components/home/FAQSection'), { ssr: true })
 const CTASection = dynamic(() => import('@/components/home/CTASection'), { ssr: true })
@@ -37,14 +34,11 @@ export default function HomePage() {
       <VisionValuesSection />
       <StatsSection />
       <BusinessDomainsSection />
-      <PartnersSection />
       <GlobalPresenceSection />
-      <TechnologyHubSection />
       <RenewableEnergyHub />
-      {/* <SuccessStoriesSection /> */}
+      <TechnologyHubSection />
+      <ElectricVehiclesSection />
       <TestimonialsSection />
-      {/* <SustainabilityPlayground /> */}
-      {/* <BYDShowroom /> */}
       <InnovationSection />
       <SubsidiariesSection />
       <CTASection />

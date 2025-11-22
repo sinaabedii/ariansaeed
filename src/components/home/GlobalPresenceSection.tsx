@@ -104,7 +104,7 @@ const partnerCountries = [
 const stats = [
   { icon: Globe, label: 'Partner Countries', value: '12' },
   { icon: Building2, label: 'Active Projects', value: '50+' },
-  { icon: Users, label: 'International Team', value: '1,200+' },
+  { icon: Users, label: 'International Team', value: '20+' },
   { icon: MapPin, label: 'Global Reach', value: '3 Continents' }
 ]
 
@@ -127,7 +127,7 @@ export default function GlobalPresenceSection() {
           className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16"
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-3 sm:mb-4 md:mb-6">
-            Export <span className="text-white/80">Services</span>
+            Global <span className="text-white/80">Partners</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed px-2">
             Everything that Sina MDF produces has desirable, healthy and world-class characteristics. Our international supply is very prosperous and developing, with products shared across markets worldwide. Thousands of production staff trained by European experts ensure optimal production and supply.
@@ -169,35 +169,6 @@ export default function GlobalPresenceSection() {
             
             {/* 3D Globe Component */}
             <Globe3D className="w-full h-full" />
-            
-            {/* Floating info panels - Desktop - Compact */}
-            <div className="hidden lg:flex absolute top-1/2 right-3 transform -translate-y-1/2 flex-col space-y-2">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1 }}
-                className="bg-white/10 backdrop-blur-lg rounded p-2 text-white border border-white/20"
-              >
-                <div className="flex items-center space-x-1.5 mb-0.5">
-                  <Zap className="w-3.5 h-3.5 text-yellow-400" />
-                  <span className="font-medium text-xs">Real-time Operations</span>
-                </div>
-                <div className="text-white/70 text-[10px]">24/7 Global Coverage</div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1.2 }}
-                className="bg-white/10 backdrop-blur-lg rounded p-2 text-white border border-white/20"
-              >
-                <div className="flex items-center space-x-1.5 mb-0.5">
-                  <TrendingUp className="w-3.5 h-3.5 text-green-400" />
-                  <span className="font-medium text-xs">Growth Rate</span>
-                </div>
-                <div className="text-white/70 text-[10px]">+25% YoY Expansion</div>
-              </motion.div>
-            </div>
             
             {/* Mobile & Tablet info bar - Very compact */}
             <div className="lg:hidden absolute bottom-2 left-2 right-2 z-10">

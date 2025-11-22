@@ -80,7 +80,7 @@ export default function SubsidiariesSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm sm:text-base md:text-lg text-white/70 max-w-2xl mx-auto px-4"
             >
-              Leading companies under the Arian Saeed Holding umbrella
+              Leading companies under the Arian Saeed Industrial Group Inc umbrella
             </motion.p>
           </div>
 

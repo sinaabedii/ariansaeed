@@ -10,13 +10,13 @@ const technologies = [
     name: 'Artificial Intelligence',
     description: 'Advanced AI solutions driving automation and intelligent decision-making',
     image: '/images/c1_hWy2qZ4.jpg',
-    stats: '50+ AI Models',
+    stats: '50+ Projects',
     color: 'from-purple-500 to-indigo-600'
   },
   {
     icon: Cloud,
-    name: 'Cloud Computing',
-    description: 'Scalable cloud infrastructure powering digital transformation',
+    name: 'Blockchain',
+    description: 'Decentralized solutions for transparent business operations',
     image: '/images/c2_up6Glpn.jpg',
     stats: '99.9% Uptime',
     color: 'from-blue-500 to-cyan-600'
@@ -39,26 +39,7 @@ const technologies = [
   }
 ]
 
-const innovations = [
-  {
-    title: 'Quantum Computing Research',
-    description: 'Pioneering quantum algorithms for complex optimization problems',
-    image: '/images/DJI_0006.JPG',
-    status: 'In Development'
-  },
-  {
-    title: 'IoT Ecosystem Platform',
-    description: 'Connecting billions of devices for smart city initiatives',
-    image: '/images/DSC00426.JPG',
-    status: 'Live'
-  },
-  {
-    title: 'Blockchain Infrastructure',
-    description: 'Decentralized solutions for transparent business operations',
-    image: '/images/1.jpg',
-    status: 'Beta'
-  }
-]
+
 
 export default function TechnologyHubSection() {
   return (
@@ -136,60 +117,7 @@ export default function TechnologyHubSection() {
           ))}
         </div>
 
-        {/* Innovation Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-3xl font-heading font-bold text-center mb-12">
-            Innovation <span className="text-primary">Showcase</span>
-          </h3>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {innovations.map((innovation, index) => (
-              <motion.div
-                key={innovation.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-lg rounded-2xl overflow-hidden hover:bg-white/10 transition-colors duration-300"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src={innovation.image}
-                    alt={innovation.title}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    quality={80}
-                    loading="lazy"
-                    className="object-cover"
-                  />
-                  <div className="absolute top-4 right-4">
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      innovation.status === 'Live' 
-                        ? 'bg-green-500 text-white' 
-                        : innovation.status === 'Beta'
-                        ? 'bg-yellow-500 text-black'
-                        : 'bg-blue-500 text-white'
-                    }`}>
-                      {innovation.status}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold mb-3">{innovation.title}</h4>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {innovation.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+       
 
         {/* Tech Stats */}
         <motion.div
@@ -201,7 +129,7 @@ export default function TechnologyHubSection() {
         >
           {[
             { icon: Rocket, label: 'Patents Filed', value: '150+' },
-            { icon: Cpu, label: 'AI Models', value: '50+' },
+            { icon: Cpu, label: 'Projects', value: '50+' },
             { icon: Zap, label: 'API Calls/Day', value: '10M+' },
             { icon: Smartphone, label: 'Apps Deployed', value: '200+' }
           ].map((stat, index) => (

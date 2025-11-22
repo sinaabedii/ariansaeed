@@ -4,9 +4,7 @@ import { useRef, useEffect, useState, useCallback, Suspense } from 'react'
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { OrbitControls, Html, Stars, useTexture, Sphere, Preload } from '@react-three/drei'
 import * as THREE from 'three'
-import { motion, AnimatePresence } from 'framer-motion'
 import { MapPin, Building2, Users, ZoomIn, ZoomOut, RotateCcw, Maximize2, Minimize2 } from 'lucide-react'
-import Image from 'next/image'
 
 // Countries we work with - VERIFIED precise coordinates
 // Coordinates are validated using Google Maps and align perfectly with the Earth texture
@@ -309,101 +307,101 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
         />
       </mesh>
       
-      {/* Responsive detailed tooltip */}
-      {(hovered || isSelected) && zoomLevel < 6 && (
-        <Html 
-          distanceFactor={isMobile ? 6 : 10} 
+      {/* Tooltip - Glass Style */}
+      {(hovered || isSelected) && (
+        <Html
           position={[0, GLOBE_CONFIG.markerHeight, 0]}
-          style={{ pointerEvents: 'none' }}
+          center
+          distanceFactor={isMobile ? 5 : 8}
+          style={{
+            pointerEvents: 'none',
+            userSelect: 'none',
+            transform: 'translateY(-10px)'
+          }}
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: 10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.8, y: 10 }}
-            className={`bg-white/98 backdrop-blur-xl rounded-lg shadow-xl ${
-              office.isBase ? 'border-2 border-green-500' : 'border border-gray-200/50'
-            } ${isMobile ? 'p-1.5 w-[140px]' : 'p-2 w-[180px]'}`}
+          <div
+            style={{
+              background: office.isBase 
+                ? 'rgba(34, 197, 94, 0.15)'
+                : 'rgba(255, 255, 255, 0.15)',
+              backdropFilter: 'blur(20px) saturate(180%)',
+              WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+              padding: isMobile ? '8px 12px' : '10px 14px',
+              borderRadius: isMobile ? '12px' : '14px',
+              border: office.isBase 
+                ? '1px solid rgba(34, 197, 94, 0.3)'
+                : '1px solid rgba(255, 255, 255, 0.3)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.5)',
+              minWidth: isMobile ? '85px' : '110px',
+              maxWidth: isMobile ? '115px' : '150px',
+              position: 'relative'
+            }}
           >
-            <div className={`flex items-start ${
-              isMobile ? 'mb-1 space-x-1' : 'mb-1.5 space-x-1.5'
-            }`}>
-              <div className={`relative rounded overflow-hidden flex-shrink-0 ${
-                isMobile ? 'w-6 h-6' : 'w-8 h-8'
-              }`}>
-                <Image
-                  src={office.image}
-                  alt={office.city}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex-1 min-w-0">
-                <div className={`font-semibold text-gray-900 truncate flex items-center gap-0.5 ${
-                  isMobile ? 'text-[10px]' : 'text-xs'
-                }`}>
-                  {office.city}
-                  {office.isBase && <span className="text-[10px]">🏢</span>}
-                </div>
-                <div className={`text-gray-600 truncate ${
-                  isMobile ? 'text-[8px]' : 'text-[10px]'
-                }`}>{office.country}</div>
-              </div>
-              <div 
-                className={`rounded-full flex-shrink-0 ${
-                  isMobile ? 'w-1 h-1 mt-0.5' : 'w-1.5 h-1.5 mt-0.5'
-                }`}
-                style={{ backgroundColor: office.color }}
-              />
+            {/* City Name */}
+            <div
+              style={{
+                fontSize: isMobile ? '12px' : '14px',
+                fontWeight: '700',
+                color: office.isBase ? '#22c55e' : '#fff',
+                marginBottom: '3px',
+                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                letterSpacing: '0.3px'
+              }}
+            >
+              {office.isBase && <span style={{ fontSize: isMobile ? '10px' : '12px' }}>🏢</span>}
+              <span>{office.city}</span>
             </div>
             
-            <div className={`space-y-0.5 ${
-              isMobile ? 'text-[8px]' : 'text-[10px]'
-            }`}>
-              <div className="flex items-center justify-between gap-0.5">
-                <span className="text-gray-500 truncate text-[8px]">{office.type}</span>
-              </div>
+            {/* Country */}
+            <div
+              style={{
+                fontSize: isMobile ? '10px' : '11px',
+                color: 'rgba(255, 255, 255, 0.9)',
+                fontWeight: '500',
+                textShadow: '0 1px 3px rgba(0, 0, 0, 0.3)'
+              }}
+            >
+              {office.country}
             </div>
             
-            
-            {/* Status indicator */}
-            <div className={`flex items-center space-x-1 ${
-              isMobile ? 'mt-1 pt-1 border-t border-gray-100' : 'mt-1.5 pt-1.5 border-t border-gray-100'
-            }`}>
-              <div className={`${office.isBase ? 'bg-green-600' : 'bg-green-500'} rounded-full animate-pulse ${
-                isMobile ? 'w-0.5 h-0.5' : 'w-1 h-1'
-              }`} />
-              <span className={`text-gray-500 truncate ${
-                isMobile ? 'text-[7px]' : 'text-[8px]'
-              }`}>
-                {office.isBase ? 'HQ' : 'Active'}
-              </span>
+            {/* Type Badge */}
+            <div
+              style={{
+                fontSize: isMobile ? '8px' : '9px',
+                color: 'rgba(255, 255, 255, 0.75)',
+                marginTop: '5px',
+                paddingTop: '5px',
+                borderTop: '1px solid rgba(255, 255, 255, 0.2)',
+                fontWeight: '500',
+                textTransform: 'uppercase',
+                letterSpacing: '0.5px',
+                textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)'
+              }}
+            >
+              {office.type}
             </div>
-          </motion.div>
+            
+            {/* Status Indicator */}
+            <div
+              style={{
+                position: 'absolute',
+                top: isMobile ? '8px' : '10px',
+                right: isMobile ? '10px' : '12px',
+                width: isMobile ? '6px' : '7px',
+                height: isMobile ? '6px' : '7px',
+                borderRadius: '50%',
+                backgroundColor: office.isBase ? '#22c55e' : office.color,
+                boxShadow: `0 0 10px ${office.isBase ? '#22c55e' : office.color}`,
+                animation: 'pulse 2s ease-in-out infinite'
+              }}
+            />
+          </div>
         </Html>
       )}
       
-      {/* Simple tooltip for far zoom - responsive */}
-      {(hovered || isSelected) && zoomLevel >= 6 && (
-        <Html 
-          distanceFactor={isMobile ? 4 : 5} 
-          position={[0, GLOBE_CONFIG.markerHeight, 0]}
-          style={{ pointerEvents: 'none' }}
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            className={`bg-black/80 backdrop-blur-lg rounded text-white whitespace-nowrap ${
-              isMobile ? 'px-1 py-0.5 text-[8px]' : 'px-1.5 py-1 text-[10px]'
-            }`}
-          >
-            <div className={`font-medium truncate ${isMobile ? 'max-w-[60px]' : 'max-w-[70px]'}`}>{office.city}</div>
-            <div className={`opacity-80 truncate ${
-              isMobile ? 'text-[7px] max-w-[60px]' : 'text-[8px] max-w-[70px]'
-            }`}>{office.country}</div>
-          </motion.div>
-        </Html>
-      )}
     </group>
   )
 }
@@ -436,7 +434,7 @@ function CameraController({ selectedOffice, onZoomChange }: {
       
       // Calculate optimal camera position
       // Position camera directly in front of the marker, looking at globe center
-      const cameraDistance = 3.2 // Optimal distance for clear view
+      const cameraDistance = 2.0 // Optimal distance for clear view
       
       // Camera looks at the marker from outside
       // Direction from globe center to marker
@@ -492,9 +490,12 @@ function CameraController({ selectedOffice, onZoomChange }: {
   return null
 }
 
-function Globe({ onZoomChange, onLocationSelect }: { 
+function Globe({ onZoomChange, onLocationSelect, zoomIn, zoomOut, resetToIran }: { 
   onZoomChange: (zoom: number) => void
   onLocationSelect: (selected: boolean) => void
+  zoomIn?: boolean
+  zoomOut?: boolean
+  resetToIran?: boolean
 }) {
   const globeRef = useRef<THREE.Mesh>(null)
   const atmosphereRef = useRef<THREE.Mesh>(null)
@@ -502,6 +503,7 @@ function Globe({ onZoomChange, onLocationSelect }: {
   const orbitControlsRef = useRef<any>(null)
   const [selectedOffice, setSelectedOffice] = useState<typeof offices[0] | null>(null)
   const [zoomLevel, setZoomLevel] = useState(5)
+  const { camera } = useThree()
   
   // Load high-quality Earth textures using useTexture (better caching)
   const [earthTexture, earthBumpMap] = useTexture([
@@ -527,14 +529,8 @@ function Globe({ onZoomChange, onLocationSelect }: {
   }, [earthTexture, earthBumpMap])
   
   useFrame((state) => {
-    if (globeRef.current && atmosphereRef.current && markersGroupRef.current) {
-      // Gentle rotation - markers rotate WITH globe
-      const rotationSpeed = 0.0003 // Reduced from 0.001 for slower rotation
-      globeRef.current.rotation.y += rotationSpeed
-      markersGroupRef.current.rotation.y += rotationSpeed // Sync markers with globe
-      atmosphereRef.current.rotation.y += rotationSpeed * 0.5
-      
-      // Dynamic atmosphere based on zoom
+    if (atmosphereRef.current) {
+      // Dynamic atmosphere based on zoom - NO automatic globe rotation
       const distance = state.camera.position.distanceTo(new THREE.Vector3(0, 0, 0))
       const atmosphereOpacity = Math.max(0.05, Math.min(0.2, 0.3 - distance * 0.02))
       ;(atmosphereRef.current.material as THREE.MeshBasicMaterial).opacity = atmosphereOpacity
@@ -551,6 +547,70 @@ function Globe({ onZoomChange, onLocationSelect }: {
     setZoomLevel(zoom)
     onZoomChange(zoom)
   }, [onZoomChange])
+  
+  // Handle zoom in
+  useEffect(() => {
+    if (zoomIn && camera) {
+      const currentDistance = camera.position.length()
+      const newDistance = Math.max(0.5, currentDistance - 1.2)
+      const direction = camera.position.clone().normalize()
+      camera.position.copy(direction.multiplyScalar(newDistance))
+    }
+  }, [zoomIn, camera])
+  
+  // Handle zoom out
+  useEffect(() => {
+    if (zoomOut && camera) {
+      const currentDistance = camera.position.length()
+      const newDistance = Math.min(25, currentDistance + 1.2)
+      const direction = camera.position.clone().normalize()
+      camera.position.copy(direction.multiplyScalar(newDistance))
+    }
+  }, [zoomOut, camera])
+  
+  // Handle reset to Iran
+  useEffect(() => {
+    if (resetToIran) {
+      setSelectedOffice(null)
+      const iranOffice = offices.find(o => o.id === 'iran')
+      if (iranOffice && camera) {
+        const markerPosLocal = latLngToVector3(iranOffice.lat, iranOffice.lng, GLOBE_CONFIG.radius)
+        const rotationMatrix = new THREE.Matrix4().makeRotationY(-Math.PI / 2)
+        const markerWorldPos = markerPosLocal.clone().applyMatrix4(rotationMatrix)
+        const directionToMarker = markerWorldPos.clone().normalize()
+        const targetPosition = directionToMarker.multiplyScalar(2.0)
+        
+        const startPosition = camera.position.clone()
+        let progress = 0
+        const duration = 1.0
+        const startTime = Date.now()
+        
+        const animate = () => {
+          const elapsed = (Date.now() - startTime) / 1000
+          progress = Math.min(elapsed / duration, 1)
+          const eased = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2
+          
+          if (progress < 1) {
+            camera.position.lerpVectors(startPosition, targetPosition, eased)
+            camera.lookAt(markerWorldPos.clone().multiplyScalar(0.95))
+            if (orbitControlsRef.current) {
+              orbitControlsRef.current.target.copy(markerWorldPos.clone().multiplyScalar(0.95))
+              orbitControlsRef.current.update()
+            }
+            requestAnimationFrame(animate)
+          } else {
+            camera.position.copy(targetPosition)
+            camera.lookAt(markerWorldPos.clone().multiplyScalar(0.95))
+            if (orbitControlsRef.current) {
+              orbitControlsRef.current.target.copy(markerWorldPos.clone().multiplyScalar(0.95))
+              orbitControlsRef.current.update()
+            }
+          }
+        }
+        animate()
+      }
+    }
+  }, [resetToIran, camera])
   
   // Update OrbitControls target when office is selected
   useEffect(() => {
@@ -667,21 +727,36 @@ function Globe({ onZoomChange, onLocationSelect }: {
         </mesh>
       </group>
       
-      {/* OrbitControls - controlled by ref */}
+      {/* OrbitControls - controlled by ref, NO auto rotation */}
       <OrbitControls
         ref={orbitControlsRef}
         enableZoom={true}
         enablePan={false}
-        minDistance={2.5}
-        maxDistance={12}
-        autoRotate={!selectedOffice}
-        autoRotateSpeed={0.15}
+        minDistance={0.5}
+        maxDistance={25}
+        autoRotate={false}
         enableDamping={true}
         dampingFactor={0.05}
-        minPolarAngle={Math.PI * 0.1}
-        maxPolarAngle={Math.PI * 0.9}
-        rotateSpeed={1}
-        zoomSpeed={1}
+        minPolarAngle={Math.PI * 0.15}
+        maxPolarAngle={Math.PI * 0.85}
+        rotateSpeed={0.7}
+        zoomSpeed={3.5}
+        mouseButtons={{
+          LEFT: THREE.MOUSE.ROTATE,
+          MIDDLE: THREE.MOUSE.DOLLY,
+          RIGHT: THREE.MOUSE.ROTATE
+        }}
+        target={(() => {
+          // Set initial target to Iran
+          const iranOffice = offices.find(o => o.id === 'iran')
+          if (iranOffice) {
+            const markerPosLocal = latLngToVector3(iranOffice.lat, iranOffice.lng, GLOBE_CONFIG.radius)
+            const rotationMatrix = new THREE.Matrix4().makeRotationY(-Math.PI / 2)
+            const markerWorldPos = markerPosLocal.clone().applyMatrix4(rotationMatrix)
+            return markerWorldPos.clone().multiplyScalar(0.95)
+          }
+          return new THREE.Vector3(0, 0, 0)
+        })()}
       />
     </group>
   )
@@ -694,10 +769,12 @@ interface Globe3DProps {
 export default function Globe3D({ className }: Globe3DProps) {
   const [zoomLevel, setZoomLevel] = useState(5)
   const [isFullscreen, setIsFullscreen] = useState(false)
-  const [autoRotate, setAutoRotate] = useState(true)
   const [showStats, setShowStats] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
   const [isLocationSelected, setIsLocationSelected] = useState(false)
+  const [triggerZoomIn, setTriggerZoomIn] = useState(false)
+  const [triggerZoomOut, setTriggerZoomOut] = useState(false)
+  const [triggerReset, setTriggerReset] = useState(false)
   
   // Detect mobile device
   useEffect(() => {
@@ -716,17 +793,22 @@ export default function Globe3D({ className }: Globe3DProps) {
   
   const handleLocationSelect = useCallback((selected: boolean) => {
     setIsLocationSelected(selected)
-    if (selected) {
-      setAutoRotate(false) // Stop rotation when location is selected
-    } else {
-      setAutoRotate(true) // Resume rotation when location is deselected
-    }
   }, [])
   
   const resetCamera = () => {
     setIsLocationSelected(false)
-    setAutoRotate(true)
-    window.location.reload() // Simple reset for now
+    setTriggerReset(true)
+    setTimeout(() => setTriggerReset(false), 100)
+  }
+  
+  const handleZoomIn = () => {
+    setTriggerZoomIn(true)
+    setTimeout(() => setTriggerZoomIn(false), 100)
+  }
+  
+  const handleZoomOut = () => {
+    setTriggerZoomOut(true)
+    setTimeout(() => setTriggerZoomOut(false), 100)
   }
   
   const toggleFullscreen = () => {
@@ -737,7 +819,19 @@ export default function Globe3D({ className }: Globe3DProps) {
     <div className={`relative ${className} ${isFullscreen ? 'fixed inset-0 z-50 bg-black' : ''}`}>
       <Canvas
         camera={{ 
-          position: isMobile ? [0, 0, 6] : [0, 0, 5], 
+          position: (() => {
+            // Start camera focused on Iran
+            const iranOffice = offices.find(o => o.id === 'iran')
+            if (iranOffice) {
+              const markerPosLocal = latLngToVector3(iranOffice.lat, iranOffice.lng, GLOBE_CONFIG.radius)
+              const rotationMatrix = new THREE.Matrix4().makeRotationY(-Math.PI / 2)
+              const markerWorldPos = markerPosLocal.clone().applyMatrix4(rotationMatrix)
+              const directionToMarker = markerWorldPos.clone().normalize()
+              const cameraDistance = isMobile ? 2.3 : 2.0
+              return directionToMarker.multiplyScalar(cameraDistance).toArray() as [number, number, number]
+            }
+            return isMobile ? [0, 0, 6] : [0, 0, 5]
+          })(),
           fov: isMobile ? 75 : 60 
         }}
         style={{ background: 'transparent' }}
@@ -789,6 +883,9 @@ export default function Globe3D({ className }: Globe3DProps) {
           <Globe 
             onZoomChange={handleZoomChange} 
             onLocationSelect={handleLocationSelect}
+            zoomIn={triggerZoomIn}
+            zoomOut={triggerZoomOut}
+            resetToIran={triggerReset}
           />
           {/* Preload all assets */}
           <Preload all />
@@ -796,12 +893,10 @@ export default function Globe3D({ className }: Globe3DProps) {
       </Canvas>
       
       {/* Responsive Control Panel */}
-      <div className={`absolute ${isMobile ? 'top-2 left-2' : 'top-4 left-4'} space-y-2`}>
+      <div className={`absolute z-10 ${isMobile ? 'top-2 left-2' : 'top-4 left-4'} space-y-2`}>
         {showStats && (
           <>
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+            <div
               className={`bg-black/20 backdrop-blur-xl rounded-xl text-white border border-white/10 ${
                 isMobile ? 'p-3' : 'p-4'
               }`}
@@ -827,32 +922,13 @@ export default function Globe3D({ className }: Globe3DProps) {
                   </div>
                 </div>
               )}
-            </motion.div>
-            
-            {!isMobile && (
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 }}
-                className="bg-black/20 backdrop-blur-xl rounded-xl p-3 text-white border border-white/10"
-              >
-                <div className="flex items-center space-x-2 mb-2">
-                  <div className={`w-2 h-2 rounded-full ${isLocationSelected ? 'bg-blue-400' : 'bg-green-400 animate-pulse'}`} />
-                  <span className="text-sm font-medium">
-                    {isLocationSelected ? 'Location Focused' : 'Live Status'}
-                  </span>
-                </div>
-                <div className="text-xs text-white/70">
-                  Zoom: {zoomLevel.toFixed(1)}x • {isLocationSelected ? 'Rotation paused' : 'Auto-rotating'}
-                </div>
-              </motion.div>
-            )}
+            </div>
           </>
         )}
       </div>
       
       {/* Responsive Control Buttons */}
-      <div className={`absolute ${isMobile ? 'top-2 right-2' : 'top-4 right-4'} ${
+      <div className={`absolute z-10 ${isMobile ? 'top-2 right-2' : 'top-4 right-4'} ${
         isMobile ? 'flex flex-row space-x-1' : 'flex flex-col space-y-2'
       }`}>
         {!isMobile && (
@@ -866,26 +942,19 @@ export default function Globe3D({ className }: Globe3DProps) {
         )}
         
         <button
-          onClick={() => {
-            setAutoRotate(!autoRotate)
-            if (isLocationSelected) {
-              setIsLocationSelected(false) // Clear selection when manually toggling rotation
-            }
-          }}
-          className={`${isMobile ? 'p-2' : 'p-3'} backdrop-blur-xl rounded-xl text-white transition-colors border border-white/10 ${
-            autoRotate ? 'bg-primary/20 hover:bg-primary/30' : 'bg-black/20 hover:bg-black/30'
-          }`}
-          title={autoRotate ? "Stop Auto Rotation" : "Start Auto Rotation"}
+          onClick={resetCamera}
+          className={`${isMobile ? 'p-2' : 'p-3'} bg-primary/20 backdrop-blur-xl rounded-xl text-white hover:bg-primary/30 transition-colors border border-white/10`}
+          title="Reset to Iran (Home)"
         >
           <RotateCcw className={isMobile ? 'w-3 h-3' : 'w-4 h-4'} />
         </button>
         
         <button
-          onClick={resetCamera}
+          onClick={handleZoomIn}
           className={`${isMobile ? 'p-2' : 'p-3'} bg-black/20 backdrop-blur-xl rounded-xl text-white hover:bg-black/30 transition-colors border border-white/10`}
-          title="Reset Camera"
+          title="Zoom In"
         >
-          <ZoomOut className={isMobile ? 'w-3 h-3' : 'w-4 h-4'} />
+          <ZoomIn className={isMobile ? 'w-3 h-3' : 'w-4 h-4'} />
         </button>
         
         <button
@@ -897,16 +966,18 @@ export default function Globe3D({ className }: Globe3DProps) {
         </button>
       </div>
       
-      {/* Mobile-friendly Zoom Controls */}
+      {/* Desktop Zoom Controls */}
       {!isMobile && (
-        <div className="absolute bottom-4 right-4 flex flex-col space-y-2">
+        <div className="absolute z-10 bottom-4 right-4 flex flex-col space-y-2">
           <button
+            onClick={handleZoomIn}
             className="p-3 bg-black/20 backdrop-blur-xl rounded-xl text-white hover:bg-black/30 transition-colors border border-white/10"
             title="Zoom In"
           >
             <ZoomIn className="w-4 h-4" />
           </button>
           <button
+            onClick={handleZoomOut}
             className="p-3 bg-black/20 backdrop-blur-xl rounded-xl text-white hover:bg-black/30 transition-colors border border-white/10"
             title="Zoom Out"
           >
@@ -915,40 +986,19 @@ export default function Globe3D({ className }: Globe3DProps) {
         </div>
       )}
       
-      {/* Responsive Instructions */}
-      {!isMobile && (
-        <div className="absolute bottom-4 left-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="bg-black/20 backdrop-blur-xl rounded-xl p-4 text-white text-sm border border-white/10 max-w-xs"
-          >
-            <div className="font-medium mb-2">🌍 Interactive Globe Controls</div>
-            <div className="space-y-1 text-xs text-white/70">
-              <div>• <strong>Drag</strong> to rotate the globe</div>
-              <div>• <strong>Scroll</strong> to zoom in/out</div>
-              <div>• <strong>Click marker</strong> to focus & pause rotation</div>
-              <div>• <strong>Click again</strong> to deselect & resume</div>
-            </div>
-          </motion.div>
-        </div>
-      )}
+      
       
       {/* Mobile Instructions */}
       {isMobile && (
-        <div className="absolute bottom-2 left-2 right-2">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
+        <div className="absolute z-10 bottom-2 left-2 right-2">
+          <div
             className="bg-black/20 backdrop-blur-xl rounded-xl p-3 text-white text-xs border border-white/10 text-center"
           >
             <div className="font-medium mb-1">🌍 Touch Controls</div>
             <div className="text-white/70">
               Touch & drag to rotate • Pinch to zoom • Tap marker to focus & pause
             </div>
-          </motion.div>
+          </div>
         </div>
       )}
       

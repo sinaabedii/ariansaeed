@@ -13,7 +13,7 @@ interface SocialShareProps {
 export default function SocialShare({ 
   url = typeof window !== 'undefined' ? window.location.href : '',
   title = 'Arian Saeed Industrial Group',
-  description = 'Check out this amazing content from Arian Saeed Holding'
+  description = 'Check out this amazing content from Arian Saeed Industrial Group Inc'
 }: SocialShareProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [copied, setCopied] = useState(false)

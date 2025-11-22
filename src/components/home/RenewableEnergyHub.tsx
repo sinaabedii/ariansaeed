@@ -14,89 +14,89 @@ import energyAnimation from '@/json/energy.json'
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 const energyStats = [
-  { icon: Sun, value: '500+', label: 'MW Solar Capacity', color: 'from-yellow-400 to-orange-500' },
-  { icon: Wind, value: '250+', label: 'MW Wind Power', color: 'from-blue-400 to-cyan-500' },
-  { icon: Droplets, value: '150+', label: 'MW Hydro Energy', color: 'from-teal-400 to-green-500' },
-  { icon: Battery, value: '98%', label: 'Efficiency Rate', color: 'from-green-400 to-emerald-600' },
+  { icon: Leaf, value: '2M+', label: 'Trees Planted', color: 'from-green-400 to-emerald-500' },
+  { icon: Sun, value: '50+', label: 'Solar Projects', color: 'from-yellow-400 to-orange-500' },
+  { icon: Sparkles, value: '250K+', label: 'Tons CO₂ Saved', color: 'from-teal-400 to-cyan-500' },
+  { icon: TrendingUp, value: '100+', label: 'Green Initiatives', color: 'from-blue-400 to-green-500' },
 ]
 
 const energyTypes = [
   {
-    title: 'Solar Energy',
-    subtitle: 'Photovoltaic Excellence',
-    description: 'Advanced monocrystalline and polycrystalline solar panels with industry-leading conversion efficiency up to 22.8%. Complete EPC solutions for commercial and utility-scale projects.',
+    title: 'Reforestation Programs',
+    subtitle: 'Building Green Lungs',
+    description: 'Planting millions of saplings across regions to combat climate change and restore natural habitats. Our comprehensive tree-planting initiatives create sustainable forests for future generations.',
+    icon: Leaf,
+    gradient: 'from-green-400 via-emerald-500 to-teal-500',
+    stats: { trees: '2M+', area: '5,000+ hectares', survival: '92%' },
+    features: [
+      'Native Species Focus',
+      'Community Involvement',
+      'Long-term Monitoring',
+      'Carbon Offset Certified',
+    ],
+  },
+  {
+    title: 'Solar Power Projects',
+    subtitle: 'Clean Energy Generation',
+    description: 'Developing large-scale solar installations and rooftop solutions for homes and businesses. Our solar projects deliver reliable clean energy while reducing carbon footprint.',
     icon: Sun,
     gradient: 'from-yellow-400 via-orange-500 to-red-500',
-    stats: { power: '500+ MW', efficiency: '22.8%', projects: '50+' },
+    stats: { projects: '50+', capacity: '100+ MW', homes: '20,000+' },
     features: [
-      'Tier-1 Solar Modules',
-      'Smart Inverter Systems',
-      'Energy Storage Solutions',
-      '25-Year Performance Warranty',
+      'Residential & Commercial',
+      'Grid-Tied Systems',
+      'Energy Independence',
+      'Cost-Effective Solutions',
     ],
   },
   {
-    title: 'Wind Energy',
-    subtitle: 'Turbine Technology',
-    description: 'Modern wind turbine installations from 2MW to 5MW capacity per unit. Onshore and offshore wind farm development with predictive maintenance systems.',
-    icon: Wind,
-    gradient: 'from-blue-400 via-cyan-500 to-teal-500',
-    stats: { power: '250+ MW', efficiency: '45%', projects: '30+' },
+    title: 'Sustainable Development',
+    subtitle: 'Green Future Vision',
+    description: 'Comprehensive environmental programs combining renewable energy, reforestation, and community education to build a sustainable future for all.',
+    icon: Sparkles,
+    gradient: 'from-blue-400 via-green-500 to-emerald-500',
+    stats: { initiatives: '100+', communities: '50+', impact: 'National' },
     features: [
-      'High-Efficiency Turbines',
-      'Remote Monitoring',
-      'Predictive Maintenance',
-      'Grid Integration Systems',
-    ],
-  },
-  {
-    title: 'Hydroelectric Power',
-    subtitle: 'Water Energy Solutions',
-    description: 'Small to medium-scale hydroelectric installations utilizing river flow and reservoir systems. Run-of-river and pumped-storage configurations.',
-    icon: Droplets,
-    gradient: 'from-teal-400 via-cyan-500 to-blue-500',
-    stats: { power: '150+ MW', efficiency: '90%', projects: '20+' },
-    features: [
-      'Run-of-River Systems',
-      'Pumped Storage',
-      'Minimal Environmental Impact',
-      'Year-Round Generation',
+      'Educational Programs',
+      'Green Infrastructure',
+      'Circular Economy',
+      'Zero-Waste Goals',
     ],
   },
 ]
 
 const technologies = [
   {
-    icon: Activity,
-    title: 'MPPT Technology',
-    description: 'Maximum Power Point Tracking for optimal energy harvest',
-    stat: '99.5%',
-    label: 'Tracking Accuracy',
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
-    icon: ThermometerSun,
-    title: 'Thermal Management',
-    description: 'Advanced cooling maintaining peak performance',
-    stat: '85°C',
-    label: 'Max Operating Temp',
-    color: 'from-red-500 to-orange-500',
-  },
-  {
-    icon: Factory,
-    title: 'Smart Grid Integration',
-    description: 'AI-powered grid management and load balancing',
-    stat: '24/7',
-    label: 'Real-time Monitoring',
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
     icon: Leaf,
-    title: 'Carbon Neutral',
-    description: 'Sustainable manufacturing with zero emissions',
+    title: 'Tree Planting',
+    description: 'Large-scale reforestation with native species',
+    stat: '2M+',
+    label: 'Saplings Planted',
+    color: 'from-green-500 to-emerald-500',
+  },
+  {
+    icon: Sun,
+    title: 'Solar Projects',
+    description: 'Clean energy installations across communities',
+    stat: '50+',
+    label: 'Active Projects',
+    color: 'from-yellow-500 to-orange-500',
+  },
+  {
+    icon: Sparkles,
+    title: 'Carbon Offsetting',
+    description: 'Reducing environmental impact through green initiatives',
     stat: '250K+',
     label: 'Tons CO₂ Saved',
-    color: 'from-green-500 to-emerald-500',
+    color: 'from-teal-500 to-cyan-500',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Green Growth',
+    description: 'Sustainable expansion with environmental focus',
+    stat: '100+',
+    label: 'Eco Initiatives',
+    color: 'from-blue-500 to-green-500',
   },
 ]
 
@@ -145,8 +145,8 @@ export default function RenewableEnergyHub() {
             className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-yellow-500/20 via-green-500/20 to-blue-500/20 backdrop-blur-sm rounded-full mb-6 border border-green-500/30"
           >
             <Zap className="w-5 h-5 text-green-600 animate-pulse" />
-            <span className="text-sm font-bold bg-gradient-to-r from-yellow-700 via-green-700 to-blue-700 bg-clip-text text-transparent">
-              Renewable Energy Solutions
+            <span className="text-sm font-bold bg-gradient-to-r from-green-700 via-emerald-700 to-teal-700 bg-clip-text text-transparent">
+              Green Future Initiatives
             </span>
           </motion.div>
 
@@ -156,11 +156,11 @@ export default function RenewableEnergyHub() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-7xl font-heading font-bold mb-6"
           >
-            <span className="bg-gradient-to-r from-yellow-600 via-green-600 to-blue-600 bg-clip-text text-transparent">
-              Clean Energy
+            <span className="bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent">
+              Green Future
             </span>
             <br />
-            <span className="text-gray-900">For Tomorrow</span>
+            <span className="text-gray-900">Building Tomorrow</span>
           </motion.h2>
 
           <motion.p
@@ -169,7 +169,7 @@ export default function RenewableEnergyHub() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-gray-600 leading-relaxed"
           >
-            Pioneering the future of sustainable energy with solar, wind, and hydroelectric power solutions
+            Creating a sustainable future through massive reforestation, solar energy projects, and environmental initiatives
           </motion.p>
         </motion.div>
 
@@ -402,10 +402,10 @@ export default function RenewableEnergyHub() {
         >
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-              Advanced Technologies
+              Our Green Impact
             </h3>
             <p className="text-lg text-gray-600">
-              Industry-leading innovations powering our renewable energy solutions
+              Measurable environmental achievements building a sustainable tomorrow
             </p>
           </div>
 
@@ -475,10 +475,10 @@ export default function RenewableEnergyHub() {
                 <Award className="w-8 h-8" />
               </div>
               <h3 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-                Partner With Us for a Sustainable Future
+                Join Our Green Future Movement
               </h3>
               <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">
-                Join us in the clean energy revolution. Let&apos;s build a greener tomorrow together.
+                Together we plant trees, generate clean solar energy, and build a sustainable world for future generations.
               </p>
               <div className="inline-flex flex-col sm:flex-row gap-4">
                 <motion.button

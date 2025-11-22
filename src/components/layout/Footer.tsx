@@ -129,7 +129,7 @@ export default function Footer() {
                 markers={[
                   {
                     position: [CONTACT_INFO.mapCenter.lat, CONTACT_INFO.mapCenter.lng],
-                    popup: 'Arian Saeed Holding',
+                    popup: 'Arian Saeed Industrial Group Inc',
                   },
                 ]}
               />
