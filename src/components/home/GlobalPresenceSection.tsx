@@ -1,7 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Building2, Users, Globe, Zap, TrendingUp } from 'lucide-react'
+import { MapPin, Building2, Users, Globe, Zap, TrendingUp, Factory, Leaf, ShoppingCart, Sparkles } from 'lucide-react'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
@@ -20,85 +21,105 @@ const partnerCountries = [
     country: 'Iran',
     status: 'Headquarters',
     image: '/images/counteries/iran-tehran.jpg',
-    description: 'Main operations center'
+    description: 'Main operations center',
+    category: 'headquarters'
   },
   {
     city: 'Istanbul',
     country: 'Turkey',
     status: 'Active Partnership',
     image: '/images/counteries/Turkey.jpg',
-    description: 'Strategic partnerships and trade operations'
+    description: 'Strategic partnerships and trade operations',
+    category: 'partnership'
   },
   {
     city: 'Dubai',
     country: 'UAE',
     status: 'AI + Export',
     image: '/images/counteries/Dubai.jpg',
-    description: 'AI-driven services and export operations across the Gulf region'
+    description: 'AI-driven services and export operations across the Gulf region',
+    category: 'ai-export'
   },
   {
     city: 'Muscat',
     country: 'Oman',
     status: 'Active Projects',
     image: '/images/counteries/oman.webp',
-    description: 'AI-enabled export operations and regional business development'
+    description: 'AI-enabled export operations and regional business development',
+    category: 'ai-export'
   },
   {
     city: 'Berlin',
     country: 'Germany',
     status: 'Production Lines & Machinery',
     image: '/images/counteries/germany.webp',
-    description: 'Industrial production lines, machinery solutions, and engineering support'
+    description: 'Industrial production lines, machinery solutions, and engineering support',
+    category: 'production'
   },
   {
     city: 'Beijing',
     country: 'China',
     status: 'AI + Sustainable & Renewable Energy and Vehicles',
     image: '/images/counteries/china.jpg',
-    description: 'AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships'
+    description: 'AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships',
+    category: 'ai-energy'
   },
   {
     city: 'Baku',
     country: 'Azerbaijan',
     status: 'Active Partnership',
     image: '/images/counteries/azerbaijan.jpg',
-    description: 'import & export operations and trade'
+    description: 'import & export operations and trade',
+    category: 'import-export'
   },
   {
     city: 'Moscow',
     country: 'Russia',
     status: 'Strategic Projects',
     image: '/images/counteries/russia.jpg',
-    description: 'import & export activities and commercial collaborations'
+    description: 'import & export activities and commercial collaborations',
+    category: 'import-export'
   },
   {
     city: 'Dushanbe',
     country: 'Tajikistan',
     status: 'Development Projects',
     image: '/images/counteries/tajikistan.jpg',
-    description: ' trade facilitation and import/export operations'
+    description: ' trade facilitation and import/export operations',
+    category: 'import-export'
   },
   {
     city: 'Baghdad',
     country: 'Iraq',
     status: 'Active Projects',
     image: '/images/counteries/iraq.jpg',
-    description: 'AI-driven solutions and export operations across Arab markets'
+    description: 'AI-driven solutions and export operations across Arab markets',
+    category: 'ai-export'
   },
   {
     city: 'Damascus',
     country: 'Syria',
     status: 'AI + Export',
     image: '/images/counteries/Damascus.webp',
-    description: 'AI-enabled services and export-focused initiatives in the Arab region'
+    description: 'AI-enabled services and export-focused initiatives in the Arab region',
+    category: 'ai-export'
   },
   {
     city: 'Beirut',
     country: 'Lebanon',
     status: 'Active Partnership',
     image: '/images/counteries/syria.jpg',
-    description: 'AI services with export-oriented partnerships in the Gulf & Arab markets'
+    description: 'AI services with export-oriented partnerships in the Gulf & Arab markets',
+    category: 'ai-export'
   }
+]
+
+const categories = [
+  { id: 'all', label: 'All Partners', icon: Globe },
+  { id: 'production', label: 'Production & Machinery', icon: Factory },
+  { id: 'ai-energy', label: 'AI + Renewable Energy', icon: Leaf },
+  { id: 'import-export', label: 'Import & Export', icon: ShoppingCart },
+  { id: 'ai-export', label: 'AI + Export', icon: Sparkles },
 ]
 
 const stats = [
@@ -109,6 +130,12 @@ const stats = [
 ]
 
 export default function GlobalPresenceSection() {
+  const [activeCategory, setActiveCategory] = useState('all')
+
+  const filteredCountries = activeCategory === 'all'
+    ? partnerCountries
+    : partnerCountries.filter(country => country.category === activeCategory)
+
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -218,6 +245,39 @@ export default function GlobalPresenceSection() {
           </div>
         </motion.div>
 
+        {/* Category Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-8 sm:mb-10 md:mb-12"
+        >
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4">
+            {categories.map((category) => {
+              const Icon = category.icon
+              const isActive = activeCategory === category.id
+              return (
+                <motion.button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`flex items-center gap-2 px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold text-xs sm:text-sm md:text-base transition-all duration-300 ${
+                    isActive
+                      ? 'bg-white text-primary-900 shadow-lg'
+                      : 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+                  <span className="hidden sm:inline">{category.label}</span>
+                  <span className="sm:hidden">{category.label.split(' ')[0]}</span>
+                </motion.button>
+              )
+            })}
+          </div>
+        </motion.div>
+
         {/* Partner Countries Grid - Responsive */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -226,7 +286,7 @@ export default function GlobalPresenceSection() {
           viewport={{ once: true }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6"
         >
-          {partnerCountries.map((country, index) => (
+          {filteredCountries.map((country, index) => (
             <motion.div 
               key={country.city} 
               initial={{ opacity: 0, y: 20 }}
