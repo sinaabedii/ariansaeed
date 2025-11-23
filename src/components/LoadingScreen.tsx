@@ -17,7 +17,7 @@ export default function LoadingScreen() {
           setTimeout(() => setIsLoading(false), 500)
           return 100
         }
-        return prev + Math.random() * 10
+        return Math.min(prev + Math.random() * 10, 100)
       })
     }, 200)
 
@@ -104,7 +104,7 @@ export default function LoadingScreen() {
               transition={{ delay: 0.6 }}
               className="text-white/60 text-sm mt-4"
             >
-              {Math.round(progress)}%
+              {Math.round(Math.min(progress, 100))}%
             </motion.p>
 
             {/* Animated Dots */}

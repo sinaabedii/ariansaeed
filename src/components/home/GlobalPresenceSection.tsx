@@ -32,72 +32,72 @@ const partnerCountries = [
   {
     city: 'Dubai',
     country: 'UAE',
-    status: 'Regional Hub',
+    status: 'AI + Export',
     image: '/images/counteries/Dubai.jpg',
-    description: 'Middle East business hub'
+    description: 'AI-driven services and export operations across the Gulf region'
   },
   {
     city: 'Muscat',
     country: 'Oman',
     status: 'Active Projects',
     image: '/images/counteries/oman.webp',
-    description: 'Infrastructure development'
+    description: 'AI-enabled export operations and regional business development'
   },
   {
     city: 'Berlin',
     country: 'Germany',
-    status: 'Strategic Alliance',
+    status: 'Production Lines & Machinery',
     image: '/images/counteries/germany.webp',
-    description: 'Technology partnerships'
+    description: 'Industrial production lines, machinery solutions, and engineering support'
   },
   {
     city: 'Beijing',
     country: 'China',
-    status: 'Major Collaborations',
+    status: 'AI + Sustainable & Renewable Energy and Vehicles',
     image: '/images/counteries/china.jpg',
-    description: 'Manufacturing partnerships'
+    description: 'AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships'
   },
   {
     city: 'Baku',
     country: 'Azerbaijan',
     status: 'Active Partnership',
     image: '/images/counteries/azerbaijan.jpg',
-    description: 'Energy sector projects'
+    description: 'import & export operations and trade'
   },
   {
     city: 'Moscow',
     country: 'Russia',
     status: 'Strategic Projects',
     image: '/images/counteries/russia.jpg',
-    description: 'Industrial collaborations'
+    description: 'import & export activities and commercial collaborations'
   },
   {
     city: 'Dushanbe',
     country: 'Tajikistan',
     status: 'Development Projects',
     image: '/images/counteries/tajikistan.jpg',
-    description: 'Infrastructure development'
+    description: ' trade facilitation and import/export operations'
   },
   {
     city: 'Baghdad',
     country: 'Iraq',
     status: 'Active Projects',
     image: '/images/counteries/iraq.jpg',
-    description: 'Construction projects'
+    description: 'AI-driven solutions and export operations across Arab markets'
   },
   {
     city: 'Damascus',
     country: 'Syria',
-    status: 'Reconstruction',
+    status: 'AI + Export',
     image: '/images/counteries/Damascus.webp',
-    description: 'Reconstruction projects'
+    description: 'AI-enabled services and export-focused initiatives in the Arab region'
   },
   {
     city: 'Beirut',
     country: 'Lebanon',
     status: 'Active Partnership',
     image: '/images/counteries/syria.jpg',
-    description: 'Business development'
+    description: 'AI services with export-oriented partnerships in the Gulf & Arab markets'
   }
 ]
 
@@ -130,7 +130,7 @@ export default function GlobalPresenceSection() {
             Global <span className="text-white/80">Partners</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto leading-relaxed px-2">
-            Everything that Sina MDF produces has desirable, healthy and world-class characteristics. Our international supply is very prosperous and developing, with products shared across markets worldwide. Thousands of production staff trained by European experts ensure optimal production and supply.
+            Everything that ASIGI produces has desirable, healthy and world-class characteristics. Our international supply is very prosperous and developing, with products shared across markets worldwide. Thousands of production staff trained by European experts ensure optimal production and supply.
           </p>
         </motion.div>
 

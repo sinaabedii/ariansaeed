@@ -10,15 +10,8 @@ import {
 } from 'lucide-react'
 import evAnimation from '@/json/Electric vehicle charging animation.json'
 
-// Dynamically import Lottie to avoid SSR issues
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
-const evStats = [
-  { icon: Car, value: '500+', label: 'EVs Delivered', color: 'from-green-400 to-emerald-500' },
-  { icon: Battery, value: '0', label: 'Emissions', color: 'from-blue-400 to-cyan-500', suffix: 'g/km' },
-  { icon: Leaf, value: '85%', label: 'Less Pollution', color: 'from-teal-400 to-green-500' },
-  { icon: TrendingDown, value: '60%', label: 'Lower Costs', color: 'from-amber-400 to-yellow-500' },
-]
 
 const vehicleTypes = [
   {
@@ -200,34 +193,9 @@ export default function ElectricVehiclesSection() {
           </motion.p>
         </motion.div>
 
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {evStats.map((stat, index) => {
-            const Icon = stat.icon
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-2xl transition-all group"
-              >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                  <Icon className="w-7 h-7 text-white" />
-                </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">
-                  {stat.value}{stat.suffix || ''}
-                </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
-              </motion.div>
-            )
-          })}
-        </div>
+     
 
-        {/* Animation + Vehicle Types */}
         <div className="grid lg:grid-cols-2 gap-12 mb-20">
-          {/* Lottie Animation */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -243,7 +211,6 @@ export default function ElectricVehiclesSection() {
             </div>
           </motion.div>
 
-          {/* Vehicle Type Tabs */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}

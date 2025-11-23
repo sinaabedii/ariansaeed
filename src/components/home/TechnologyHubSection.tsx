@@ -24,7 +24,7 @@ const technologies = [
   {
     icon: Shield,
     name: 'Cybersecurity',
-    description: 'Enterprise-grade security solutions protecting digital assets',
+    description: 'Manufacturing automation',
     image: '/images/c3.jpg',
     stats: 'Zero Breaches',
     color: 'from-red-500 to-pink-600'
@@ -125,10 +125,10 @@ export default function TechnologyHubSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center"
         >
           {[
-            { icon: Rocket, label: 'Patents Filed', value: '150+' },
+            // { icon: Rocket, label: 'Patents Filed', value: '150+' },
             { icon: Cpu, label: 'Projects', value: '50+' },
             { icon: Zap, label: 'API Calls/Day', value: '10M+' },
             { icon: Smartphone, label: 'Apps Deployed', value: '200+' }

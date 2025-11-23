@@ -7,7 +7,7 @@ import Image from 'next/image'
 const values = [
   {
     icon: Sun,
-    title: 'Solar Panels',
+    title: 'Renewable Energy',
     description: 'High‑efficiency solar systems to cut energy costs for homes, buildings, and businesses with sustainable power solutions.',
     image: '/images/solarpark-limbach-dorf-Xpert.Digital-png.png',
     gradient: 'from-yellow-600 to-orange-600',
@@ -16,7 +16,7 @@ const values = [
   },
   {
     icon: Building2,
-    title: 'Factory Energy Panels',
+    title: 'Wood-Based Panels',
     description: 'Integrated energy and automation for production lines to reduce consumption, boost efficiency, and ensure uptime.',
     image: '/images/c2_up6Glpn.jpg',
     gradient: 'from-blue-600 to-cyan-600',
@@ -43,7 +43,7 @@ const values = [
   },
   {
     icon: Car,
-    title: 'BYD Automotive Business',
+    title: 'Green Cars',
     description: 'Sales network and after‑sales services for BYD electric vehicles, delivering reliable and eco‑friendly mobility.',
     image: '/images/1053127.jpg',
     gradient: 'from-green-600 to-emerald-600',
@@ -69,21 +69,12 @@ const values = [
     stat: '24/7 Operations'
   },
   {
-    icon: TreePine,
-    title: 'Sustainable Wood',
-    description: '7,000 years of Iranian carpentry heritage combined with modern environmental protection and sustainable arboriculture practices.',
-    image: '/images/3.jpg',
-    gradient: 'from-green-600 to-emerald-600',
-    number: '08',
-    stat: 'Eco-Certified'
-  },
-  {
     icon: Shield,
     title: 'Premium Durability',
     description: 'Robust and strong MDF products built to withstand time, delivering unmatched reliability for construction and furniture applications.',
     image: '/images/4.jpg',
     gradient: 'from-orange-600 to-red-600',
-    number: '09',
+    number: '08',
     stat: '50+ Years Life'
   },
   {
@@ -92,7 +83,7 @@ const values = [
     description: 'Prosperous international supply to diverse markets worldwide with Sina MDF products meeting world-class standards.',
     image: '/images/1O0A6321.JPG',
     gradient: 'from-purple-600 to-indigo-600',
-    number: '10',
+    number: '09',
     stat: '50+ Countries'
   },
   {
@@ -101,7 +92,7 @@ const values = [
     description: 'Highly educated production staff trained by European experts, bringing decades of knowledge and precision to every product.',
     image: '/images/1O0A6342.JPG',
     gradient: 'from-pink-600 to-rose-600',
-    number: '11',
+    number: '10',
     stat: 'EU Trained'
   },
   {
@@ -110,7 +101,7 @@ const values = [
     description: 'Express logistics and efficient supply chain ensuring fast delivery of products to meet customer needs promptly.',
     image: '/images/DSC_0030.JPG',
     gradient: 'from-yellow-600 to-amber-600',
-    number: '12',
+    number: '11',
     stat: '48H Delivery'
   },
   {
@@ -119,7 +110,7 @@ const values = [
     description: 'Economic solutions providing the best value without compromising on quality, supported by efficient production processes.',
     image: '/images/_SMH3265.jpg',
     gradient: 'from-teal-600 to-cyan-600',
-    number: '13',
+    number: '12',
     stat: 'Best Value'
   }
 ]
@@ -291,33 +282,6 @@ export default function VisionValuesSection() {
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-12 sm:mt-14 md:mt-16"
-        >
-          <p className="text-white mb-4 sm:mb-6 text-sm sm:text-base">Trusted by thousands of customers worldwide</p>
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 bg-gradient-to-r from-primary to-primary-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-primary/50 transition-all text-sm sm:text-base"
-            >
-              View Products
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 bg-white/10 backdrop-blur-lg text-white border border-white/20 rounded-xl font-semibold hover:bg-white/20 transition-all text-sm sm:text-base"
-            >
-              Contact Sales
-            </motion.button>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -50,8 +50,8 @@ const offices = [
     color: '#00732F',
     timezone: 'GMT+4',
     established: '2016',
-    type: 'Regional Office',
-    description: 'Middle East business hub and operations'
+    type: 'AI + Export',
+    description: 'AI-driven services and export operations across the Gulf region'
   },
   {
     id: 'oman',
@@ -64,8 +64,8 @@ const offices = [
     color: '#D62718',
     timezone: 'GMT+4',
     established: '2017',
-    type: 'Business Partner',
-    description: 'Infrastructure and development projects'
+    type: 'AI + Export',
+    description: 'AI-enabled export operations and regional business development'
   },
   {
     id: 'germany',
@@ -78,8 +78,8 @@ const offices = [
     color: '#000000',
     timezone: 'GMT+1',
     established: '2018',
-    type: 'European Partner',
-    description: 'Technology transfer and industrial cooperation'
+    type: 'Production Lines & Machinery',
+    description: 'Industrial production lines, machinery solutions, and engineering support'
   },
   {
     id: 'china',
@@ -92,8 +92,8 @@ const offices = [
     color: '#DE2910',
     timezone: 'GMT+8',
     established: '2014',
-    type: 'Strategic Partner',
-    description: 'Manufacturing and technology partnerships'
+    type: 'AI + Sustainable & Renewable Energy and Vehicles',
+    description: 'AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships'
   },
   {
     id: 'azerbaijan',
@@ -106,8 +106,8 @@ const offices = [
     color: '#00B5E2',
     timezone: 'GMT+4',
     established: '2019',
-    type: 'Regional Partner',
-    description: 'Energy sector and infrastructure projects'
+    type: 'Import & Export',
+    description: 'CIS-focused import & export operations and trade'
   },
   {
     id: 'russia',
@@ -120,8 +120,8 @@ const offices = [
     color: '#0033A0',
     timezone: 'GMT+3',
     established: '2016',
-    type: 'Business Partner',
-    description: 'Industrial and commercial collaborations'
+    type: 'Import & Export',
+    description: 'CIS import & export activities and commercial collaborations'
   },
   {
     id: 'tajikistan',
@@ -134,8 +134,8 @@ const offices = [
     color: '#006600',
     timezone: 'GMT+5',
     established: '2020',
-    type: 'Regional Partner',
-    description: 'Infrastructure development and trade'
+    type: 'Import & Export',
+    description: 'CIS trade facilitation and import/export operations'
   },
   {
     id: 'iraq',
@@ -148,8 +148,8 @@ const offices = [
     color: '#CE1126',
     timezone: 'GMT+3',
     established: '2017',
-    type: 'Business Partner',
-    description: 'Construction and development projects'
+    type: 'AI + Export',
+    description: 'AI-driven solutions and export operations across Arab markets'
   },
   {
     id: 'syria',
@@ -162,8 +162,8 @@ const offices = [
     color: '#CE1126',
     timezone: 'GMT+2',
     established: '2021',
-    type: 'Development Partner',
-    description: 'Reconstruction and humanitarian projects'
+    type: 'AI + Export',
+    description: 'AI-enabled services and export-focused initiatives in the Arab region'
   },
   {
     id: 'lebanon',
@@ -176,8 +176,8 @@ const offices = [
     color: '#ED1C24',
     timezone: 'GMT+2',
     established: '2019',
-    type: 'Regional Partner',
-    description: 'Trade and business development'
+    type: 'AI + Export',
+    description: 'AI services with export-oriented partnerships in the Gulf & Arab markets'
   }
 ]
 
@@ -434,7 +434,7 @@ function CameraController({ selectedOffice, onZoomChange }: {
       
       // Calculate optimal camera position
       // Position camera directly in front of the marker, looking at globe center
-      const cameraDistance = 2.0 // Optimal distance for clear view
+      const cameraDistance = 2.5 // Optimal distance for clear view
       
       // Camera looks at the marker from outside
       // Direction from globe center to marker
@@ -552,7 +552,7 @@ function Globe({ onZoomChange, onLocationSelect, zoomIn, zoomOut, resetToIran }:
   useEffect(() => {
     if (zoomIn && camera) {
       const currentDistance = camera.position.length()
-      const newDistance = Math.max(0.5, currentDistance - 1.2)
+      const newDistance = Math.max(1.6, currentDistance - 0.4)
       const direction = camera.position.clone().normalize()
       camera.position.copy(direction.multiplyScalar(newDistance))
     }
@@ -562,7 +562,7 @@ function Globe({ onZoomChange, onLocationSelect, zoomIn, zoomOut, resetToIran }:
   useEffect(() => {
     if (zoomOut && camera) {
       const currentDistance = camera.position.length()
-      const newDistance = Math.min(25, currentDistance + 1.2)
+      const newDistance = Math.min(22, currentDistance + 0.4)
       const direction = camera.position.clone().normalize()
       camera.position.copy(direction.multiplyScalar(newDistance))
     }
@@ -578,7 +578,7 @@ function Globe({ onZoomChange, onLocationSelect, zoomIn, zoomOut, resetToIran }:
         const rotationMatrix = new THREE.Matrix4().makeRotationY(-Math.PI / 2)
         const markerWorldPos = markerPosLocal.clone().applyMatrix4(rotationMatrix)
         const directionToMarker = markerWorldPos.clone().normalize()
-        const targetPosition = directionToMarker.multiplyScalar(2.0)
+        const targetPosition = directionToMarker.multiplyScalar(2.5)
         
         const startPosition = camera.position.clone()
         let progress = 0
@@ -732,15 +732,15 @@ function Globe({ onZoomChange, onLocationSelect, zoomIn, zoomOut, resetToIran }:
         ref={orbitControlsRef}
         enableZoom={true}
         enablePan={false}
-        minDistance={0.5}
-        maxDistance={25}
+        minDistance={1.8}
+        maxDistance={20}
         autoRotate={false}
         enableDamping={true}
         dampingFactor={0.05}
         minPolarAngle={Math.PI * 0.15}
         maxPolarAngle={Math.PI * 0.85}
         rotateSpeed={0.7}
-        zoomSpeed={3.5}
+        zoomSpeed={1.6}
         mouseButtons={{
           LEFT: THREE.MOUSE.ROTATE,
           MIDDLE: THREE.MOUSE.DOLLY,

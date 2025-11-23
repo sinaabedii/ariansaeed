@@ -10,21 +10,21 @@ const slides = [
     id: 1,
     title: 'Solar Panels',
     subtitle: 'Renewable Energy Solutions',
-    description: 'High‑efficiency solar systems to cut energy costs for homes, buildings, and businesses.',
+    description: 'High‑efficiency solar systems to cut energy costs for a carbon‑free world.',
     image: '/images/solarpark-limbach-dorf-Xpert.Digital-png.png',
   },
   {
     id: 2,
     title: 'Factory Energy Panels',
     subtitle: 'Industrial Efficiency',
-    description: 'Integrated energy and automation for production lines to reduce consumption and boost uptime.',
+    description: 'Wood‑based panels — high‑end German technology, biggest in Iran.',
     image: '/images/c2_up6Glpn.jpg',
   },
   {
     id: 3,
     title: 'Artificial Intelligence',
     subtitle: 'Smart Automation',
-    description: 'Analytics and computer vision that improve decisions, quality, and speed across operations.',
+    description: 'Manufacturing automation and data‑driven decision‑making.',
     image: '/images/1_bigstock-Ai-Car-Fix-Technology-Ai-Fix-471835423.jpg',
   },
   {
@@ -38,7 +38,7 @@ const slides = [
     id: 5,
     title: 'BYD Automotive Business',
     subtitle: 'Clean Mobility',
-    description: 'Sales and after‑sales services for BYD EVs, delivering reliable and eco‑friendly transport.',
+    description: 'Green and high‑tech vehicles.',
     image: '/images/1053127.jpg',
   },
 ]

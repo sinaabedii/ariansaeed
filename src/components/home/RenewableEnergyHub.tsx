@@ -15,9 +15,9 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 const energyStats = [
   { icon: Leaf, value: '2M+', label: 'Trees Planted', color: 'from-green-400 to-emerald-500' },
-  { icon: Sun, value: '50+', label: 'Solar Projects', color: 'from-yellow-400 to-orange-500' },
-  { icon: Sparkles, value: '250K+', label: 'Tons CO₂ Saved', color: 'from-teal-400 to-cyan-500' },
-  { icon: TrendingUp, value: '100+', label: 'Green Initiatives', color: 'from-blue-400 to-green-500' },
+  { icon: Sun, value: '50 MW', label: 'Solar Projects', color: 'from-yellow-400 to-orange-500' },
+  // { icon: Sparkles, value: '250K+', label: 'Tons CO₂ Saved', color: 'from-teal-400 to-cyan-500' },
+  // { icon: TrendingUp, value: '100+', label: 'Green Initiatives', color: 'from-blue-400 to-green-500' },
 ]
 
 const energyTypes = [
@@ -174,7 +174,7 @@ export default function RenewableEnergyHub() {
         </motion.div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2  gap-6 mb-20">
           {energyStats.map((stat, index) => {
             const Icon = stat.icon
             return (
@@ -393,72 +393,6 @@ export default function RenewableEnergyHub() {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Technologies Grid */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-              Our Green Impact
-            </h3>
-            <p className="text-lg text-gray-600">
-              Measurable environmental achievements building a sustainable tomorrow
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {technologies.map((tech, index) => {
-              const Icon = tech.icon
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-                  whileHover={{ y: -5 }}
-                  className="relative group"
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-br ${tech.color} opacity-0 group-hover:opacity-20 rounded-2xl blur-xl transition-opacity duration-300`} />
-                  <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full">
-                    <motion.div
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                      className={`inline-flex items-center justify-center w-14 h-14 rounded-xl bg-gradient-to-br ${tech.color} mb-4 shadow-lg`}
-                    >
-                      <Icon className="w-7 h-7 text-white" />
-                    </motion.div>
-
-                    <h4 className="text-lg font-bold text-gray-900 mb-2">
-                      {tech.title}
-                    </h4>
-
-                    <p className="text-sm text-gray-600 mb-4 leading-relaxed">
-                      {tech.description}
-                    </p>
-
-                    <div className="flex items-end justify-between pt-4 border-t border-gray-100">
-                      <div>
-                        <div className={`text-2xl font-bold bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}>
-                          {tech.stat}
-                        </div>
-                        <div className="text-xs text-gray-500">{tech.label}</div>
-                      </div>
-                      <motion.div
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className={`w-2 h-2 rounded-full bg-gradient-to-br ${tech.color}`}
-                      />
-                    </div>
-                  </div>
-                </motion.div>
-              )
-            })}
-          </div>
-        </motion.div>
-
         {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
