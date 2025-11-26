@@ -29,24 +29,24 @@ const partnerCountries = [
     country: 'Turkey',
     status: 'Active Partnership',
     image: '/images/counteries/Turkey.jpg',
-    description: 'Strategic partnerships and trade operations',
-    category: 'partnership'
+    description: 'Production lines, manufacturing solutions, and industrial partnerships',
+    category: 'production'
   },
   {
     city: 'Dubai',
     country: 'UAE',
-    status: 'AI + Export',
+    status: 'AI + Energy',
     image: '/images/counteries/Dubai.jpg',
-    description: 'AI-driven services and export operations across the Gulf region',
-    category: 'ai-export'
+    description: 'AI-driven services and renewable energy initiatives across the Gulf region',
+    category: 'ai-energy'
   },
   {
     city: 'Muscat',
     country: 'Oman',
     status: 'Active Projects',
     image: '/images/counteries/oman.webp',
-    description: 'AI-enabled export operations and regional business development',
-    category: 'ai-export'
+    description: 'CIS import & export operations and regional business development',
+    category: 'import-export'
   },
   {
     city: 'Berlin',
@@ -59,10 +59,10 @@ const partnerCountries = [
   {
     city: 'Beijing',
     country: 'China',
-    status: 'AI + Sustainable & Renewable Energy and Vehicles',
+    status: 'Production + AI + Energy',
     image: '/images/counteries/china.jpg',
-    description: 'AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships',
-    category: 'ai-energy'
+    description: 'Production lines, AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships',
+    category: 'production-ai-energy'
   },
   {
     city: 'Baku',
@@ -93,33 +93,32 @@ const partnerCountries = [
     country: 'Iraq',
     status: 'Active Projects',
     image: '/images/counteries/iraq.jpg',
-    description: 'AI-driven solutions and export operations across Arab markets',
-    category: 'ai-export'
+    description: 'CIS import & export operations across Arab markets',
+    category: 'import-export'
   },
   {
     city: 'Damascus',
     country: 'Syria',
-    status: 'AI + Export',
+    status: 'Active Projects',
     image: '/images/counteries/Damascus.webp',
-    description: 'AI-enabled services and export-focused initiatives in the Arab region',
-    category: 'ai-export'
+    description: 'CIS import & export operations and trade initiatives in the Arab region',
+    category: 'import-export'
   },
   {
     city: 'Beirut',
     country: 'Lebanon',
     status: 'Active Partnership',
     image: '/images/counteries/syria.jpg',
-    description: 'AI services with export-oriented partnerships in the Gulf & Arab markets',
-    category: 'ai-export'
+    description: 'CIS import & export operations with partnerships in the Gulf & Arab markets',
+    category: 'import-export'
   }
 ]
 
 const categories = [
-  { id: 'all', label: 'All Partners', icon: Globe },
-  { id: 'production', label: 'Production & Machinery', icon: Factory },
-  { id: 'ai-energy', label: 'AI + Renewable Energy', icon: Leaf },
+  { id: 'all', label: 'All Categories', icon: Globe },
+  { id: 'production', label: 'Production', icon: Factory },
+  { id: 'ai-energy', label: 'AI & Energy', icon: Leaf },
   { id: 'import-export', label: 'Import & Export', icon: ShoppingCart },
-  { id: 'ai-export', label: 'AI + Export', icon: Sparkles },
 ]
 
 const stats = [
@@ -134,7 +133,13 @@ export default function GlobalPresenceSection() {
 
   const filteredCountries = activeCategory === 'all'
     ? partnerCountries
-    : partnerCountries.filter(country => country.category === activeCategory)
+    : partnerCountries.filter(country => {
+        // China belongs to both production and ai-energy categories
+        if (country.category === 'production-ai-energy') {
+          return activeCategory === 'production' || activeCategory === 'ai-energy'
+        }
+        return country.category === activeCategory
+      })
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">

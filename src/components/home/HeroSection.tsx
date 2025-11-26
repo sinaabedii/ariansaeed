@@ -15,9 +15,9 @@ const slides = [
   },
   {
     id: 2,
-    title: 'Factory Energy Panels',
+    title: 'Wood‑based panels',
     subtitle: 'Industrial Efficiency',
-    description: 'Wood‑based panels — high‑end German technology, biggest in Iran.',
+    description: 'High‑end German technology, biggest in Iran.',
     image: '/images/c2_up6Glpn.jpg',
   },
   {

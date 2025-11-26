@@ -5,16 +5,14 @@ import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { BUSINESS_DOMAINS } from '@/lib/constants'
 import { 
-  MdViewInAr,
-  MdInventory,
-  MdWaterDrop,
-  MdConstruction,
-  MdPsychology,
-  MdWbSunny,
-  MdTrendingUp,
-  MdPublic,
-  MdWork
-} from 'react-icons/md'
+  Box,
+  Droplet,
+  Brain,
+  Sun,
+  TrendingUp,
+  Car
+} from 'lucide-react'
+
 
 export default function BusinessDomainsSection() {
   const ref = useRef(null)
@@ -63,16 +61,22 @@ export default function BusinessDomainsSection() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${domain.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                 
                 <div className="relative z-10">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${domain.gradient} rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                    {domain.id === 'wood-panels' && <MdViewInAr className="w-8 h-8 text-white" />}
-                    {domain.id === 'cellulose' && <MdInventory className="w-8 h-8 text-white" />}
-                    {domain.id === 'petrochemicals' && <MdWaterDrop className="w-8 h-8 text-white" />}
-                    {domain.id === 'construction' && <MdConstruction className="w-8 h-8 text-white" />}
-                    {domain.id === 'ai-tech' && <MdPsychology className="w-8 h-8 text-white" />}
-                    {domain.id === 'renewable-energy' && <MdWbSunny className="w-8 h-8 text-white" />}
-                    {domain.id === 'investment' && <MdTrendingUp className="w-8 h-8 text-white" />}
-                    {domain.id === 'trade' && <MdPublic className="w-8 h-8 text-white" />}
-                    {!['wood-panels', 'cellulose', 'petrochemicals', 'construction', 'ai-tech', 'renewable-energy', 'investment', 'trade'].includes(domain.id) && <MdWork className="w-8 h-8 text-white" />}
+                  <div className={`w-16 h-16 bg-gradient-to-br ${domain.gradient} rounded-2xl flex items-center justify-center mb-6 transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg`}>
+                      {domain.icon === 'Brain' ? (
+                        <Brain className="w-8 h-8 text-red" strokeWidth={2} />
+                      ) : domain.icon === 'Box' ? (
+                        <Box className="w-8 h-8 text-white" strokeWidth={2} />
+                      ) : domain.icon === 'Droplet' ? (
+                        <Droplet className="w-8 h-8 text-white" strokeWidth={2} />
+                      ) : domain.icon === 'Sun' ? (
+                        <Sun className="w-8 h-8 text-white" strokeWidth={2} />
+                      ) : domain.icon === 'TrendingUp' ? (
+                        <TrendingUp className="w-8 h-8 text-white" strokeWidth={2} />
+                      ) : domain.icon === 'Car' ? (
+                        <Car className="w-8 h-8 text-white" strokeWidth={2} />
+                      ) : (
+                        <Box className="w-8 h-8 text-white" strokeWidth={2} />
+                      )}
                   </div>
                   
                   <h3 className="text-2xl font-heading font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">

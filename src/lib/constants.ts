@@ -292,6 +292,27 @@ export const PARTNER_LOCATIONS = [
   { city: 'Beirut', country: 'Lebanon', lat: 33.8886, lng: 35.4955 },
 ]
 
+export const BUSINESS_CATEGORIES = {
+  PRODUCTION: {
+    id: 'production',
+    label: 'Production',
+    countries: ['Germany', 'China', 'Turkey'],
+    description: 'Manufacturing and industrial production operations'
+  },
+  AI_ENERGY: {
+    id: 'ai-energy', 
+    label: 'AI & Energy',
+    countries: ['China', 'UAE'],
+    description: 'Artificial intelligence and renewable energy initiatives'
+  },
+  IMPORT_EXPORT: {
+    id: 'import-export',
+    label: 'Import & Export',
+    countries: ['Russia', 'Iraq', 'Syria', 'Lebanon', 'UAE', 'Oman'],
+    description: 'CIS region import and export operations'
+  }
+}
+
 export const NAVIGATION_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },

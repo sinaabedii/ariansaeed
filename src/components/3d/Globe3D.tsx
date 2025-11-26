@@ -5,6 +5,7 @@ import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { OrbitControls, Html, Stars, useTexture, Sphere, Preload } from '@react-three/drei'
 import * as THREE from 'three'
 import { MapPin, Building2, Users, ZoomIn, ZoomOut, RotateCcw, Maximize2, Minimize2 } from 'lucide-react'
+import Image from 'next/image'
 
 // Countries we work with - VERIFIED precise coordinates
 // Coordinates are validated using Google Maps and align perfectly with the Earth texture
@@ -36,8 +37,8 @@ const offices = [
     color: '#E30A17',
     timezone: 'GMT+3',
     established: '2015',
-    type: 'Business Partner',
-    description: 'Strategic partnerships and trade operations'
+    type: 'Production',
+    description: 'Production lines, manufacturing solutions, and industrial partnerships'
   },
   {
     id: 'uae',
@@ -50,8 +51,8 @@ const offices = [
     color: '#00732F',
     timezone: 'GMT+4',
     established: '2016',
-    type: 'AI + Export',
-    description: 'AI-driven services and export operations across the Gulf region'
+    type: 'AI + Energy',
+    description: 'AI-driven services and renewable energy initiatives across the Gulf region'
   },
   {
     id: 'oman',
@@ -64,8 +65,8 @@ const offices = [
     color: '#D62718',
     timezone: 'GMT+4',
     established: '2017',
-    type: 'AI + Export',
-    description: 'AI-enabled export operations and regional business development'
+    type: 'Import & Export',
+    description: 'CIS import & export operations and regional business development'
   },
   {
     id: 'germany',
@@ -78,7 +79,7 @@ const offices = [
     color: '#000000',
     timezone: 'GMT+1',
     established: '2018',
-    type: 'Production Lines & Machinery',
+    type: 'Production',
     description: 'Industrial production lines, machinery solutions, and engineering support'
   },
   {
@@ -92,8 +93,8 @@ const offices = [
     color: '#DE2910',
     timezone: 'GMT+8',
     established: '2014',
-    type: 'AI + Sustainable & Renewable Energy and Vehicles',
-    description: 'AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships'
+    type: 'Production + AI + Energy',
+    description: 'Production lines, AI initiatives, clean energy (sustainable & renewable), and smart vehicles partnerships'
   },
   {
     id: 'azerbaijan',
@@ -148,8 +149,8 @@ const offices = [
     color: '#CE1126',
     timezone: 'GMT+3',
     established: '2017',
-    type: 'AI + Export',
-    description: 'AI-driven solutions and export operations across Arab markets'
+    type: 'Import & Export',
+    description: 'CIS import & export operations across Arab markets'
   },
   {
     id: 'syria',
@@ -162,8 +163,8 @@ const offices = [
     color: '#CE1126',
     timezone: 'GMT+2',
     established: '2021',
-    type: 'AI + Export',
-    description: 'AI-enabled services and export-focused initiatives in the Arab region'
+    type: 'Import & Export',
+    description: 'CIS import & export operations and trade initiatives in the Arab region'
   },
   {
     id: 'lebanon',
@@ -176,8 +177,8 @@ const offices = [
     color: '#ED1C24',
     timezone: 'GMT+2',
     established: '2019',
-    type: 'AI + Export',
-    description: 'AI services with export-oriented partnerships in the Gulf & Arab markets'
+    type: 'Import & Export',
+    description: 'CIS import & export operations with partnerships in the Gulf & Arab markets'
   }
 ]
 
@@ -307,16 +308,16 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
         />
       </mesh>
       
-      {/* Tooltip - Glass Style */}
+      {/* Tooltip - Compact Glass Style with Country Image */}
       {(hovered || isSelected) && (
         <Html
           position={[0, GLOBE_CONFIG.markerHeight, 0]}
           center
-          distanceFactor={isMobile ? 5 : 8}
+          distanceFactor={isMobile ? 6 : 10}
           style={{
             pointerEvents: 'none',
             userSelect: 'none',
-            transform: 'translateY(-10px)'
+            transform: 'translateY(-8px)'
           }}
         >
           <div
@@ -326,75 +327,115 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
                 : 'rgba(255, 255, 255, 0.15)',
               backdropFilter: 'blur(20px) saturate(180%)',
               WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-              padding: isMobile ? '8px 12px' : '10px 14px',
-              borderRadius: isMobile ? '12px' : '14px',
+              padding: isMobile ? '4px 6px' : '6px 8px',
+              borderRadius: isMobile ? '8px' : '10px',
               border: office.isBase 
                 ? '1px solid rgba(34, 197, 94, 0.3)'
                 : '1px solid rgba(255, 255, 255, 0.3)',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.5)',
-              minWidth: isMobile ? '85px' : '110px',
-              maxWidth: isMobile ? '115px' : '150px',
-              position: 'relative'
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
+              minWidth: isMobile ? '85px' : '105px',
+              maxWidth: isMobile ? '105px' : '130px',
+              position: 'relative',
+              display: 'flex',
+              alignItems: 'center',
+              gap: isMobile ? '4px' : '6px'
             }}
           >
-            {/* City Name */}
+            {/* Country Image */}
             <div
               style={{
-                fontSize: isMobile ? '12px' : '14px',
-                fontWeight: '700',
-                color: office.isBase ? '#22c55e' : '#fff',
-                marginBottom: '3px',
-                textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '4px',
-                letterSpacing: '0.3px'
+                width: isMobile ? '24px' : '32px',
+                height: isMobile ? '18px' : '24px',
+                borderRadius: isMobile ? '4px' : '6px',
+                overflow: 'hidden',
+                flexShrink: 0,
+                border: '1.5px solid rgba(255, 255, 255, 0.3)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+                background: 'rgba(255, 255, 255, 0.1)'
               }}
             >
-              {office.isBase && <span style={{ fontSize: isMobile ? '10px' : '12px' }}>🏢</span>}
-              <span>{office.city}</span>
+              <Image
+                src={office.image}
+                alt={office.country}
+                fill
+                sizes="32px"
+                style={{
+                  objectFit: 'cover',
+                  filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'
+                }}
+              />
             </div>
             
-            {/* Country */}
-            <div
-              style={{
-                fontSize: isMobile ? '10px' : '11px',
-                color: 'rgba(255, 255, 255, 0.9)',
-                fontWeight: '500',
-                textShadow: '0 1px 3px rgba(0, 0, 0, 0.3)'
-              }}
-            >
-              {office.country}
-            </div>
-            
-            {/* Type Badge */}
-            <div
-              style={{
-                fontSize: isMobile ? '8px' : '9px',
-                color: 'rgba(255, 255, 255, 0.75)',
-                marginTop: '5px',
-                paddingTop: '5px',
-                borderTop: '1px solid rgba(255, 255, 255, 0.2)',
-                fontWeight: '500',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                textShadow: '0 1px 2px rgba(0, 0, 0, 0.2)'
-              }}
-            >
-              {office.type}
+            {/* Text Content */}
+            <div style={{ flex: 1, minWidth: 0, alignSelf: 'flex-end', paddingBottom: '2px' }}>
+              {/* City Name */}
+              <div
+                style={{
+                  fontSize: isMobile ? '9px' : '10px',
+                  fontWeight: '700',
+                  color: office.isBase ? '#22c55e' : '#fff',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '2px',
+                  letterSpacing: '0.2px',
+                  lineHeight: 1.1
+                }}
+              >
+                {office.isBase && <span style={{ fontSize: isMobile ? '7px' : '8px' }}>🏢</span>}
+                <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  {office.city}
+                </span>
+              </div>
+              
+              {/* Country */}
+              <div
+                style={{
+                  fontSize: isMobile ? '8px' : '9px',
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontWeight: '500',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                  lineHeight: 1.1,
+                  marginTop: '1px',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
+                }}
+              >
+                {office.country}
+              </div>
+              
+              {/* Activity Type */}
+              <div
+                style={{
+                  fontSize: isMobile ? '7px' : '8px',
+                  color: 'rgba(255, 255, 255, 0.75)',
+                  fontWeight: '500',
+                  textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
+                  lineHeight: 1,
+                  marginTop: '2px',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.3px'
+                }}
+              >
+                {office.type}
+              </div>
             </div>
             
             {/* Status Indicator */}
             <div
               style={{
                 position: 'absolute',
-                top: isMobile ? '8px' : '10px',
-                right: isMobile ? '10px' : '12px',
-                width: isMobile ? '6px' : '7px',
-                height: isMobile ? '6px' : '7px',
+                top: isMobile ? '2px' : '3px',
+                right: isMobile ? '3px' : '4px',
+                width: isMobile ? '4px' : '5px',
+                height: isMobile ? '4px' : '5px',
                 borderRadius: '50%',
                 backgroundColor: office.isBase ? '#22c55e' : office.color,
-                boxShadow: `0 0 10px ${office.isBase ? '#22c55e' : office.color}`,
+                boxShadow: `0 0 6px ${office.isBase ? '#22c55e' : office.color}`,
                 animation: 'pulse 2s ease-in-out infinite'
               }}
             />

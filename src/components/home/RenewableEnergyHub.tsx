@@ -14,7 +14,7 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false })
 
 const energyStats = [
   { icon: Leaf, value: '2M+', label: 'Trees Planted', color: 'from-green-400 to-emerald-500' },
-  { icon: Sun, value: '50 MW', label: 'Solar Projects', color: 'from-yellow-400 to-orange-500' },
+  { icon: Sun, value: '50 MW+', label: 'Solar Projects', color: 'from-yellow-400 to-orange-500' },
 ]
 
 const energyTypes = [
