@@ -8,6 +8,7 @@ import StatsSection from '@/components/home/StatsSection'
 import GlobalPresenceSection from '@/components/home/GlobalPresenceSection'
 
 const BusinessDomainsSection = dynamic(() => import('@/components/home/BusinessDomainsSection'), { ssr: true })
+const DepartmentsSection = dynamic(() => import('@/components/home/DepartmentsSection'), { ssr: true })
 // const GlobalPresenceSection = dynamic(() => import('@/components/home/GlobalPresenceSection'), { ssr: true })
 const StaticGlobeSection = dynamic(() => import('@/components/home/StaticGlobeSection'), { ssr: true })
 const TechnologyHubSection = dynamic(() => import('@/components/home/TechnologyHubSection'), { ssr: true })
@@ -34,6 +35,7 @@ export default function HomePage() {
       <VisionValuesSection />
       <StatsSection />
       <BusinessDomainsSection />
+      <DepartmentsSection />
       <GlobalPresenceSection />
       <RenewableEnergyHub />
       <TechnologyHubSection />

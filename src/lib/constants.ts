@@ -45,8 +45,8 @@ export const BUSINESS_DOMAINS = [
   },
   {
     id: 'investment',
-    title: 'Investment & Finance',
-    description: 'Portfolio management and project financing focused on sustainable returns and long‑term growth.',
+    title: 'Investment & Fintech',
+    description: 'Digital financial solutions, portfolio management, and fintech innovations for sustainable returns and long‑term growth.',
     icon: 'TrendingUp',
     gradient: 'from-amber-500 to-yellow-500',
     image: '/images/IMG_Mst_Invest_Wealth_Manage.jpg',
@@ -269,7 +269,7 @@ export const SUBSIDIARY_COMPANIES = [
 
 export const CONTACT_INFO = {
   address: 'Tehran, Iran',
-  phone: '+98 21 1234 5678',
+  phone: '+98 21 2459 2000',
   email: 'info@ariansaeed.com',
   mapCenter: {
     lat: 35.77857469321197,
@@ -313,11 +313,161 @@ export const BUSINESS_CATEGORIES = {
   }
 }
 
+export const DEPARTMENTS = [
+  {
+    id: 'wood-manufacturing',
+    name: 'Wood Manufacturing Department',
+    description: 'Leading the production of world-class MDF and wood-based panels with advanced European technology',
+    icon: 'Factory',
+    gradient: 'from-amber-600 via-orange-500 to-red-500',
+    image: '/images/1.jpg',
+    stats: {
+      companies: 12,
+      employees: '800+',
+      productionLines: 8,
+      capacity: '500,000 m³/year'
+    },
+    companies: [11, 6, 21, 15, 4, 3, 10, 9, 8, 12, 13, 16],
+    features: [
+      'Advanced European Technology',
+      'High-Quality MDF Production',
+      'Sustainable Manufacturing',
+      'ISO Certified Facilities'
+    ]
+  },
+  {
+    id: 'chemical-petrochemical',
+    name: 'Chemical & Petrochemical Department',
+    description: 'Providing comprehensive chemical solutions and adhesive production for industrial applications',
+    icon: 'FlaskConical',
+    gradient: 'from-purple-600 via-violet-500 to-pink-500',
+    image: '/images/2.jpg',
+    stats: {
+      companies: 3,
+      employees: '200+',
+      productionLines: 4,
+      capacity: '50,000 tons/year'
+    },
+    companies: [19, 26, 2],
+    features: [
+      'Advanced Chemical Processing',
+      'Quality Adhesive Production',
+      'R&D Laboratory',
+      'Environmental Compliance'
+    ]
+  },
+  {
+    id: 'technology-ai',
+    name: 'Technology & AI Department',
+    description: 'Driving innovation through artificial intelligence, data analytics, and smart automation solutions',
+    icon: 'Cpu',
+    gradient: 'from-blue-600 via-indigo-500 to-purple-500',
+    image: '/images/1_bigstock-Ai-Car-Fix-Technology-Ai-Fix-471835423.jpg',
+    stats: {
+      companies: 2,
+      employees: '150+',
+      projects: '50+',
+      technologies: '15+'
+    },
+    companies: [7, 17],
+    features: [
+      'Machine Learning & AI',
+      'Computer Vision Systems',
+      'Data Analytics Platform',
+      'Smart Automation'
+    ]
+  },
+  {
+    id: 'investment-fintech',
+    name: 'Investment & Fintech Department',
+    description: 'Strategic investment management and cutting-edge fintech solutions for sustainable growth and digital transformation',
+    icon: 'TrendingUp',
+    gradient: 'from-emerald-600 via-green-500 to-teal-500',
+    image: '/images/IMG_Mst_Invest_Wealth_Manage.jpg',
+    stats: {
+      companies: 4,
+      employees: '100+',
+      portfolio: '$500M+',
+      projects: '30+'
+    },
+    companies: [5, 14, 22, 24],
+    features: [
+      'Portfolio Management',
+      'Project Financing',
+      'Risk Assessment',
+      'Strategic Planning'
+    ]
+  },
+  {
+    id: 'trade-logistics',
+    name: 'Trade & Logistics Department',
+    description: 'International trade operations and comprehensive logistics solutions across global markets',
+    icon: 'Ship',
+    gradient: 'from-cyan-600 via-blue-500 to-indigo-500',
+    image: '/images/2.jpg',
+    stats: {
+      companies: 3,
+      employees: '250+',
+      countries: '15+',
+      volume: '100,000+ tons/year'
+    },
+    companies: [1, 18, 23],
+    features: [
+      'International Trade',
+      'Supply Chain Management',
+      'Custom Clearance',
+      'Warehousing Solutions'
+    ]
+  },
+  {
+    id: 'construction-development',
+    name: 'Construction & Development Department',
+    description: 'Comprehensive construction management and real estate development services',
+    icon: 'Building2',
+    gradient: 'from-orange-600 via-red-500 to-pink-500',
+    image: '/images/1.jpg',
+    stats: {
+      companies: 2,
+      employees: '180+',
+      projects: '40+',
+      area: '500,000+ m²'
+    },
+    companies: [20, 27],
+    features: [
+      'Project Management',
+      'Construction Services',
+      'Real Estate Development',
+      'Quality Assurance'
+    ]
+  },
+  {
+    id: 'green-energy',
+    name: 'Green Energy & Mobility Department',
+    description: 'Leading the transition to sustainable energy and electric mobility solutions',
+    icon: 'Leaf',
+    gradient: 'from-green-600 via-emerald-500 to-teal-500',
+    image: '/images/solarpark-limbach-dorf-Xpert.Digital-png.png',
+    stats: {
+      companies: 1,
+      employees: '120+',
+      capacity: '100MW',
+      vehicles: '500+ units/year'
+    },
+    companies: [25],
+    features: [
+      'Solar Energy Solutions',
+      'EV Sales & Service',
+      'Charging Infrastructure',
+      'Energy Storage Systems'
+    ]
+  }
+]
+
 export const NAVIGATION_ITEMS = [
   { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/about' },
-  { label: 'Business Domains', href: '/#domains' },
+  { label: 'Departments', href: '/departments' },
   { label: 'Articles', href: '/articles' },
-  { label: 'Contact', href: '/contact' },
   { label: 'Careers', href: '/careers' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
 ]

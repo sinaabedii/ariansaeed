@@ -327,41 +327,43 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
                 : 'rgba(255, 255, 255, 0.15)',
               backdropFilter: 'blur(20px) saturate(180%)',
               WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-              padding: isMobile ? '4px 6px' : '6px 8px',
-              borderRadius: isMobile ? '8px' : '10px',
+              padding: isMobile ? '6px 8px' : '8px 10px',
+              borderRadius: isMobile ? '10px' : '12px',
               border: office.isBase 
-                ? '1px solid rgba(34, 197, 94, 0.3)'
-                : '1px solid rgba(255, 255, 255, 0.3)',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3)',
-              minWidth: isMobile ? '85px' : '105px',
-              maxWidth: isMobile ? '105px' : '130px',
+                ? '1.5px solid rgba(34, 197, 94, 0.4)'
+                : '1.5px solid rgba(255, 255, 255, 0.4)',
+              boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3), inset 0 1px 2px rgba(255, 255, 255, 0.4)',
+              minWidth: isMobile ? '95px' : '120px',
+              maxWidth: isMobile ? '120px' : '150px',
               position: 'relative',
               display: 'flex',
               alignItems: 'center',
-              gap: isMobile ? '4px' : '6px'
+              gap: isMobile ? '6px' : '8px'
             }}
           >
             {/* Country Image */}
             <div
               style={{
-                width: isMobile ? '24px' : '32px',
-                height: isMobile ? '18px' : '24px',
-                borderRadius: isMobile ? '4px' : '6px',
+                width: isMobile ? '32px' : '40px',
+                height: isMobile ? '24px' : '30px',
+                borderRadius: isMobile ? '5px' : '7px',
                 overflow: 'hidden',
                 flexShrink: 0,
-                border: '1.5px solid rgba(255, 255, 255, 0.3)',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-                background: 'rgba(255, 255, 255, 0.1)'
+                border: '2px solid rgba(255, 255, 255, 0.4)',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.2)',
+                background: '#1a1a1a',
+                position: 'relative'
               }}
             >
               <Image
                 src={office.image}
                 alt={office.country}
                 fill
-                sizes="32px"
+                sizes="(max-width: 768px) 32px, 40px"
+                quality={90}
                 style={{
                   objectFit: 'cover',
-                  filter: 'brightness(1.1) contrast(1.1) saturate(1.2)'
+                  objectPosition: 'center',
                 }}
               />
             </div>
@@ -371,7 +373,7 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
               {/* City Name */}
               <div
                 style={{
-                  fontSize: isMobile ? '9px' : '10px',
+                  fontSize: isMobile ? '10px' : '11px',
                   fontWeight: '700',
                   color: office.isBase ? '#22c55e' : '#fff',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
@@ -391,7 +393,7 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
               {/* Country */}
               <div
                 style={{
-                  fontSize: isMobile ? '8px' : '9px',
+                  fontSize: isMobile ? '9px' : '10px',
                   color: 'rgba(255, 255, 255, 0.9)',
                   fontWeight: '500',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
@@ -408,7 +410,7 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
               {/* Activity Type */}
               <div
                 style={{
-                  fontSize: isMobile ? '7px' : '8px',
+                  fontSize: isMobile ? '8px' : '9px',
                   color: 'rgba(255, 255, 255, 0.75)',
                   fontWeight: '500',
                   textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)',
@@ -429,13 +431,13 @@ function LocationMarker({ office, position, onClick, isSelected, zoomLevel }: Lo
             <div
               style={{
                 position: 'absolute',
-                top: isMobile ? '2px' : '3px',
-                right: isMobile ? '3px' : '4px',
-                width: isMobile ? '4px' : '5px',
-                height: isMobile ? '4px' : '5px',
+                top: isMobile ? '4px' : '5px',
+                right: isMobile ? '4px' : '5px',
+                width: isMobile ? '6px' : '7px',
+                height: isMobile ? '6px' : '7px',
                 borderRadius: '50%',
                 backgroundColor: office.isBase ? '#22c55e' : office.color,
-                boxShadow: `0 0 6px ${office.isBase ? '#22c55e' : office.color}`,
+                boxShadow: `0 0 8px ${office.isBase ? '#22c55e' : office.color}, 0 0 12px ${office.isBase ? '#22c55e88' : office.color + '88'}`,
                 animation: 'pulse 2s ease-in-out infinite'
               }}
             />

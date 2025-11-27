@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Upload, FileText, User, Mail, Phone, Briefcase, MapPin, Award, CheckCircle2 } from 'lucide-react'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 interface ResumeModalProps {
   isOpen: boolean
@@ -25,6 +25,16 @@ export default function ResumeModal({ isOpen, onClose, jobTitle }: ResumeModalPr
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // Update position field when jobTitle changes
+  useEffect(() => {
+    if (jobTitle) {
+      setFormData(prev => ({
+        ...prev,
+        position: jobTitle
+      }))
+    }
+  }, [jobTitle])
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -236,7 +246,7 @@ export default function ResumeModal({ isOpen, onClose, jobTitle }: ResumeModalPr
                       onChange={handleChange}
                       required
                       className="w-full px-2.5 py-1.5 sm:px-4 sm:py-3 text-sm sm:text-base rounded-lg sm:rounded-xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
-                      placeholder="e.g., Software Engineer"
+                      placeholder={jobTitle ? jobTitle : "e.g., Software Engineer"}
                     />
                   </div>
 

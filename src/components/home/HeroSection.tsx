@@ -29,9 +29,9 @@ const slides = [
   },
   {
     id: 4,
-    title: 'Investment & Finance',
-    subtitle: 'Sustainable Growth',
-    description: 'Portfolio management and project financing focused on stable returns and long‑term value.',
+    title: 'Investment & Fintech',
+    subtitle: 'Digital Finance',
+    description: 'Fintech innovations and portfolio management focused on digital transformation and sustainable growth.',
     image: '/images/IMG_Mst_Invest_Wealth_Manage.jpg',
   },
   {

@@ -1,11 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Sparkles } from 'lucide-react'
+import { Building2, Network, Globe2, Sparkles } from 'lucide-react'
 
-export default function ContactHero() {
+export default function DepartmentsHero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-orange-900 to-amber-900">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900">
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0" style={{
@@ -22,9 +22,9 @@ export default function ContactHero() {
             className="absolute rounded-full"
             style={{
               background: `radial-gradient(circle, ${
-                i % 3 === 0 ? 'rgba(251, 146, 60, 0.3)' : 
-                i % 3 === 1 ? 'rgba(245, 158, 11, 0.3)' : 
-                'rgba(234, 179, 8, 0.3)'
+                i % 3 === 0 ? 'rgba(99, 102, 241, 0.3)' : 
+                i % 3 === 1 ? 'rgba(168, 85, 247, 0.3)' : 
+                'rgba(236, 72, 153, 0.3)'
               }, transparent)`,
               width: `${200 + i * 100}px`,
               height: `${200 + i * 100}px`,
@@ -55,8 +55,8 @@ export default function ContactHero() {
             transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-lg rounded-full border border-white/20 mb-8"
           >
-            <Sparkles className="w-5 h-5 text-orange-400" />
-            <span className="text-white font-semibold">Get Connected</span>
+            <Sparkles className="w-5 h-5 text-primary" />
+            <span className="text-white font-semibold">Organizational Excellence</span>
           </motion.div>
 
           {/* Main Title */}
@@ -64,11 +64,11 @@ export default function ContactHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white mb-6 leading-tight"
+            className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-heading font-bold text-white mb-6 leading-tight"
           >
-            Get In{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-400">
-              Touch
+            Our{' '}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-purple-400 to-pink-400">
+              Departments
             </span>
           </motion.h1>
 
@@ -77,12 +77,13 @@ export default function ContactHero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible
+            Seven strategic departments driving innovation and excellence across
+            32+ subsidiary companies in diverse industries
           </motion.p>
 
-          {/* Contact Info Cards */}
+          {/* Stats Cards */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,22 +91,22 @@ export default function ContactHero() {
             className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
           >
             {[
-              { icon: Mail, label: 'Email Us', value: 'info@ariansaeed.com' },
-              { icon: Phone, label: 'Call Us', value: '+98 21 1234 5678' },
-              { icon: MapPin, label: 'Visit Us', value: 'Tehran, Iran' },
-            ].map((contact, index) => (
+              { icon: Building2, label: 'Departments', value: '7' },
+              { icon: Network, label: 'Companies', value: '32+' },
+              { icon: Globe2, label: 'Countries', value: '15+' },
+            ].map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                className="group relative bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-orange-400/50 hover:bg-white/10 transition-all duration-300"
+                className="group relative bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10 hover:border-primary/50 hover:bg-white/10 transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
                 <div className="relative">
-                  <contact.icon className="w-8 h-8 text-orange-400 mb-3 mx-auto" />
-                  <div className="text-lg font-bold text-white mb-1">{contact.label}</div>
-                  <div className="text-sm text-white/70">{contact.value}</div>
+                  <stat.icon className="w-8 h-8 text-primary mb-3 mx-auto" />
+                  <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                  <div className="text-sm text-white/70">{stat.label}</div>
                 </div>
               </motion.div>
             ))}

@@ -44,7 +44,7 @@ export default function ContactInfo() {
           </div>
         </div>
 
-        <div className="flex items-start space-x-4">
+        {/* <div className="flex items-start space-x-4">
           <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
             <Clock className="w-6 h-6 text-primary" />
           </div>
@@ -53,7 +53,7 @@ export default function ContactInfo() {
             <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
             <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="h-80 rounded-2xl overflow-hidden shadow-lg">

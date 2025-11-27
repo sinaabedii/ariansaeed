@@ -34,8 +34,8 @@ const values = [
   },
   {
     icon: TrendingUp,
-    title: 'Investment & Finance',
-    description: 'Portfolio management and project financing focused on sustainable returns and long‑term value creation.',
+    title: 'Investment & Fintech',
+    description: 'Digital financial solutions and fintech innovations focused on sustainable returns and long‑term value creation.',
     image: '/images/IMG_Mst_Invest_Wealth_Manage.jpg',
     gradient: 'from-amber-600 to-yellow-600',
     number: '04',
@@ -185,7 +185,7 @@ export default function VisionValuesSection() {
             Excellence in <span className="bg-gradient-to-r from-primary to-cyan-400 bg-clip-text text-transparent">Every Detail</span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto leading-relaxed px-4">
-            42 years of innovation across energy, technology, mobility, construction, finance, and manufacturing—delivering excellence in every detail.
+            42 years of innovation across energy, technology, mobility, construction, fintech, and manufacturing—delivering excellence in every detail.
           </p>
         </motion.div>
 

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronDown, Globe, Search } from 'lucide-react'
+import { Menu, X, Search } from 'lucide-react'
 import { NAVIGATION_ITEMS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 import SearchModal from '@/components/SearchModal'
@@ -75,18 +75,9 @@ export default function Header() {
                 <Search className="w-5 h-5" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-xl" />
               </button>
-              
-              {/* Language Selector
-              <button className="flex items-center space-x-1 font-medium transition-all duration-200 px-3 py-2 rounded-xl group relative text-white hover:text-primary hover:bg-white/10">
-                <Globe className="w-4 h-4" />
-                <span className="text-sm">EN</span>
-                <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-xl" />
-              </button> */}
             </div>
           </nav>
 
-          {/* Enhanced Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-3 rounded-xl transition-all duration-200 group relative text-white hover:text-primary hover:bg-white/10 shadow-sm"
@@ -103,7 +94,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Enhanced Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden pb-6 pt-4 animate-slide-down border-t border-white/10">
             <nav className="flex flex-col space-y-2">
@@ -140,12 +130,6 @@ export default function Header() {
                 >
                   <Search className="w-4 h-4" />
                   <span>Search</span>
-                </button>
-                
-                <button className="w-full flex items-center justify-center space-x-2 font-medium transition-all duration-200 py-3 px-4 rounded-xl group relative text-white hover:text-primary hover:bg-white/10">
-                  <Globe className="w-4 h-4" />
-                  <span>English</span>
-                  <ChevronDown className="w-3 h-3 transition-transform group-hover:rotate-180" />
                 </button>
               </div>
             </nav>
